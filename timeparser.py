@@ -18,7 +18,7 @@ def myparser():
     """Creates parser object
     """
     parser = argparse.ArgumentParser(
-        description="parsetiming.py: A script to reformat slurm log files.")
+        description="timeparser.py: A script to reformat slurm log files.")
     parser.add_argument('--indir', '-i', type=str, required=True,
                         help='The error log produced from vsearch')
 
