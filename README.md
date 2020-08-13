@@ -22,4 +22,4 @@ Rscript Plot.R
 
 ## Plot
 
-![alt text](https://github.com/ravinpoudel/metagenomics/blob/master/Metagenomics.png)
+# ![alt text](https://github.com/ravinpoudel/metagenomics/blob/master/Metagenomics.png)
