@@ -94,7 +94,7 @@ def main(args=None):
     labels = ["Genome", "threads", "CPU%", "process_sec"]
     df = pandas.DataFrame.from_records(chunks, columns=labels)
     print(df)
-    df.to_csv(args.outfile)
+    df.to_csv(args.outfile, index=False)
 
 
 if __name__ == "__main__":
