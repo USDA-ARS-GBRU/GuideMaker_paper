@@ -30,7 +30,7 @@ p3 <- ggplot(summarystat, aes(x=threads, y=process_sec, colour=Genome, group=Gen
   expand_limits(y=0) + # Expand y range
   theme_bw() +
   theme(legend.justification=c(1,0),
-        legend.position=c(0.5,0.8)) # Position legend (left-right, top-bottom)
+        legend.position=c(0.7,0.8)) # Position legend (left-right, top-bottom)
 
 
 ## Fixing axis text size

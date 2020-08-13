@@ -1,0 +1,451 @@
+Thu Aug 13 11:22:17 EDT 2020
+c21b-s3.ufhpc
+/blue/garrett/rp3448/analysis/guidemaker/GuideMaker
+My SLURM_ARRAY_TASK_ID:  1
+My TMPDIR IS:  /scratch/local/57437298
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Burkholderia_thailandensis_E264_ATCC_700388_133.gbk
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  1
+GuideMaker
+2020-08-13 11:22:24,315: INFO     Temp directory is: /scratch/local/57437298/guidemaker_68uikla3
+2020-08-13 11:22:24,316: INFO     Writing fasta file from genbank file(s)
+2020-08-13 11:22:24,317: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:22:25,169: INFO     Identifying PAM sites in the genome
+2020-08-13 11:22:45,189: INFO     Identifing guides that are unique near the PAM site
+2020-08-13 11:22:46,331: INFO     Indexing all potential guide sites: 923226. This is the longest step.
+2020-08-13 11:22:50,844: INFO     M                   = 16
+2020-08-13 11:22:50,844: INFO     indexThreadQty      = 1
+2020-08-13 11:22:50,844: INFO     efConstruction      = 64
+2020-08-13 11:22:50,844: INFO     maxM			          = 16
+2020-08-13 11:22:50,845: INFO     maxM0			          = 32
+2020-08-13 11:22:50,845: INFO     mult                = 0.360674
+2020-08-13 11:22:50,845: INFO     skip_optimized_index= 0
+2020-08-13 11:22:50,845: INFO     delaunay_type       = 2
+2020-08-13 11:22:50,845: INFO     Set HNSW query-time parameters:
+2020-08-13 11:22:50,845: INFO     ef(Search)         =20
+2020-08-13 11:22:50,845: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+*2020-08-13 11:30:26,768: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2020-08-13 11:30:26,770: INFO     searchMethod			  = 0
+2020-08-13 11:30:26,850: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2020-08-13 11:30:27,142: INFO     Set HNSW query-time parameters:
+2020-08-13 11:30:27,142: INFO     ef(Search)         =256
+2020-08-13 11:30:27,142: INFO     algoType           =2
+2020-08-13 11:32:49,690: INFO     Formatting data for BedTools
+2020-08-13 11:32:50,054: INFO     Create GuideMaker Annotation object
+2020-08-13 11:32:50,054: INFO     Identify genomic features
+2020-08-13 11:32:50,056: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:32:51,418: INFO     Find genomic features closest the guides
+2020-08-13 11:32:53,823: INFO     Select guides that start between +100 and -100 of a feature start
+2020-08-13 11:32:53,993: INFO     Select description columns
+2020-08-13 11:32:54,047: INFO     Format the output
+2020-08-13 11:32:54,760: INFO     creating random control guides
+2020-08-13 11:33:05,408: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2020-08-13 11:33:05,410: INFO     guidemaker completed, results are at TEST
+2020-08-13 11:33:05,411: INFO     PAM sequence: NGG
+2020-08-13 11:33:05,411: INFO     PAM orientation: 5prime
+2020-08-13 11:33:05,411: INFO     Genome strand(s) searched: both
+2020-08-13 11:33:05,411: INFO     Total PAM sites considered: 923226
+2020-08-13 11:33:05,411: INFO     Guide RNA candidates found: 35882
+	Command being timed: "guidemaker -i test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk --pamseq NGG --outdir TEST --pam_orientation 5prime --guidelength 20 --strand both --lcp 10 --dist 3 --before 100 --into 100 --knum 10 --controls 10 --log GuideMaker_57437298_1.log --threads 1"
+	User time (seconds): 641.24
+	System time (seconds): 5.43
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 10:46.56
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2159416
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 123
+	Minor (reclaiming a frame) page faults: 3629053
+	Voluntary context switches: 3896
+	Involuntary context switches: 60704
+	Swaps: 0
+	File system inputs: 393984
+	File system outputs: 146944
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  1
+My TMPDIR IS:  /scratch/local/57437298
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Burkholderia_thailandensis_E264_ATCC_700388_133.gbk
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  2
+GuideMaker
+2020-08-13 11:33:08,049: INFO     Temp directory is: /scratch/local/57437298/guidemaker_mbw1_rm1
+2020-08-13 11:33:08,050: INFO     Writing fasta file from genbank file(s)
+2020-08-13 11:33:08,050: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:33:08,804: INFO     Identifying PAM sites in the genome
+2020-08-13 11:33:29,063: INFO     Identifing guides that are unique near the PAM site
+2020-08-13 11:33:30,222: INFO     Indexing all potential guide sites: 923226. This is the longest step.
+2020-08-13 11:33:34,633: INFO     M                   = 16
+2020-08-13 11:33:34,633: INFO     indexThreadQty      = 2
+2020-08-13 11:33:34,633: INFO     efConstruction      = 64
+2020-08-13 11:33:34,633: INFO     maxM			          = 16
+2020-08-13 11:33:34,633: INFO     maxM0			          = 32
+2020-08-13 11:33:34,633: INFO     mult                = 0.360674
+2020-08-13 11:33:34,633: INFO     skip_optimized_index= 0
+2020-08-13 11:33:34,633: INFO     delaunay_type       = 2
+2020-08-13 11:33:34,633: INFO     Set HNSW query-time parameters:
+2020-08-13 11:33:34,633: INFO     ef(Search)         =20
+2020-08-13 11:33:34,634: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2020-08-13 11:37:51,020: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2020-08-13 11:37:51,021: INFO     searchMethod			  = 0
+2020-08-13 11:37:51,098: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2020-08-13 11:37:51,407: INFO     Set HNSW query-time parameters:
+2020-08-13 11:37:51,407: INFO     ef(Search)         =256
+2020-08-13 11:37:51,407: INFO     algoType           =2
+2020-08-13 11:39:16,188: INFO     Formatting data for BedTools
+2020-08-13 11:39:16,523: INFO     Create GuideMaker Annotation object
+2020-08-13 11:39:16,523: INFO     Identify genomic features
+2020-08-13 11:39:16,524: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:39:17,735: INFO     Find genomic features closest the guides
+2020-08-13 11:39:20,147: INFO     Select guides that start between +100 and -100 of a feature start
+2020-08-13 11:39:20,306: INFO     Select description columns
+2020-08-13 11:39:20,359: INFO     Format the output
+2020-08-13 11:39:21,118: INFO     creating random control guides
+2020-08-13 11:40:25,651: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2020-08-13 11:40:25,656: INFO     guidemaker completed, results are at TEST
+2020-08-13 11:40:25,656: INFO     PAM sequence: NGG
+2020-08-13 11:40:25,656: INFO     PAM orientation: 5prime
+2020-08-13 11:40:25,656: INFO     Genome strand(s) searched: both
+2020-08-13 11:40:25,656: INFO     Total PAM sites considered: 923226
+2020-08-13 11:40:25,656: INFO     Guide RNA candidates found: 35882
+Number of random control searched:  100000
+	Command being timed: "guidemaker -i test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk --pamseq NGG --outdir TEST --pam_orientation 5prime --guidelength 20 --strand both --lcp 10 --dist 3 --before 100 --into 100 --knum 10 --controls 10 --log GuideMaker_57437298_1.log --threads 2"
+	User time (seconds): 799.42
+	System time (seconds): 34.16
+	Percent of CPU this job got: 189%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:20.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2317016
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 18764144
+	Voluntary context switches: 73654
+	Involuntary context switches: 72404
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 146832
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  1
+My TMPDIR IS:  /scratch/local/57437298
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Burkholderia_thailandensis_E264_ATCC_700388_133.gbk
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  4
+GuideMaker
+2020-08-13 11:40:28,871: INFO     Temp directory is: /scratch/local/57437298/guidemaker_cdrxyik6
+2020-08-13 11:40:28,872: INFO     Writing fasta file from genbank file(s)
+2020-08-13 11:40:28,872: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:40:29,607: INFO     Identifying PAM sites in the genome
+2020-08-13 11:40:49,674: INFO     Identifing guides that are unique near the PAM site
+2020-08-13 11:40:50,872: INFO     Indexing all potential guide sites: 923226. This is the longest step.
+2020-08-13 11:40:55,292: INFO     M                   = 16
+2020-08-13 11:40:55,292: INFO     indexThreadQty      = 4
+2020-08-13 11:40:55,292: INFO     efConstruction      = 64
+2020-08-13 11:40:55,292: INFO     maxM			          = 16
+2020-08-13 11:40:55,292: INFO     maxM0			          = 32
+2020-08-13 11:40:55,293: INFO     mult                = 0.360674
+2020-08-13 11:40:55,293: INFO     skip_optimized_index= 0
+2020-08-13 11:40:55,293: INFO     delaunay_type       = 2
+2020-08-13 11:40:55,293: INFO     Set HNSW query-time parameters:
+2020-08-13 11:40:55,293: INFO     ef(Search)         =20
+2020-08-13 11:40:55,293: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+******************************************************2020-08-13 11:43:06,631: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2020-08-13 11:43:06,631: INFO     searchMethod			  = 0
+2020-08-13 11:43:06,710: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2020-08-13 11:43:06,997: INFO     Set HNSW query-time parameters:
+2020-08-13 11:43:06,997: INFO     ef(Search)         =256
+2020-08-13 11:43:06,997: INFO     algoType           =2
+2020-08-13 11:43:52,132: INFO     Formatting data for BedTools
+2020-08-13 11:43:52,469: INFO     Create GuideMaker Annotation object
+2020-08-13 11:43:52,469: INFO     Identify genomic features
+2020-08-13 11:43:52,470: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:43:53,672: INFO     Find genomic features closest the guides
+2020-08-13 11:43:56,027: INFO     Select guides that start between +100 and -100 of a feature start
+2020-08-13 11:43:56,191: INFO     Select description columns
+2020-08-13 11:43:56,241: INFO     Format the output
+2020-08-13 11:43:56,945: INFO     creating random control guides
+2020-08-13 11:44:32,432: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2020-08-13 11:44:32,435: INFO     guidemaker completed, results are at TEST
+2020-08-13 11:44:32,435: INFO     PAM sequence: NGG
+2020-08-13 11:44:32,435: INFO     PAM orientation: 5prime
+2020-08-13 11:44:32,435: INFO     Genome strand(s) searched: both
+2020-08-13 11:44:32,435: INFO     Total PAM sites considered: 923226
+2020-08-13 11:44:32,435: INFO     Guide RNA candidates found: 35882
+Number of random control searched:  100000
+	Command being timed: "guidemaker -i test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk --pamseq NGG --outdir TEST --pam_orientation 5prime --guidelength 20 --strand both --lcp 10 --dist 3 --before 100 --into 100 --knum 10 --controls 10 --log GuideMaker_57437298_1.log --threads 4"
+	User time (seconds): 817.54
+	System time (seconds): 23.08
+	Percent of CPU this job got: 341%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:06.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2311880
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 11483107
+	Voluntary context switches: 127510
+	Involuntary context switches: 656337
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 146760
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  1
+My TMPDIR IS:  /scratch/local/57437298
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Burkholderia_thailandensis_E264_ATCC_700388_133.gbk
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  8
+GuideMaker
+2020-08-13 11:44:35,396: INFO     Temp directory is: /scratch/local/57437298/guidemaker_y16m1ban
+2020-08-13 11:44:35,396: INFO     Writing fasta file from genbank file(s)
+2020-08-13 11:44:35,396: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:44:36,142: INFO     Identifying PAM sites in the genome
+2020-08-13 11:44:55,919: INFO     Identifing guides that are unique near the PAM site
+2020-08-13 11:44:57,153: INFO     Indexing all potential guide sites: 923226. This is the longest step.
+2020-08-13 11:45:01,790: INFO     M                   = 16
+2020-08-13 11:45:01,791: INFO     indexThreadQty      = 8
+2020-08-13 11:45:01,791: INFO     efConstruction      = 64
+2020-08-13 11:45:01,791: INFO     maxM			          = 16
+2020-08-13 11:45:01,791: INFO     maxM0			          = 32
+2020-08-13 11:45:01,791: INFO     mult                = 0.360674
+2020-08-13 11:45:01,791: INFO     skip_optimized_index= 0
+2020-08-13 11:45:01,791: INFO     delaunay_type       = 2
+2020-08-13 11:45:01,791: INFO     Set HNSW query-time parameters:
+2020-08-13 11:45:01,791: INFO     ef(Search)         =20
+2020-08-13 11:45:01,791: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2020-08-13 11:46:11,875: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2020-08-13 11:46:11,876: INFO     searchMethod			  = 0
+2020-08-13 11:46:11,965: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2020-08-13 11:46:12,317: INFO     Set HNSW query-time parameters:
+2020-08-13 11:46:12,317: INFO     ef(Search)         =256
+2020-08-13 11:46:12,317: INFO     algoType           =2
+2020-08-13 11:46:38,990: INFO     Formatting data for BedTools
+2020-08-13 11:46:39,330: INFO     Create GuideMaker Annotation object
+2020-08-13 11:46:39,330: INFO     Identify genomic features
+2020-08-13 11:46:39,330: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:46:40,537: INFO     Find genomic features closest the guides
+2020-08-13 11:46:42,888: INFO     Select guides that start between +100 and -100 of a feature start
+2020-08-13 11:46:43,045: INFO     Select description columns
+2020-08-13 11:46:43,095: INFO     Format the output
+2020-08-13 11:46:43,795: INFO     creating random control guides
+2020-08-13 11:46:46,086: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2020-08-13 11:46:46,088: INFO     guidemaker completed, results are at TEST
+2020-08-13 11:46:46,089: INFO     PAM sequence: NGG
+2020-08-13 11:46:46,089: INFO     PAM orientation: 5prime
+2020-08-13 11:46:46,089: INFO     Genome strand(s) searched: both
+2020-08-13 11:46:46,089: INFO     Total PAM sites considered: 923226
+2020-08-13 11:46:46,089: INFO     Guide RNA candidates found: 35882
+	Command being timed: "guidemaker -i test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk --pamseq NGG --outdir TEST --pam_orientation 5prime --guidelength 20 --strand both --lcp 10 --dist 3 --before 100 --into 100 --knum 10 --controls 10 --log GuideMaker_57437298_1.log --threads 8"
+	User time (seconds): 751.18
+	System time (seconds): 17.05
+	Percent of CPU this job got: 575%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:13.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2273528
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 6971388
+	Voluntary context switches: 199106
+	Involuntary context switches: 284548
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 146720
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  1
+My TMPDIR IS:  /scratch/local/57437298
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Burkholderia_thailandensis_E264_ATCC_700388_133.gbk
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  16
+GuideMaker
+2020-08-13 11:46:48,933: INFO     Temp directory is: /scratch/local/57437298/guidemaker_9vqixofw
+2020-08-13 11:46:48,933: INFO     Writing fasta file from genbank file(s)
+2020-08-13 11:46:48,934: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:46:49,675: INFO     Identifying PAM sites in the genome
+2020-08-13 11:47:09,927: INFO     Identifing guides that are unique near the PAM site
+2020-08-13 11:47:11,096: INFO     Indexing all potential guide sites: 923226. This is the longest step.
+2020-08-13 11:47:15,401: INFO     M                   = 16
+2020-08-13 11:47:15,402: INFO     indexThreadQty      = 16
+2020-08-13 11:47:15,402: INFO     efConstruction      = 64
+2020-08-13 11:47:15,402: INFO     maxM			          = 16
+2020-08-13 11:47:15,402: INFO     maxM0			          = 32
+2020-08-13 11:47:15,402: INFO     mult                = 0.360674
+2020-08-13 11:47:15,402: INFO     skip_optimized_index= 0
+2020-08-13 11:47:15,402: INFO     delaunay_type       = 2
+2020-08-13 11:47:15,402: INFO     Set HNSW query-time parameters:
+2020-08-13 11:47:15,402: INFO     ef(Search)         =20
+2020-08-13 11:47:15,402: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2020-08-13 11:47:55,696: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2020-08-13 11:47:55,697: INFO     searchMethod			  = 0
+2020-08-13 11:47:55,775: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2020-08-13 11:47:56,063: INFO     Set HNSW query-time parameters:
+2020-08-13 11:47:56,063: INFO     ef(Search)         =256
+2020-08-13 11:47:56,063: INFO     algoType           =2
+2020-08-13 11:48:14,095: INFO     Formatting data for BedTools
+2020-08-13 11:48:14,433: INFO     Create GuideMaker Annotation object
+2020-08-13 11:48:14,433: INFO     Identify genomic features
+2020-08-13 11:48:14,433: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:48:15,648: INFO     Find genomic features closest the guides
+2020-08-13 11:48:18,046: INFO     Select guides that start between +100 and -100 of a feature start
+2020-08-13 11:48:18,213: INFO     Select description columns
+2020-08-13 11:48:18,266: INFO     Format the output
+2020-08-13 11:48:18,991: INFO     creating random control guides
+2020-08-13 11:48:20,541: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2020-08-13 11:48:20,543: INFO     guidemaker completed, results are at TEST
+2020-08-13 11:48:20,543: INFO     PAM sequence: NGG
+2020-08-13 11:48:20,543: INFO     PAM orientation: 5prime
+2020-08-13 11:48:20,543: INFO     Genome strand(s) searched: both
+2020-08-13 11:48:20,543: INFO     Total PAM sites considered: 923226
+2020-08-13 11:48:20,543: INFO     Guide RNA candidates found: 35882
+	Command being timed: "guidemaker -i test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk --pamseq NGG --outdir TEST --pam_orientation 5prime --guidelength 20 --strand both --lcp 10 --dist 3 --before 100 --into 100 --knum 10 --controls 10 --log GuideMaker_57437298_1.log --threads 16"
+	User time (seconds): 833.29
+	System time (seconds): 26.91
+	Percent of CPU this job got: 909%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:34.54
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2309028
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 6750025
+	Voluntary context switches: 353186
+	Involuntary context switches: 132089
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 146696
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  1
+My TMPDIR IS:  /scratch/local/57437298
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Burkholderia_thailandensis_E264_ATCC_700388_133.gbk
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  32
+GuideMaker
+2020-08-13 11:48:23,454: INFO     Temp directory is: /scratch/local/57437298/guidemaker_loxiju30
+2020-08-13 11:48:23,455: INFO     Writing fasta file from genbank file(s)
+2020-08-13 11:48:23,455: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:48:24,194: INFO     Identifying PAM sites in the genome
+2020-08-13 11:48:44,277: INFO     Identifing guides that are unique near the PAM site
+2020-08-13 11:48:45,480: INFO     Indexing all potential guide sites: 923226. This is the longest step.
+2020-08-13 11:48:50,041: INFO     M                   = 16
+2020-08-13 11:48:50,041: INFO     indexThreadQty      = 32
+2020-08-13 11:48:50,041: INFO     efConstruction      = 64
+2020-08-13 11:48:50,041: INFO     maxM			          = 16
+2020-08-13 11:48:50,041: INFO     maxM0			          = 32
+2020-08-13 11:48:50,041: INFO     mult                = 0.360674
+2020-08-13 11:48:50,041: INFO     skip_optimized_index= 0
+2020-08-13 11:48:50,041: INFO     delaunay_type       = 2
+2020-08-13 11:48:50,041: INFO     Set HNSW query-time parameters:
+2020-08-13 11:48:50,042: INFO     ef(Search)         =20
+2020-08-13 11:48:50,042: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+******************************************************2020-08-13 11:49:12,318: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2020-08-13 11:49:12,319: INFO     searchMethod			  = 0
+2020-08-13 11:49:12,395: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2020-08-13 11:49:12,680: INFO     Set HNSW query-time parameters:
+2020-08-13 11:49:12,681: INFO     ef(Search)         =256
+2020-08-13 11:49:12,681: INFO     algoType           =2
+2020-08-13 11:49:26,264: INFO     Formatting data for BedTools
+2020-08-13 11:49:26,592: INFO     Create GuideMaker Annotation object
+2020-08-13 11:49:26,592: INFO     Identify genomic features
+2020-08-13 11:49:26,593: INFO     check if test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk is gzipped
+2020-08-13 11:49:27,782: INFO     Find genomic features closest the guides
+2020-08-13 11:49:30,138: INFO     Select guides that start between +100 and -100 of a feature start
+2020-08-13 11:49:30,291: INFO     Select description columns
+2020-08-13 11:49:30,340: INFO     Format the output
+2020-08-13 11:49:31,033: INFO     creating random control guides
+2020-08-13 11:49:42,969: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2020-08-13 11:49:42,972: INFO     guidemaker completed, results are at TEST
+2020-08-13 11:49:42,972: INFO     PAM sequence: NGG
+2020-08-13 11:49:42,972: INFO     PAM orientation: 5prime
+2020-08-13 11:49:42,972: INFO     Genome strand(s) searched: both
+2020-08-13 11:49:42,972: INFO     Total PAM sites considered: 923226
+2020-08-13 11:49:42,972: INFO     Guide RNA candidates found: 35882
+Number of random control searched:  100000
+	Command being timed: "guidemaker -i test/test_data/Burkholderia_thailandensis_E264_ATCC_700388_133.gbk --pamseq NGG --outdir TEST --pam_orientation 5prime --guidelength 20 --strand both --lcp 10 --dist 3 --before 100 --into 100 --knum 10 --controls 10 --log GuideMaker_57437298_1.log --threads 32"
+	User time (seconds): 1053.27
+	System time (seconds): 37.25
+	Percent of CPU this job got: 1317%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:22.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2391872
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 5921888
+	Voluntary context switches: 652915
+	Involuntary context switches: 225008
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 146688
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
