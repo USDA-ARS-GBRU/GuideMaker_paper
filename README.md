@@ -19,3 +19,7 @@ Plotting the output from `timeparser.py`  in R.
 Rscript Plot.R 
 
 ```
+
+## Plot
+
+![alt text](https://github.com/ravinpoudel/metagenomics/blob/master/Metagenomics.png)
