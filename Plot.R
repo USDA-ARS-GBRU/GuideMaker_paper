@@ -43,11 +43,13 @@ p4 <- p3 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 
 p4 
 
 # Save the plot
-ggsave("AVX2_Performance_Graph.pdf", width = 8, height = 6, units = "in")
+ggsave("figures/AVX2_Performance_Graph.pdf", width = 8, height = 6, units = "in")
+ggsave("figures/AVX2_Performance_Graph.png", width = 8, height = 6, units = "in")
 
 dev.off()
 
 print("Plot saved as AVX2_Performance_Graph.pdf")
+
 
 ##
 file.remove("Rplots.pdf")
