@@ -51,8 +51,8 @@ p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 
 p5 
 
 # Save the plot
-ggsave("figures/AVX2_Performance_Graph.pdf", width = 8, height = 6, units = "in")
-ggsave("figures/AVX2_Performance_Graph.png", width = 8, height = 6, units = "in")
+ggsave("figures/AVX2_Performance_Graph.pdf", width = 10, height = 6, units = "in")
+ggsave("figures/AVX2_Performance_Graph.png", width = 10, height = 6, units = "in")
 
 dev.off()
 
