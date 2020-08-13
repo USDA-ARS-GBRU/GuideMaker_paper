@@ -1,5 +1,7 @@
 # GuideMaker_paper
 
+Scripts to parse timelogs from slurm and generate performance graphics
+
 
 
 ```python
