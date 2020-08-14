@@ -7,7 +7,8 @@ Scripts to parse timelogs from slurm and generate performance graphics
 ```python
 
 ### Usage
-python timeparser.py -i slurm_avx2_logs/ -o out.csv
+python timeparser.py -i slurm_avx2_logs/ -o avx2_out.csv
+python timeparser.py -i slurm_nonavx2_logs/ -o nonavx2_out.csv
 
 ```
 
