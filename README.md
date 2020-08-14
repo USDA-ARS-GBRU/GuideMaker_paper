@@ -15,7 +15,7 @@ python timeparser.py -i slurm_nonavx2_logs/ -o nonavx2_out.csv
 
 Plotting the output from `timeparser.py`  in R. 
 
-```bash
+```R
 
 Rscript Plot.R 
 
