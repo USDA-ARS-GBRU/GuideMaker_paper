@@ -60,7 +60,7 @@ Table summarizing output with different values of `dist` parameter across three 
 
 
 ### Note
-Following parameters are used for analyzing performace of `GuideMaker`. Parameter on test was modifiy accordingly while other paramter remains the same.
+Following parameters are used for analyzing performace of `GuideMaker`. Only the test paramters have been modified accordingly while other paramter remains the same.
 
 ```bash
 
