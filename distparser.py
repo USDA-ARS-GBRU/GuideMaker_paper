@@ -100,7 +100,7 @@ def main(args=None):
             print(e)
             continue
     labels = ["Genome", "threads", "dist", "total_locus","target_locus","missed_locus","missed_locus%",
-    "target_coverage%","mean_target","std_target","median_targer","min_target","max_target","n_agg","n_cgg","n_ggg","n_tgg"]
+    "target_coverage%","mean_target","std_target","median_target","min_target","max_target","n_agg","n_cgg","n_ggg","n_tgg"]
     datalist_flat = sum(datalist, [])
     chunks = [datalist_flat[x:x+len(labels)] for x in range(0, len(datalist_flat), len(labels))]
     

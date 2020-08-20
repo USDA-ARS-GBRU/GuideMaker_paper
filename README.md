@@ -36,8 +36,7 @@ python distparser.py -i dist_profile_logs/ -o dist_profile.csv
 
 ## Table
 
-
-|Genome                                             |threads|dist|total_locus|target_locus|missed_locus|missed_locus%|target_coverage%|mean_target|std_target|median_targer|min_target|max_target|n_agg|n_cgg|n_ggg|n_tgg|
+|Genome                                             |threads|dist|total_locus|target_locus|missed_locus|missed_locus%|target_coverage%|mean_target|std_target|median_target|min_target|max_target|n_agg|n_cgg|n_ggg|n_tgg|
 |---------------------------------------------------|-------|----|-----------|------------|------------|-------------|----------------|-----------|----------|-------------|----------|----------|-----|-----|-----|-----|
 |Escherichia.coli_str_K-12_substr_MG1655.gbk        |32     |1   |4357       |4302        |55          |1.26%        |98.74%          |8.39       |3.7       |8            |1         |29        |8776 |9437 |7111 |10784|
 |Escherichia.coli_str_K-12_substr_MG1655.gbk        |32     |2   |4357       |4301        |56          |1.29%        |98.71%          |8.38       |3.7       |8            |1         |29        |8758 |9411 |7094 |10768|
@@ -54,3 +53,8 @@ python distparser.py -i dist_profile_logs/ -o dist_profile.csv
 |Burkholderia_thailandensis_E264_ATCC_700388_133.gbk|32     |3   |5633       |5309        |324         |5.75%        |94.25%          |6.76       |4.11      |6            |1         |34        |5955 |16142|7154 |6631 |
 |Burkholderia_thailandensis_E264_ATCC_700388_133.gbk|32     |4   |5633       |5207        |426         |7.56%        |92.44%          |6.21       |3.94      |6            |1         |31        |5449 |14354|6445 |6101 |
 |Burkholderia_thailandensis_E264_ATCC_700388_133.gbk|32     |5   |5633       |4584        |1049        |18.62%       |81.38%          |4.34       |3.15      |4            |1         |29        |3601 |8376 |3989 |3920 |
+
+
+
+
+
