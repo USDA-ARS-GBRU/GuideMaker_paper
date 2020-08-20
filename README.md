@@ -59,7 +59,18 @@ Table summarizing output with different values of `dist` parameter across three 
 
 
 
+### Note
+Following parameters are used for analyzing performace of `GuideMaker`. Parameter on test was modifiy accordingly while other paramter remains the same.
 
+```bash
+
+guidemaker -i $inputgenome \
+                        --pamseq NGG  --outdir TEST --pam_orientation 5prime \
+                        --guidelength 20 --strand both --lcp 10 --dist 3 --before 100 \
+                        --into  100 --knum 10 --controls 10  --log $logfile --threads $THREADS
+
+
+```
 
 
 
