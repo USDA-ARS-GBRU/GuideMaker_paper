@@ -40,6 +40,12 @@ def parse_sample_file(file):
             if "Dist used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" in line:
                 dist = line.strip().split()[2]
                 tlist.append(dist)
+            if "Total PAM sites considered:" in line:
+                tpam = int(line.strip().split()[-1])
+                tlist.append(tpam)
+            if "Guide RNA candidates found:" in line:
+                cpam = int(line.strip().split()[-1])
+                tlist.append(cpam)   
             if "Total number of CDS/locus_tag in the genome:" in line:
                 tc = line.strip().split()[-1]
                 tlist.append(tc)
@@ -81,7 +87,7 @@ def parse_sample_file(file):
                 tlist.append(ggg)
             if "|TGG |" in line:
                 tgg = int(line.strip().split("|")[-2])
-                tlist.append(tgg)
+                tlist.append(tgg)      
     return tlist
 
 
@@ -99,12 +105,14 @@ def main(args=None):
         except Exception as e:
             print(e)
             continue
-    labels = ["Genome", "threads", "dist", "total_locus","target_locus","missed_locus","missed_locus%",
-    "target_coverage%","mean_target","std_target","median_target","min_target","max_target","n_agg","n_cgg","n_ggg","n_tgg"]
+    labels = ["Genome", "threads", "dist","total_PAM_sites","n_candidate_PAM","total_locus","target_locus","missed_locus","missed_locus%",
+    "target_coverage%","mean_target","std_target","median_target","min_target","max_target","n_agg",
+    "n_cgg","n_ggg","n_tgg"]
     datalist_flat = sum(datalist, [])
     chunks = [datalist_flat[x:x+len(labels)] for x in range(0, len(datalist_flat), len(labels))]
-    
     df = pandas.DataFrame.from_records(chunks, columns=labels)
+    p_pamc = round(df['n_candidate_PAM']/df['total_PAM_sites'] * 100, 2)
+    df.insert(5, "percent_PAM_consider", p_pamc, True) 
     print(df)
     df.to_csv(args.outfile, index=False)
 
