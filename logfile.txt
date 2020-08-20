@@ -1,0 +1,40 @@
+08-19 13:30 root         INFO     Temp directory is: /var/folders/ct/2nl65wtn3978tk0rq17mg2fw0000gn/T/guidemaker_ivx7bltv
+08-19 13:30 root         INFO     Writing fasta file from genbank file(s)
+08-19 13:30 root         INFO     check if test/test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+08-19 13:30 root         INFO     Identifying PAM sites in the genome
+08-19 13:30 root         INFO     Identifing guides that are unique near the PAM site
+08-19 13:30 root         INFO     Indexing all potential guide sites: 250222. This is the longest step.
+08-19 13:30 nmslib       INFO     M                   = 16
+08-19 13:30 nmslib       INFO     indexThreadQty      = 2
+08-19 13:30 nmslib       INFO     efConstruction      = 64
+08-19 13:30 nmslib       INFO     maxM			          = 16
+08-19 13:30 nmslib       INFO     maxM0			          = 32
+08-19 13:30 nmslib       INFO     mult                = 0.360674
+08-19 13:30 nmslib       INFO     skip_optimized_index= 0
+08-19 13:30 nmslib       INFO     delaunay_type       = 2
+08-19 13:30 nmslib       INFO     Set HNSW query-time parameters:
+08-19 13:30 nmslib       INFO     ef(Search)         =20
+08-19 13:30 nmslib       INFO     algoType           =2
+08-19 13:32 nmslib       INFO     No appropriate custom distance function for Hamming (bit-storage) space
+08-19 13:32 nmslib       INFO     searchMethod			  = 0
+08-19 13:32 root         INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+08-19 13:32 nmslib       INFO     Set HNSW query-time parameters:
+08-19 13:32 nmslib       INFO     ef(Search)         =256
+08-19 13:32 nmslib       INFO     algoType           =2
+08-19 13:33 root         INFO     Formatting data for BedTools
+08-19 13:33 root         INFO     Create GuideMaker Annotation object
+08-19 13:33 root         INFO     Identify genomic features
+08-19 13:33 root         INFO     check if test/test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+08-19 13:33 root         INFO     Total number of CDS/locus in the input genome: 5584
+08-19 13:33 root         INFO     Find genomic features closest the guides
+08-19 13:33 root         INFO     Select guides that start between +100 and -100 of a feature start
+08-19 13:33 root         INFO     Select description columns
+08-19 13:33 root         INFO     Format the output
+08-19 13:33 root         INFO     creating random control guides
+08-19 13:33 root         INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+08-19 13:33 root         INFO     guidemaker completed, results are at OUTDIR
+08-19 13:33 root         INFO     PAM sequence: AGG
+08-19 13:33 root         INFO     PAM orientation: 5prime
+08-19 13:33 root         INFO     Genome strand(s) searched: both
+08-19 13:33 root         INFO     Total PAM sites considered: 250222
+08-19 13:33 root         INFO     Guide RNA candidates found: 19614

@@ -3,3 +3,5 @@
 *.Rapp.history
 *.Rhistory
 .Rproj.user
+targets.csv
+controls.csv

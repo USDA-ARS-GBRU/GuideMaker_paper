@@ -36,7 +36,7 @@ p3 <- ggplot(summarystat, aes(x=threads, y=process_sec, colour=Genome, group=Gen
   expand_limits(y=0) + # Expand y range
   theme_bw() +
   theme(legend.justification=c(1,0),
-        legend.position=c(0.48,0.82)) # Position legend (left-right, top-bottom)
+        legend.position=c(0.48,0.75)) # Position legend (left-right, top-bottom)
 
  
 p4 <- p3 + facet_grid(. ~ Processor)
