@@ -34,7 +34,8 @@ python distparser.py -i dist_profile_logs/ -o dist_profile.csv
 
 ```
 
-## Table summarizing output with different values of `dist` parameter across three genomes.
+## Table
+Table summarizing output with different values of `dist` parameter across three genomes.
 
 |Genome                                             |threads|dist|total_PAM_sites|n_candidate_PAM|percent_PAM_consider|total_locus|target_locus|missed_locus|missed_locus%|target_coverage%|mean_target|std_target|median_target|min_target|max_target|n_agg|n_cgg|n_ggg|n_tgg|
 |---------------------------------------------------|-------|----|---------------|---------------|--------------------|-----------|------------|------------|-------------|----------------|-----------|----------|-------------|----------|----------|-----|-----|-----|-----|
