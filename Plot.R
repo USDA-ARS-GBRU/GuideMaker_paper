@@ -48,7 +48,9 @@ p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 
            axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
   theme(legend.title = element_text(face = "bold"))
 
-p5 
+p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
+  scale_y_continuous(breaks = seq(0, 1200, 100))
+  
 
 # Save the plot
 ggsave("figures/AVX2_Performance_Graph.pdf", width = 10, height = 6, units = "in")
