@@ -59,7 +59,21 @@ Table summarizing output with different values of `dist` parameter across three 
 
 
 
+### Note
+Following parameters are used for analyzing performace of `GuideMaker`. Only the test paramters have been modified accordingly while other paramter remains the same. For instance, while profiling the output as a function of different `-dist ` [1, 2, 3, 4, 5] values, dist value was modified. Similarly, we profiled performace of `Guidemaker` with different `threads` values [1, 2, 4, 8, 16, and 32] on three genomes:
+  - Escherichia.coli_str_K-12_substr_MG1655.gbk
+  - Pseudomonas_aeruginosa_PAO1_107.gbk
+  - Burkholderia_thailandensis_E264_ATCC_700388_133.gbk
 
+```bash
+
+guidemaker -i $inputgenome \
+  --pamseq NGG  --outdir TEST --pam_orientation 5prime \
+  --guidelength 20 --strand both --lcp 10 --dist 3 --before 100 \
+  --into  100 --knum 10 --controls 10  --log $logfile --threads $THREADS
+
+
+```
 
 
 
