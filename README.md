@@ -35,6 +35,8 @@ python distparser.py -i dist_profile_logs/ -o dist_profile.csv
 
 ```
 
+#### Guide features among various bacterial genomes evaluated at different -dist values. Only the guides within the locus co-ordinates are considered.
+
 |Genome                           |Escherichia.coli (K12)|FIELD3    |FIELD4   |FIELD5     |FIELD6     |FIELD7     |Pseudomonas aeruginosa (PA01)|FIELD9     |FIELD10    |FIELD11    |FIELD12    |FIELD13    |Burkholderia thailandensis(E264)|FIELD15    |FIELD16    |FIELD17    |FIELD18    |FIELD19    |
 |---------------------------------|----------------------|----------|---------|-----------|-----------|-----------|-----------------------------|-----------|-----------|-----------|-----------|-----------|--------------------------------|-----------|-----------|-----------|-----------|-----------|
 |Total PAM sites in genome        |542072                |          |         |           |           |           |1171798                      |           |           |           |           |           |923228                          |           |           |           |           |           |
