@@ -1,0 +1,502 @@
+Thu Feb  4 16:45:17 EST 2021
+c22b-s21.ufhpc
+/blue/garrett/rp3448/analysis/guidemaker/AVXGuidemaker
+My SLURM_ARRAY_TASK_ID:  8
+My TMPDIR IS:  /scratch/local/63825485
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Arabidopsis_thaliana.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  1
+GuideMaker
+2021-02-04 16:45:22,214: INFO     Temp directory is: /scratch/local/63825485/guidemaker_putguwj9
+2021-02-04 16:45:22,214: INFO     Writing fasta file from genbank file(s)
+2021-02-04 16:45:22,215: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 16:45:47,542: INFO     Identifying PAM sites in the genome
+2021-02-04 16:49:28,584: INFO     Checking guides for restriction enzymes
+2021-02-04 16:49:30,851: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 16:49:30,852: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 16:49:46,175: INFO     Number of guides removed after checking for unique PAM: 7107147
+2021-02-04 16:49:46,175: INFO     Indexing all potential guide sites: 8099754. This is the longest step.
+2021-02-04 16:50:25,390: INFO     M                   = 16
+2021-02-04 16:50:25,390: INFO     indexThreadQty      = 1
+2021-02-04 16:50:25,390: INFO     efConstruction      = 10
+2021-02-04 16:50:25,390: INFO     maxM			          = 16
+2021-02-04 16:50:25,390: INFO     maxM0			          = 32
+2021-02-04 16:50:25,390: INFO     mult                = 0.360674
+2021-02-04 16:50:25,391: INFO     skip_optimized_index= 0
+2021-02-04 16:50:25,391: INFO     delaunay_type       = 2
+2021-02-04 16:50:25,391: INFO     Set HNSW query-time parameters:
+2021-02-04 16:50:25,391: INFO     ef(Search)         =20
+2021-02-04 16:50:25,391: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+*2021-02-04 17:06:06,753: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 17:06:07,798: INFO     searchMethod			  = 0
+2021-02-04 17:06:08,412: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 17:06:10,349: INFO     Set HNSW query-time parameters:
+2021-02-04 17:06:10,349: INFO     ef(Search)         =9
+2021-02-04 17:06:10,349: INFO     algoType           =2
+2021-02-04 17:07:59,594: INFO     Formatting data for BedTools
+2021-02-04 17:08:02,692: INFO     Create GuideMaker Annotation object
+2021-02-04 17:08:02,692: INFO     Identify genomic features
+2021-02-04 17:08:02,693: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 17:08:33,933: INFO     Total number of CDS/locus in the input genome: 48262
+2021-02-04 17:08:33,934: INFO     Find genomic features closest the guides
+2021-02-04 17:08:49,139: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 17:08:49,985: INFO     Select description columns
+2021-02-04 17:08:50,451: INFO     Format the output
+2021-02-04 17:08:54,114: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 167751
+2021-02-04 17:08:59,675: INFO     creating random control guides
+2021-02-04 17:09:01,089: INFO     Number of random control searched: 100
+2021-02-04 17:09:01,089: INFO     Percentage of GC content in the input genome: 36.00
+2021-02-04 17:09:01,089: INFO     Total length of the genome: 114.1 MB
+2021-02-04 17:09:01,089: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 17:09:01,092: INFO     guidemaker completed, results are at TEST
+2021-02-04 17:09:01,093: INFO     PAM sequence: NGG
+2021-02-04 17:09:01,093: INFO     PAM orientation: 3prime
+2021-02-04 17:09:01,093: INFO     Genome strand(s) searched: both
+2021-02-04 17:09:01,093: INFO     Total PAM sites considered: 8099754
+2021-02-04 17:09:01,093: INFO     Guide RNA candidates found: 257155
+	Command being timed: "guidemaker -i ../all_test_data/Arabidopsis_thaliana.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63825485_8.log --threads 1"
+	User time (seconds): 1404.85
+	System time (seconds): 33.79
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 23:57.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 15410628
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 41926230
+	Voluntary context switches: 3233
+	Involuntary context switches: 532586
+	Swaps: 0
+	File system inputs: 139304
+	File system outputs: 1553936
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  8
+My TMPDIR IS:  /scratch/local/63825485
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Arabidopsis_thaliana.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  2
+GuideMaker
+2021-02-04 17:09:19,767: INFO     Temp directory is: /scratch/local/63825485/guidemaker_cebeqye5
+2021-02-04 17:09:19,767: INFO     Writing fasta file from genbank file(s)
+2021-02-04 17:09:19,767: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 17:09:44,952: INFO     Identifying PAM sites in the genome
+2021-02-04 17:13:27,192: INFO     Checking guides for restriction enzymes
+2021-02-04 17:13:29,436: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 17:13:29,436: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 17:13:44,628: INFO     Number of guides removed after checking for unique PAM: 7107147
+2021-02-04 17:13:44,628: INFO     Indexing all potential guide sites: 8099754. This is the longest step.
+2021-02-04 17:14:22,492: INFO     M                   = 16
+2021-02-04 17:14:22,493: INFO     indexThreadQty      = 2
+2021-02-04 17:14:22,493: INFO     efConstruction      = 10
+2021-02-04 17:14:22,493: INFO     maxM			          = 16
+2021-02-04 17:14:22,493: INFO     maxM0			          = 32
+2021-02-04 17:14:22,493: INFO     mult                = 0.360674
+2021-02-04 17:14:22,493: INFO     skip_optimized_index= 0
+2021-02-04 17:14:22,493: INFO     delaunay_type       = 2
+2021-02-04 17:14:22,493: INFO     Set HNSW query-time parameters:
+2021-02-04 17:14:22,493: INFO     ef(Search)         =20
+2021-02-04 17:14:22,493: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 17:25:00,756: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 17:25:00,756: INFO     searchMethod			  = 0
+2021-02-04 17:25:01,393: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 17:25:03,288: INFO     Set HNSW query-time parameters:
+2021-02-04 17:25:03,289: INFO     ef(Search)         =9
+2021-02-04 17:25:03,289: INFO     algoType           =2
+2021-02-04 17:26:39,168: INFO     Formatting data for BedTools
+2021-02-04 17:26:42,126: INFO     Create GuideMaker Annotation object
+2021-02-04 17:26:42,126: INFO     Identify genomic features
+2021-02-04 17:26:42,127: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 17:27:13,952: INFO     Total number of CDS/locus in the input genome: 48262
+2021-02-04 17:27:13,952: INFO     Find genomic features closest the guides
+2021-02-04 17:27:30,629: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 17:27:31,486: INFO     Select description columns
+2021-02-04 17:27:31,979: INFO     Format the output
+2021-02-04 17:27:35,742: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 167853
+2021-02-04 17:27:41,593: INFO     creating random control guides
+2021-02-04 17:27:44,384: INFO     Number of random control searched: 1000
+2021-02-04 17:27:44,385: INFO     Percentage of GC content in the input genome: 36.00
+2021-02-04 17:27:44,385: INFO     Total length of the genome: 114.1 MB
+2021-02-04 17:27:44,385: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 17:27:44,388: INFO     guidemaker completed, results are at TEST
+2021-02-04 17:27:44,388: INFO     PAM sequence: NGG
+2021-02-04 17:27:44,388: INFO     PAM orientation: 3prime
+2021-02-04 17:27:44,388: INFO     Genome strand(s) searched: both
+2021-02-04 17:27:44,388: INFO     Total PAM sites considered: 8099754
+2021-02-04 17:27:44,388: INFO     Guide RNA candidates found: 257292
+	Command being timed: "guidemaker -i ../all_test_data/Arabidopsis_thaliana.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63825485_8.log --threads 2"
+	User time (seconds): 1644.86
+	System time (seconds): 153.39
+	Percent of CPU this job got: 159%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:44.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 16227948
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 94730164
+	Voluntary context switches: 732306
+	Involuntary context switches: 298130
+	Swaps: 0
+	File system inputs: 3088
+	File system outputs: 1553744
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  8
+My TMPDIR IS:  /scratch/local/63825485
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Arabidopsis_thaliana.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  4
+GuideMaker
+2021-02-04 17:28:04,339: INFO     Temp directory is: /scratch/local/63825485/guidemaker_o57apzh5
+2021-02-04 17:28:04,339: INFO     Writing fasta file from genbank file(s)
+2021-02-04 17:28:04,340: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 17:28:30,482: INFO     Identifying PAM sites in the genome
+2021-02-04 17:32:19,029: INFO     Checking guides for restriction enzymes
+2021-02-04 17:32:21,322: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 17:32:21,323: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 17:32:36,926: INFO     Number of guides removed after checking for unique PAM: 7107147
+2021-02-04 17:32:36,926: INFO     Indexing all potential guide sites: 8099754. This is the longest step.
+2021-02-04 17:33:15,912: INFO     M                   = 16
+2021-02-04 17:33:15,912: INFO     indexThreadQty      = 4
+2021-02-04 17:33:15,912: INFO     efConstruction      = 10
+2021-02-04 17:33:15,912: INFO     maxM			          = 16
+2021-02-04 17:33:15,912: INFO     maxM0			          = 32
+2021-02-04 17:33:15,912: INFO     mult                = 0.360674
+2021-02-04 17:33:15,912: INFO     skip_optimized_index= 0
+2021-02-04 17:33:15,912: INFO     delaunay_type       = 2
+2021-02-04 17:33:15,913: INFO     Set HNSW query-time parameters:
+2021-02-04 17:33:15,913: INFO     ef(Search)         =20
+2021-02-04 17:33:15,913: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 17:38:51,717: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 17:38:51,718: INFO     searchMethod			  = 0
+2021-02-04 17:38:52,353: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 17:38:54,300: INFO     Set HNSW query-time parameters:
+2021-02-04 17:38:54,300: INFO     ef(Search)         =9
+2021-02-04 17:38:54,300: INFO     algoType           =2
+2021-02-04 17:40:07,062: INFO     Formatting data for BedTools
+2021-02-04 17:40:09,912: INFO     Create GuideMaker Annotation object
+2021-02-04 17:40:09,912: INFO     Identify genomic features
+2021-02-04 17:40:09,913: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 17:40:42,426: INFO     Total number of CDS/locus in the input genome: 48262
+2021-02-04 17:40:42,426: INFO     Find genomic features closest the guides
+2021-02-04 17:40:59,616: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 17:41:00,734: INFO     Select description columns
+2021-02-04 17:41:01,279: INFO     Format the output
+2021-02-04 17:41:05,821: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 167962
+2021-02-04 17:41:11,645: INFO     creating random control guides
+2021-02-04 17:41:13,802: INFO     Number of random control searched: 100
+2021-02-04 17:41:13,802: INFO     Percentage of GC content in the input genome: 36.00
+2021-02-04 17:41:13,802: INFO     Total length of the genome: 114.1 MB
+2021-02-04 17:41:13,802: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 17:41:13,806: INFO     guidemaker completed, results are at TEST
+2021-02-04 17:41:13,806: INFO     PAM sequence: NGG
+2021-02-04 17:41:13,806: INFO     PAM orientation: 3prime
+2021-02-04 17:41:13,806: INFO     Genome strand(s) searched: both
+2021-02-04 17:41:13,806: INFO     Total PAM sites considered: 8099754
+2021-02-04 17:41:13,806: INFO     Guide RNA candidates found: 257453
+	Command being timed: "guidemaker -i ../all_test_data/Arabidopsis_thaliana.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63825485_8.log --threads 4"
+	User time (seconds): 1730.84
+	System time (seconds): 123.61
+	Percent of CPU this job got: 228%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:30.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 16278216
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 71449105
+	Voluntary context switches: 1563211
+	Involuntary context switches: 291475
+	Swaps: 0
+	File system inputs: 1528
+	File system outputs: 1553352
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  8
+My TMPDIR IS:  /scratch/local/63825485
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Arabidopsis_thaliana.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  8
+GuideMaker
+2021-02-04 17:41:34,526: INFO     Temp directory is: /scratch/local/63825485/guidemaker_hfh6v3_9
+2021-02-04 17:41:34,526: INFO     Writing fasta file from genbank file(s)
+2021-02-04 17:41:34,527: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 17:42:00,095: INFO     Identifying PAM sites in the genome
+2021-02-04 17:45:48,447: INFO     Checking guides for restriction enzymes
+2021-02-04 17:45:51,199: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 17:45:51,199: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 17:46:06,464: INFO     Number of guides removed after checking for unique PAM: 7107147
+2021-02-04 17:46:06,464: INFO     Indexing all potential guide sites: 8099754. This is the longest step.
+2021-02-04 17:46:46,815: INFO     M                   = 16
+2021-02-04 17:46:46,815: INFO     indexThreadQty      = 8
+2021-02-04 17:46:46,815: INFO     efConstruction      = 10
+2021-02-04 17:46:46,815: INFO     maxM			          = 16
+2021-02-04 17:46:46,815: INFO     maxM0			          = 32
+2021-02-04 17:46:46,815: INFO     mult                = 0.360674
+2021-02-04 17:46:46,815: INFO     skip_optimized_index= 0
+2021-02-04 17:46:46,816: INFO     delaunay_type       = 2
+2021-02-04 17:46:46,816: INFO     Set HNSW query-time parameters:
+2021-02-04 17:46:46,816: INFO     ef(Search)         =20
+2021-02-04 17:46:46,816: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 17:49:52,011: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 17:49:52,011: INFO     searchMethod			  = 0
+2021-02-04 17:49:52,645: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 17:49:54,548: INFO     Set HNSW query-time parameters:
+2021-02-04 17:49:54,548: INFO     ef(Search)         =9
+2021-02-04 17:49:54,548: INFO     algoType           =2
+2021-02-04 17:50:53,939: INFO     Formatting data for BedTools
+2021-02-04 17:50:56,845: INFO     Create GuideMaker Annotation object
+2021-02-04 17:50:56,845: INFO     Identify genomic features
+2021-02-04 17:50:56,846: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 17:51:28,884: INFO     Total number of CDS/locus in the input genome: 48262
+2021-02-04 17:51:28,884: INFO     Find genomic features closest the guides
+2021-02-04 17:51:46,133: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 17:51:47,037: INFO     Select description columns
+2021-02-04 17:51:47,557: INFO     Format the output
+2021-02-04 17:51:52,187: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 167912
+2021-02-04 17:51:57,771: INFO     creating random control guides
+2021-02-04 17:51:59,769: INFO     Number of random control searched: 1000
+2021-02-04 17:51:59,769: INFO     Percentage of GC content in the input genome: 36.00
+2021-02-04 17:51:59,769: INFO     Total length of the genome: 114.1 MB
+2021-02-04 17:51:59,769: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 17:51:59,772: INFO     guidemaker completed, results are at TEST
+2021-02-04 17:51:59,773: INFO     PAM sequence: NGG
+2021-02-04 17:51:59,773: INFO     PAM orientation: 3prime
+2021-02-04 17:51:59,773: INFO     Genome strand(s) searched: both
+2021-02-04 17:51:59,773: INFO     Total PAM sites considered: 8099754
+2021-02-04 17:51:59,773: INFO     Guide RNA candidates found: 257314
+	Command being timed: "guidemaker -i ../all_test_data/Arabidopsis_thaliana.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63825485_8.log --threads 8"
+	User time (seconds): 1833.03
+	System time (seconds): 124.45
+	Percent of CPU this job got: 300%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 10:50.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 16316872
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 63844642
+	Voluntary context switches: 2825553
+	Involuntary context switches: 70692
+	Swaps: 0
+	File system inputs: 32
+	File system outputs: 1555456
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  8
+My TMPDIR IS:  /scratch/local/63825485
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Arabidopsis_thaliana.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  16
+GuideMaker
+2021-02-04 17:52:25,082: INFO     Temp directory is: /scratch/local/63825485/guidemaker_geo4nh3d
+2021-02-04 17:52:25,082: INFO     Writing fasta file from genbank file(s)
+2021-02-04 17:52:25,083: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 17:52:51,294: INFO     Identifying PAM sites in the genome
+2021-02-04 17:56:43,504: INFO     Checking guides for restriction enzymes
+2021-02-04 17:56:45,877: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 17:56:45,877: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 17:57:01,218: INFO     Number of guides removed after checking for unique PAM: 7107147
+2021-02-04 17:57:01,218: INFO     Indexing all potential guide sites: 8099754. This is the longest step.
+2021-02-04 17:57:42,250: INFO     M                   = 16
+2021-02-04 17:57:42,251: INFO     indexThreadQty      = 16
+2021-02-04 17:57:42,251: INFO     efConstruction      = 10
+2021-02-04 17:57:42,251: INFO     maxM			          = 16
+2021-02-04 17:57:42,251: INFO     maxM0			          = 32
+2021-02-04 17:57:42,251: INFO     mult                = 0.360674
+2021-02-04 17:57:42,251: INFO     skip_optimized_index= 0
+2021-02-04 17:57:42,251: INFO     delaunay_type       = 2
+2021-02-04 17:57:42,251: INFO     Set HNSW query-time parameters:
+2021-02-04 17:57:42,251: INFO     ef(Search)         =20
+2021-02-04 17:57:42,251: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 17:59:26,861: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 17:59:26,861: INFO     searchMethod			  = 0
+2021-02-04 17:59:27,505: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 17:59:29,615: INFO     Set HNSW query-time parameters:
+2021-02-04 17:59:29,615: INFO     ef(Search)         =9
+2021-02-04 17:59:29,615: INFO     algoType           =2
+2021-02-04 18:00:22,384: INFO     Formatting data for BedTools
+2021-02-04 18:00:25,406: INFO     Create GuideMaker Annotation object
+2021-02-04 18:00:25,406: INFO     Identify genomic features
+2021-02-04 18:00:25,407: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 18:00:57,869: INFO     Total number of CDS/locus in the input genome: 48262
+2021-02-04 18:00:57,869: INFO     Find genomic features closest the guides
+2021-02-04 18:01:14,522: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 18:01:15,552: INFO     Select description columns
+2021-02-04 18:01:16,069: INFO     Format the output
+2021-02-04 18:01:20,248: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 167664
+2021-02-04 18:01:25,880: INFO     creating random control guides
+2021-02-04 18:01:27,769: INFO     Number of random control searched: 100
+2021-02-04 18:01:27,769: INFO     Percentage of GC content in the input genome: 36.00
+2021-02-04 18:01:27,769: INFO     Total length of the genome: 114.1 MB
+2021-02-04 18:01:27,769: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 18:01:27,771: INFO     guidemaker completed, results are at TEST
+2021-02-04 18:01:27,771: INFO     PAM sequence: NGG
+2021-02-04 18:01:27,772: INFO     PAM orientation: 3prime
+2021-02-04 18:01:27,772: INFO     Genome strand(s) searched: both
+2021-02-04 18:01:27,772: INFO     Total PAM sites considered: 8099754
+2021-02-04 18:01:27,772: INFO     Guide RNA candidates found: 257110
+	Command being timed: "guidemaker -i ../all_test_data/Arabidopsis_thaliana.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63825485_8.log --threads 16"
+	User time (seconds): 1955.80
+	System time (seconds): 132.34
+	Percent of CPU this job got: 370%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:23.53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 16432732
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 46294587
+	Voluntary context switches: 4755383
+	Involuntary context switches: 2517
+	Swaps: 0
+	File system inputs: 192
+	File system outputs: 1553192
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  8
+My TMPDIR IS:  /scratch/local/63825485
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Arabidopsis_thaliana.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  32
+GuideMaker
+2021-02-04 18:01:48,621: INFO     Temp directory is: /scratch/local/63825485/guidemaker_xfsgqa6f
+2021-02-04 18:01:48,621: INFO     Writing fasta file from genbank file(s)
+2021-02-04 18:01:48,622: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 18:02:14,344: INFO     Identifying PAM sites in the genome
+2021-02-04 18:06:03,783: INFO     Checking guides for restriction enzymes
+2021-02-04 18:06:06,071: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 18:06:06,071: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 18:06:21,557: INFO     Number of guides removed after checking for unique PAM: 7107147
+2021-02-04 18:06:21,557: INFO     Indexing all potential guide sites: 8099754. This is the longest step.
+2021-02-04 18:06:59,709: INFO     M                   = 16
+2021-02-04 18:06:59,709: INFO     indexThreadQty      = 32
+2021-02-04 18:06:59,709: INFO     efConstruction      = 10
+2021-02-04 18:06:59,709: INFO     maxM			          = 16
+2021-02-04 18:06:59,709: INFO     maxM0			          = 32
+2021-02-04 18:06:59,709: INFO     mult                = 0.360674
+2021-02-04 18:06:59,709: INFO     skip_optimized_index= 0
+2021-02-04 18:06:59,709: INFO     delaunay_type       = 2
+2021-02-04 18:06:59,709: INFO     Set HNSW query-time parameters:
+2021-02-04 18:06:59,710: INFO     ef(Search)         =20
+2021-02-04 18:06:59,710: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 18:08:10,464: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 18:08:10,465: INFO     searchMethod			  = 0
+2021-02-04 18:08:11,091: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 18:08:12,978: INFO     Set HNSW query-time parameters:
+2021-02-04 18:08:12,978: INFO     ef(Search)         =9
+2021-02-04 18:08:12,978: INFO     algoType           =2
+2021-02-04 18:09:04,256: INFO     Formatting data for BedTools
+2021-02-04 18:09:07,221: INFO     Create GuideMaker Annotation object
+2021-02-04 18:09:07,222: INFO     Identify genomic features
+2021-02-04 18:09:07,222: INFO     check if ../all_test_data/Arabidopsis_thaliana.gbk is gzipped
+2021-02-04 18:09:40,337: INFO     Total number of CDS/locus in the input genome: 48262
+2021-02-04 18:09:40,337: INFO     Find genomic features closest the guides
+2021-02-04 18:09:57,257: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 18:09:58,133: INFO     Select description columns
+2021-02-04 18:09:58,633: INFO     Format the output
+2021-02-04 18:10:03,114: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 167661
+2021-02-04 18:10:08,847: INFO     creating random control guides
+2021-02-04 18:10:10,876: INFO     Number of random control searched: 100
+2021-02-04 18:10:10,876: INFO     Percentage of GC content in the input genome: 36.00
+2021-02-04 18:10:10,876: INFO     Total length of the genome: 114.1 MB
+2021-02-04 18:10:10,876: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 18:10:10,880: INFO     guidemaker completed, results are at TEST
+2021-02-04 18:10:10,880: INFO     PAM sequence: NGG
+2021-02-04 18:10:10,880: INFO     PAM orientation: 3prime
+2021-02-04 18:10:10,880: INFO     Genome strand(s) searched: both
+2021-02-04 18:10:10,880: INFO     Total PAM sites considered: 8099754
+2021-02-04 18:10:10,880: INFO     Guide RNA candidates found: 257024
+	Command being timed: "guidemaker -i ../all_test_data/Arabidopsis_thaliana.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63825485_8.log --threads 32"
+	User time (seconds): 2167.88
+	System time (seconds): 210.19
+	Percent of CPU this job got: 454%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:43.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 16553888
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 39255737
+	Voluntary context switches: 11184094
+	Involuntary context switches: 147728
+	Swaps: 0
+	File system inputs: 4248
+	File system outputs: 1553856
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

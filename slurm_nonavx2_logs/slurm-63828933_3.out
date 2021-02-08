@@ -1,0 +1,553 @@
+Thu Feb  4 19:49:16 EST 2021
+c27b-s26.ufhpc
+/blue/garrett/rp3448/analysis/guidemaker/nonAVXGuidemaker
+
+     active environment : NONAVX2
+    active env location : /home/rp3448/.conda/envs/NONAVX2
+            shell level : 3
+       user config file : /home/rp3448/.condarc
+ populated config files : /home/rp3448/.condarc
+          conda version : 4.9.2
+    conda-build version : not installed
+         python version : 3.9.1.final.0
+       virtual packages : __glibc=2.17=0
+                          __unix=0=0
+                          __archspec=1=x86_64
+       base environment : /apps/conda/4.9.2  (read only)
+           channel URLs : https://conda.anaconda.org/biobakery/linux-64
+                          https://conda.anaconda.org/biobakery/noarch
+                          https://conda.anaconda.org/conda-forge/linux-64
+                          https://conda.anaconda.org/conda-forge/noarch
+                          https://conda.anaconda.org/bioconda/linux-64
+                          https://conda.anaconda.org/bioconda/noarch
+                          https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /apps/conda/4.9.2/pkgs
+                          /home/rp3448/.conda/pkgs
+       envs directories : /home/rp3448/.conda/envs
+                          /apps/conda/4.9.2/envs
+               platform : linux-64
+             user-agent : conda/4.9.2 requests/2.25.1 CPython/3.9.1 Linux/3.10.0-1062.18.1.el7.x86_64 rhel/7.7 glibc/2.17
+                UID:GID : 6472:3511
+             netrc file : None
+           offline mode : False
+
+My SLURM_ARRAY_TASK_ID:  3
+My TMPDIR IS:  /scratch/local/63831058
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Escherichia.coli_str_K-12_substr_MG1655.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGRRT
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  1
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:49:20,979: INFO     Temp directory is: /scratch/local/63831058/guidemaker_5lv6dt_0
+2021-02-04 19:49:20,979: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:49:20,980: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:49:21,890: INFO     Identifying PAM sites in the genome
+2021-02-04 19:49:26,144: INFO     Checking guides for restriction enzymes
+2021-02-04 19:49:26,174: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:49:26,175: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:49:26,342: INFO     Number of guides removed after checking for unique PAM: 11268
+2021-02-04 19:49:26,342: INFO     Indexing all potential guide sites: 115034. This is the longest step.
+2021-02-04 19:49:26,835: INFO     M                   = 16
+2021-02-04 19:49:26,835: INFO     indexThreadQty      = 1
+2021-02-04 19:49:26,835: INFO     efConstruction      = 10
+2021-02-04 19:49:26,836: INFO     maxM			          = 16
+2021-02-04 19:49:26,836: INFO     maxM0			          = 32
+2021-02-04 19:49:26,836: INFO     mult                = 0.360674
+2021-02-04 19:49:26,836: INFO     skip_optimized_index= 0
+2021-02-04 19:49:26,836: INFO     delaunay_type       = 2
+2021-02-04 19:49:26,836: INFO     Set HNSW query-time parameters:
+2021-02-04 19:49:26,836: INFO     ef(Search)         =20
+2021-02-04 19:49:26,836: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+*2021-02-04 19:49:34,310: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:49:34,310: INFO     searchMethod			  = 0
+2021-02-04 19:49:34,320: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:49:34,468: INFO     Set HNSW query-time parameters:
+2021-02-04 19:49:34,468: INFO     ef(Search)         =9
+2021-02-04 19:49:34,468: INFO     algoType           =2
+2021-02-04 19:49:42,084: INFO     Formatting data for BedTools
+2021-02-04 19:49:42,267: INFO     Create GuideMaker Annotation object
+2021-02-04 19:49:42,267: INFO     Identify genomic features
+2021-02-04 19:49:42,267: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:49:43,338: INFO     Total number of CDS/locus in the input genome: 4357
+2021-02-04 19:49:43,338: INFO     Find genomic features closest the guides
+2021-02-04 19:49:44,760: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:49:44,941: INFO     Select description columns
+2021-02-04 19:49:45,017: INFO     Format the output
+2021-02-04 19:49:45,761: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 43498
+2021-02-04 19:49:46,608: INFO     creating random control guides
+2021-02-04 19:49:46,676: INFO     Number of random control searched: 100
+2021-02-04 19:49:46,677: INFO     Percentage of GC content in the input genome: 50.79
+2021-02-04 19:49:46,677: INFO     Total length of the genome: 4.4 MB
+2021-02-04 19:49:46,677: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 19:49:46,679: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:49:46,679: INFO     PAM sequence: NGRRT
+2021-02-04 19:49:46,679: INFO     PAM orientation: 3prime
+2021-02-04 19:49:46,680: INFO     Genome strand(s) searched: both
+2021-02-04 19:49:46,680: INFO     Total PAM sites considered: 115034
+2021-02-04 19:49:46,680: INFO     Guide RNA candidates found: 76595
+	Command being timed: "guidemaker -i ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk --pamseq NGRRT --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63831058_3.log --threads 1"
+	User time (seconds): 27.73
+	System time (seconds): 2.40
+	Percent of CPU this job got: 110%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:27.18
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 518984
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 523516
+	Voluntary context switches: 2972
+	Involuntary context switches: 110295
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 161752
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  3
+My TMPDIR IS:  /scratch/local/63831058
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Escherichia.coli_str_K-12_substr_MG1655.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGRRT
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  2
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:49:47,847: INFO     Temp directory is: /scratch/local/63831058/guidemaker_c3llwb3l
+2021-02-04 19:49:47,847: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:49:47,848: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:49:48,739: INFO     Identifying PAM sites in the genome
+2021-02-04 19:49:52,837: INFO     Checking guides for restriction enzymes
+2021-02-04 19:49:52,868: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:49:52,868: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:49:53,031: INFO     Number of guides removed after checking for unique PAM: 11268
+2021-02-04 19:49:53,031: INFO     Indexing all potential guide sites: 115034. This is the longest step.
+2021-02-04 19:49:53,509: INFO     M                   = 16
+2021-02-04 19:49:53,509: INFO     indexThreadQty      = 2
+2021-02-04 19:49:53,510: INFO     efConstruction      = 10
+2021-02-04 19:49:53,510: INFO     maxM			          = 16
+2021-02-04 19:49:53,510: INFO     maxM0			          = 32
+2021-02-04 19:49:53,510: INFO     mult                = 0.360674
+2021-02-04 19:49:53,510: INFO     skip_optimized_index= 0
+2021-02-04 19:49:53,510: INFO     delaunay_type       = 2
+2021-02-04 19:49:53,510: INFO     Set HNSW query-time parameters:
+2021-02-04 19:49:53,510: INFO     ef(Search)         =20
+2021-02-04 19:49:53,510: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 19:49:58,131: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:49:58,131: INFO     searchMethod			  = 0
+2021-02-04 19:49:58,141: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:49:58,278: INFO     Set HNSW query-time parameters:
+2021-02-04 19:49:58,278: INFO     ef(Search)         =9
+2021-02-04 19:49:58,278: INFO     algoType           =2
+2021-02-04 19:50:04,323: INFO     Formatting data for BedTools
+2021-02-04 19:50:04,514: INFO     Create GuideMaker Annotation object
+2021-02-04 19:50:04,515: INFO     Identify genomic features
+2021-02-04 19:50:04,515: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:50:05,602: INFO     Total number of CDS/locus in the input genome: 4357
+2021-02-04 19:50:05,603: INFO     Find genomic features closest the guides
+2021-02-04 19:50:07,037: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:50:07,201: INFO     Select description columns
+2021-02-04 19:50:07,277: INFO     Format the output
+2021-02-04 19:50:08,015: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 43503
+2021-02-04 19:50:08,841: INFO     creating random control guides
+2021-02-04 19:50:08,913: INFO     Number of random control searched: 100
+2021-02-04 19:50:08,913: INFO     Percentage of GC content in the input genome: 50.79
+2021-02-04 19:50:08,913: INFO     Total length of the genome: 4.4 MB
+2021-02-04 19:50:08,913: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 8
+2021-02-04 19:50:08,915: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:50:08,916: INFO     PAM sequence: NGRRT
+2021-02-04 19:50:08,916: INFO     PAM orientation: 3prime
+2021-02-04 19:50:08,916: INFO     Genome strand(s) searched: both
+2021-02-04 19:50:08,916: INFO     Total PAM sites considered: 115034
+2021-02-04 19:50:08,916: INFO     Guide RNA candidates found: 76602
+	Command being timed: "guidemaker -i ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk --pamseq NGRRT --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63831058_3.log --threads 2"
+	User time (seconds): 29.23
+	System time (seconds): 2.55
+	Percent of CPU this job got: 142%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 570576
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 558177
+	Voluntary context switches: 9756
+	Involuntary context switches: 280
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 161744
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  3
+My TMPDIR IS:  /scratch/local/63831058
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Escherichia.coli_str_K-12_substr_MG1655.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGRRT
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  4
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:50:10,118: INFO     Temp directory is: /scratch/local/63831058/guidemaker_vgd8wgfr
+2021-02-04 19:50:10,118: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:50:10,119: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:50:11,018: INFO     Identifying PAM sites in the genome
+2021-02-04 19:50:15,168: INFO     Checking guides for restriction enzymes
+2021-02-04 19:50:15,199: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:50:15,199: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:50:15,365: INFO     Number of guides removed after checking for unique PAM: 11268
+2021-02-04 19:50:15,366: INFO     Indexing all potential guide sites: 115034. This is the longest step.
+2021-02-04 19:50:15,851: INFO     M                   = 16
+2021-02-04 19:50:15,851: INFO     indexThreadQty      = 4
+2021-02-04 19:50:15,851: INFO     efConstruction      = 10
+2021-02-04 19:50:15,851: INFO     maxM			          = 16
+2021-02-04 19:50:15,852: INFO     maxM0			          = 32
+2021-02-04 19:50:15,852: INFO     mult                = 0.360674
+2021-02-04 19:50:15,852: INFO     skip_optimized_index= 0
+2021-02-04 19:50:15,852: INFO     delaunay_type       = 2
+2021-02-04 19:50:15,852: INFO     Set HNSW query-time parameters:
+2021-02-04 19:50:15,852: INFO     ef(Search)         =20
+2021-02-04 19:50:15,852: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 19:50:18,446: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:50:18,447: INFO     searchMethod			  = 0
+2021-02-04 19:50:18,457: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:50:18,596: INFO     Set HNSW query-time parameters:
+2021-02-04 19:50:18,596: INFO     ef(Search)         =9
+2021-02-04 19:50:18,596: INFO     algoType           =2
+2021-02-04 19:50:23,757: INFO     Formatting data for BedTools
+2021-02-04 19:50:23,938: INFO     Create GuideMaker Annotation object
+2021-02-04 19:50:23,938: INFO     Identify genomic features
+2021-02-04 19:50:23,938: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:50:25,007: INFO     Total number of CDS/locus in the input genome: 4357
+2021-02-04 19:50:25,007: INFO     Find genomic features closest the guides
+2021-02-04 19:50:26,465: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:50:26,633: INFO     Select description columns
+2021-02-04 19:50:26,711: INFO     Format the output
+2021-02-04 19:50:27,461: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 43516
+2021-02-04 19:50:28,342: INFO     creating random control guides
+2021-02-04 19:50:28,409: INFO     Number of random control searched: 100
+2021-02-04 19:50:28,410: INFO     Percentage of GC content in the input genome: 50.79
+2021-02-04 19:50:28,410: INFO     Total length of the genome: 4.4 MB
+2021-02-04 19:50:28,410: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 19:50:28,412: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:50:28,413: INFO     PAM sequence: NGRRT
+2021-02-04 19:50:28,413: INFO     PAM orientation: 3prime
+2021-02-04 19:50:28,413: INFO     Genome strand(s) searched: both
+2021-02-04 19:50:28,413: INFO     Total PAM sites considered: 115034
+2021-02-04 19:50:28,413: INFO     Guide RNA candidates found: 76629
+	Command being timed: "guidemaker -i ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk --pamseq NGRRT --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63831058_3.log --threads 4"
+	User time (seconds): 30.25
+	System time (seconds): 2.64
+	Percent of CPU this job got: 168%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:19.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 571068
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 512530
+	Voluntary context switches: 24333
+	Involuntary context switches: 51190
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 161776
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  3
+My TMPDIR IS:  /scratch/local/63831058
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Escherichia.coli_str_K-12_substr_MG1655.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGRRT
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  8
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:50:29,946: INFO     Temp directory is: /scratch/local/63831058/guidemaker_8ysrx_6y
+2021-02-04 19:50:29,946: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:50:29,946: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:50:30,842: INFO     Identifying PAM sites in the genome
+2021-02-04 19:50:35,027: INFO     Checking guides for restriction enzymes
+2021-02-04 19:50:35,057: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:50:35,058: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:50:35,225: INFO     Number of guides removed after checking for unique PAM: 11268
+2021-02-04 19:50:35,226: INFO     Indexing all potential guide sites: 115034. This is the longest step.
+2021-02-04 19:50:35,710: INFO     M                   = 16
+2021-02-04 19:50:35,710: INFO     indexThreadQty      = 8
+2021-02-04 19:50:35,710: INFO     efConstruction      = 10
+2021-02-04 19:50:35,710: INFO     maxM			          = 16
+2021-02-04 19:50:35,710: INFO     maxM0			          = 32
+2021-02-04 19:50:35,710: INFO     mult                = 0.360674
+2021-02-04 19:50:35,710: INFO     skip_optimized_index= 0
+2021-02-04 19:50:35,710: INFO     delaunay_type       = 2
+2021-02-04 19:50:35,711: INFO     Set HNSW query-time parameters:
+2021-02-04 19:50:35,711: INFO     ef(Search)         =20
+2021-02-04 19:50:35,711: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 19:50:37,105: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:50:37,105: INFO     searchMethod			  = 0
+2021-02-04 19:50:37,110: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:50:37,251: INFO     Set HNSW query-time parameters:
+2021-02-04 19:50:37,251: INFO     ef(Search)         =9
+2021-02-04 19:50:37,251: INFO     algoType           =2
+2021-02-04 19:50:42,074: INFO     Formatting data for BedTools
+2021-02-04 19:50:42,256: INFO     Create GuideMaker Annotation object
+2021-02-04 19:50:42,257: INFO     Identify genomic features
+2021-02-04 19:50:42,257: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:50:43,319: INFO     Total number of CDS/locus in the input genome: 4357
+2021-02-04 19:50:43,319: INFO     Find genomic features closest the guides
+2021-02-04 19:50:44,754: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:50:44,938: INFO     Select description columns
+2021-02-04 19:50:45,016: INFO     Format the output
+2021-02-04 19:50:45,781: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 43502
+2021-02-04 19:50:46,608: INFO     creating random control guides
+2021-02-04 19:50:46,700: INFO     Number of random control searched: 100
+2021-02-04 19:50:46,700: INFO     Percentage of GC content in the input genome: 50.79
+2021-02-04 19:50:46,700: INFO     Total length of the genome: 4.4 MB
+2021-02-04 19:50:46,700: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 19:50:46,703: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:50:46,703: INFO     PAM sequence: NGRRT
+2021-02-04 19:50:46,703: INFO     PAM orientation: 3prime
+2021-02-04 19:50:46,703: INFO     Genome strand(s) searched: both
+2021-02-04 19:50:46,703: INFO     Total PAM sites considered: 115034
+2021-02-04 19:50:46,703: INFO     Guide RNA candidates found: 76608
+	Command being timed: "guidemaker -i ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk --pamseq NGRRT --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63831058_3.log --threads 8"
+	User time (seconds): 30.20
+	System time (seconds): 2.83
+	Percent of CPU this job got: 180%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 578172
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 559284
+	Voluntary context switches: 40842
+	Involuntary context switches: 989574
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 161744
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  3
+My TMPDIR IS:  /scratch/local/63831058
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Escherichia.coli_str_K-12_substr_MG1655.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGRRT
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  16
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:50:47,915: INFO     Temp directory is: /scratch/local/63831058/guidemaker_k32s_7c_
+2021-02-04 19:50:47,915: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:50:47,916: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:50:48,807: INFO     Identifying PAM sites in the genome
+2021-02-04 19:50:53,142: INFO     Checking guides for restriction enzymes
+2021-02-04 19:50:53,181: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:50:53,181: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:50:53,362: INFO     Number of guides removed after checking for unique PAM: 11268
+2021-02-04 19:50:53,362: INFO     Indexing all potential guide sites: 115034. This is the longest step.
+2021-02-04 19:50:53,890: INFO     M                   = 16
+2021-02-04 19:50:53,890: INFO     indexThreadQty      = 16
+2021-02-04 19:50:53,890: INFO     efConstruction      = 10
+2021-02-04 19:50:53,890: INFO     maxM			          = 16
+2021-02-04 19:50:53,891: INFO     maxM0			          = 32
+2021-02-04 19:50:53,891: INFO     mult                = 0.360674
+2021-02-04 19:50:53,891: INFO     skip_optimized_index= 0
+2021-02-04 19:50:53,891: INFO     delaunay_type       = 2
+2021-02-04 19:50:53,891: INFO     Set HNSW query-time parameters:
+2021-02-04 19:50:53,891: INFO     ef(Search)         =20
+2021-02-04 19:50:53,891: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+******************************************************2021-02-04 19:50:54,710: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:50:54,710: INFO     searchMethod			  = 0
+2021-02-04 19:50:54,716: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:50:54,858: INFO     Set HNSW query-time parameters:
+2021-02-04 19:50:54,858: INFO     ef(Search)         =9
+2021-02-04 19:50:54,858: INFO     algoType           =2
+2021-02-04 19:50:59,736: INFO     Formatting data for BedTools
+2021-02-04 19:50:59,921: INFO     Create GuideMaker Annotation object
+2021-02-04 19:50:59,921: INFO     Identify genomic features
+2021-02-04 19:50:59,922: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:51:00,987: INFO     Total number of CDS/locus in the input genome: 4357
+2021-02-04 19:51:00,987: INFO     Find genomic features closest the guides
+2021-02-04 19:51:02,438: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:51:02,623: INFO     Select description columns
+2021-02-04 19:51:02,701: INFO     Format the output
+2021-02-04 19:51:03,458: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 43511
+2021-02-04 19:51:04,278: INFO     creating random control guides
+2021-02-04 19:51:04,352: INFO     Number of random control searched: 100
+2021-02-04 19:51:04,352: INFO     Percentage of GC content in the input genome: 50.79
+2021-02-04 19:51:04,352: INFO     Total length of the genome: 4.4 MB
+2021-02-04 19:51:04,352: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 19:51:04,354: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:51:04,354: INFO     PAM sequence: NGRRT
+2021-02-04 19:51:04,354: INFO     PAM orientation: 3prime
+2021-02-04 19:51:04,354: INFO     Genome strand(s) searched: both
+2021-02-04 19:51:04,354: INFO     Total PAM sites considered: 115034
+2021-02-04 19:51:04,354: INFO     Guide RNA candidates found: 76608
+	Command being timed: "guidemaker -i ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk --pamseq NGRRT --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63831058_3.log --threads 16"
+	User time (seconds): 32.95
+	System time (seconds): 3.00
+	Percent of CPU this job got: 203%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.62
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 559444
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 508838
+	Voluntary context switches: 86335
+	Involuntary context switches: 147627
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 161752
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  3
+My TMPDIR IS:  /scratch/local/63831058
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Escherichia.coli_str_K-12_substr_MG1655.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGRRT
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  32
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:51:05,566: INFO     Temp directory is: /scratch/local/63831058/guidemaker_epsl20s_
+2021-02-04 19:51:05,566: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:51:05,566: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:51:06,468: INFO     Identifying PAM sites in the genome
+2021-02-04 19:51:10,591: INFO     Checking guides for restriction enzymes
+2021-02-04 19:51:10,621: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:51:10,621: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:51:10,788: INFO     Number of guides removed after checking for unique PAM: 11268
+2021-02-04 19:51:10,788: INFO     Indexing all potential guide sites: 115034. This is the longest step.
+2021-02-04 19:51:11,281: INFO     M                   = 16
+2021-02-04 19:51:11,281: INFO     indexThreadQty      = 32
+2021-02-04 19:51:11,281: INFO     efConstruction      = 10
+2021-02-04 19:51:11,281: INFO     maxM			          = 16
+2021-02-04 19:51:11,281: INFO     maxM0			          = 32
+2021-02-04 19:51:11,281: INFO     mult                = 0.360674
+2021-02-04 19:51:11,281: INFO     skip_optimized_index= 0
+2021-02-04 19:51:11,281: INFO     delaunay_type       = 2
+2021-02-04 19:51:11,281: INFO     Set HNSW query-time parameters:
+2021-02-04 19:51:11,281: INFO     ef(Search)         =20
+2021-02-04 19:51:11,281: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 19:51:11,820: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:51:11,820: INFO     searchMethod			  = 0
+2021-02-04 19:51:11,825: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:51:11,970: INFO     Set HNSW query-time parameters:
+2021-02-04 19:51:11,970: INFO     ef(Search)         =9
+2021-02-04 19:51:11,970: INFO     algoType           =2
+2021-02-04 19:51:16,572: INFO     Formatting data for BedTools
+2021-02-04 19:51:16,754: INFO     Create GuideMaker Annotation object
+2021-02-04 19:51:16,754: INFO     Identify genomic features
+2021-02-04 19:51:16,755: INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+2021-02-04 19:51:17,824: INFO     Total number of CDS/locus in the input genome: 4357
+2021-02-04 19:51:17,824: INFO     Find genomic features closest the guides
+2021-02-04 19:51:19,414: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:51:19,581: INFO     Select description columns
+2021-02-04 19:51:19,661: INFO     Format the output
+2021-02-04 19:51:20,525: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 43511
+2021-02-04 19:51:21,391: INFO     creating random control guides
+2021-02-04 19:51:21,486: INFO     Number of random control searched: 100
+2021-02-04 19:51:21,486: INFO     Percentage of GC content in the input genome: 50.79
+2021-02-04 19:51:21,486: INFO     Total length of the genome: 4.4 MB
+2021-02-04 19:51:21,486: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 19:51:21,489: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:51:21,489: INFO     PAM sequence: NGRRT
+2021-02-04 19:51:21,489: INFO     PAM orientation: 3prime
+2021-02-04 19:51:21,489: INFO     Genome strand(s) searched: both
+2021-02-04 19:51:21,489: INFO     Total PAM sites considered: 115034
+2021-02-04 19:51:21,489: INFO     Guide RNA candidates found: 76609
+	Command being timed: "guidemaker -i ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk --pamseq NGRRT --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63831058_3.log --threads 32"
+	User time (seconds): 33.91
+	System time (seconds): 4.65
+	Percent of CPU this job got: 224%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 576232
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 534058
+	Voluntary context switches: 186215
+	Involuntary context switches: 332
+	Swaps: 0
+	File system inputs: 40
+	File system outputs: 161792
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -4,7 +4,7 @@ library(knitr)
 
 args <- commandArgs(trailingOnly = TRUE)
 
-# read in log
+# read in log - this is in actual the number of locus_tag or locus
 genome_locus_count <- readLines("logfile.txt") %>%
   .[[grep('Total number of CDS/locus in the input genome',.)]] %>%
   strsplit(., " ") %>%
@@ -14,6 +14,10 @@ genome_locus_count <- readLines("logfile.txt") %>%
 
 # read in the target output from GuideMaker
 targets <- read.csv("targets.csv", header = TRUE, stringsAsFactors = FALSE)
+
+## get only the targets within a gene coordinates i.e. feature distance = 0
+targets = targets %>%
+  filter(`Feature.distance`== 0 )
 
 # Count number of locus tag in the output
 target_locus_count <- targets %>% pull(locus_tag) %>% unique() %>% length()

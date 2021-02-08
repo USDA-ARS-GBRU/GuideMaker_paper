@@ -1,0 +1,556 @@
+Thu Feb  4 18:58:27 EST 2021
+c26b-s8.ufhpc
+/blue/garrett/rp3448/analysis/guidemaker/nonAVXGuidemaker
+
+     active environment : NONAVX2
+    active env location : /home/rp3448/.conda/envs/NONAVX2
+            shell level : 3
+       user config file : /home/rp3448/.condarc
+ populated config files : /home/rp3448/.condarc
+          conda version : 4.9.2
+    conda-build version : not installed
+         python version : 3.9.1.final.0
+       virtual packages : __glibc=2.17=0
+                          __unix=0=0
+                          __archspec=1=x86_64
+       base environment : /apps/conda/4.9.2  (read only)
+           channel URLs : https://conda.anaconda.org/biobakery/linux-64
+                          https://conda.anaconda.org/biobakery/noarch
+                          https://conda.anaconda.org/conda-forge/linux-64
+                          https://conda.anaconda.org/conda-forge/noarch
+                          https://conda.anaconda.org/bioconda/linux-64
+                          https://conda.anaconda.org/bioconda/noarch
+                          https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /apps/conda/4.9.2/pkgs
+                          /home/rp3448/.conda/pkgs
+       envs directories : /home/rp3448/.conda/envs
+                          /apps/conda/4.9.2/envs
+               platform : linux-64
+             user-agent : conda/4.9.2 requests/2.25.1 CPython/3.9.1 Linux/3.10.0-1062.18.1.el7.x86_64 rhel/7.7 glibc/2.17
+                UID:GID : 6472:3511
+             netrc file : None
+           offline mode : False
+
+My SLURM_ARRAY_TASK_ID:  5
+My TMPDIR IS:  /scratch/local/63829312
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Aspergillus_fumigatus.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  1
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 18:58:32,272: INFO     Temp directory is: /scratch/local/63829312/guidemaker_qobdipbv
+2021-02-04 18:58:32,273: INFO     Writing fasta file from genbank file(s)
+2021-02-04 18:58:32,273: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 18:58:35,372: INFO     Identifying PAM sites in the genome
+2021-02-04 19:00:04,528: INFO     Checking guides for restriction enzymes
+2021-02-04 19:00:05,509: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:00:05,509: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:00:13,901: INFO     Number of guides removed after checking for unique PAM: 2195823
+2021-02-04 19:00:13,901: INFO     Indexing all potential guide sites: 3499847. This is the longest step.
+2021-02-04 19:00:28,739: INFO     M                   = 16
+2021-02-04 19:00:28,739: INFO     indexThreadQty      = 1
+2021-02-04 19:00:28,739: INFO     efConstruction      = 10
+2021-02-04 19:00:28,739: INFO     maxM			          = 16
+2021-02-04 19:00:28,739: INFO     maxM0			          = 32
+2021-02-04 19:00:28,739: INFO     mult                = 0.360674
+2021-02-04 19:00:28,739: INFO     skip_optimized_index= 0
+2021-02-04 19:00:28,739: INFO     delaunay_type       = 2
+2021-02-04 19:00:28,740: INFO     Set HNSW query-time parameters:
+2021-02-04 19:00:28,740: INFO     ef(Search)         =20
+2021-02-04 19:00:28,740: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+*2021-02-04 19:08:03,195: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:08:03,670: INFO     searchMethod			  = 0
+2021-02-04 19:08:03,949: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:08:05,979: INFO     Set HNSW query-time parameters:
+2021-02-04 19:08:05,979: INFO     ef(Search)         =9
+2021-02-04 19:08:05,979: INFO     algoType           =2
+2021-02-04 19:10:48,153: INFO     Formatting data for BedTools
+2021-02-04 19:10:51,222: INFO     Create GuideMaker Annotation object
+2021-02-04 19:10:51,222: INFO     Identify genomic features
+2021-02-04 19:10:51,222: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:10:54,157: INFO     Total number of CDS/locus in the input genome: 9630
+2021-02-04 19:10:54,157: INFO     Find genomic features closest the guides
+2021-02-04 19:11:14,609: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:11:15,839: INFO     Select description columns
+2021-02-04 19:11:15,949: INFO     Format the output
+2021-02-04 19:11:22,511: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 231795
+2021-02-04 19:11:26,965: INFO     creating random control guides
+2021-02-04 19:11:27,371: INFO     Number of random control searched: 100
+2021-02-04 19:11:27,371: INFO     Percentage of GC content in the input genome: 48.82
+2021-02-04 19:11:27,371: INFO     Total length of the genome: 28.0 MB
+2021-02-04 19:11:27,371: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 19:11:27,374: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:11:27,374: INFO     PAM sequence: NGG
+2021-02-04 19:11:27,374: INFO     PAM orientation: 3prime
+2021-02-04 19:11:27,374: INFO     Genome strand(s) searched: both
+2021-02-04 19:11:27,374: INFO     Total PAM sites considered: 3499847
+2021-02-04 19:11:27,374: INFO     Guide RNA candidates found: 435702
+	Command being timed: "guidemaker -i ../all_test_data/Aspergillus_fumigatus.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63829312_5.log --threads 1"
+	User time (seconds): 767.52
+	System time (seconds): 15.64
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:04.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8267168
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 14631605
+	Voluntary context switches: 3185
+	Involuntary context switches: 1107100
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 1338424
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  5
+My TMPDIR IS:  /scratch/local/63829312
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Aspergillus_fumigatus.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  2
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:11:36,545: INFO     Temp directory is: /scratch/local/63829312/guidemaker_sfo6_9y7
+2021-02-04 19:11:36,545: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:11:36,546: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:11:39,628: INFO     Identifying PAM sites in the genome
+2021-02-04 19:13:08,227: INFO     Checking guides for restriction enzymes
+2021-02-04 19:13:09,426: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:13:09,426: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:13:17,734: INFO     Number of guides removed after checking for unique PAM: 2195823
+2021-02-04 19:13:17,734: INFO     Indexing all potential guide sites: 3499847. This is the longest step.
+2021-02-04 19:13:32,497: INFO     M                   = 16
+2021-02-04 19:13:32,497: INFO     indexThreadQty      = 2
+2021-02-04 19:13:32,497: INFO     efConstruction      = 10
+2021-02-04 19:13:32,497: INFO     maxM			          = 16
+2021-02-04 19:13:32,497: INFO     maxM0			          = 32
+2021-02-04 19:13:32,497: INFO     mult                = 0.360674
+2021-02-04 19:13:32,498: INFO     skip_optimized_index= 0
+2021-02-04 19:13:32,498: INFO     delaunay_type       = 2
+2021-02-04 19:13:32,498: INFO     Set HNSW query-time parameters:
+2021-02-04 19:13:32,498: INFO     ef(Search)         =20
+2021-02-04 19:13:32,498: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 19:18:24,278: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:18:24,278: INFO     searchMethod			  = 0
+2021-02-04 19:18:24,558: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:18:26,582: INFO     Set HNSW query-time parameters:
+2021-02-04 19:18:26,582: INFO     ef(Search)         =9
+2021-02-04 19:18:26,582: INFO     algoType           =2
+2021-02-04 19:20:34,946: INFO     Formatting data for BedTools
+2021-02-04 19:20:37,939: INFO     Create GuideMaker Annotation object
+2021-02-04 19:20:37,939: INFO     Identify genomic features
+2021-02-04 19:20:37,939: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:20:41,192: INFO     Total number of CDS/locus in the input genome: 9630
+2021-02-04 19:20:41,193: INFO     Find genomic features closest the guides
+2021-02-04 19:21:01,752: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:21:02,925: INFO     Select description columns
+2021-02-04 19:21:03,028: INFO     Format the output
+2021-02-04 19:21:08,583: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 231808
+2021-02-04 19:21:12,996: INFO     creating random control guides
+2021-02-04 19:21:13,885: INFO     Number of random control searched: 100
+2021-02-04 19:21:13,885: INFO     Percentage of GC content in the input genome: 48.82
+2021-02-04 19:21:13,886: INFO     Total length of the genome: 28.0 MB
+2021-02-04 19:21:13,886: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 19:21:13,888: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:21:13,888: INFO     PAM sequence: NGG
+2021-02-04 19:21:13,888: INFO     PAM orientation: 3prime
+2021-02-04 19:21:13,888: INFO     Genome strand(s) searched: both
+2021-02-04 19:21:13,889: INFO     Total PAM sites considered: 3499847
+2021-02-04 19:21:13,889: INFO     Guide RNA candidates found: 435722
+	Command being timed: "guidemaker -i ../all_test_data/Aspergillus_fumigatus.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63829312_5.log --threads 2"
+	User time (seconds): 868.89
+	System time (seconds): 69.77
+	Percent of CPU this job got: 160%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:46.51
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9122600
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 45136829
+	Voluntary context switches: 299880
+	Involuntary context switches: 2123
+	Swaps: 0
+	File system inputs: 264
+	File system outputs: 1338784
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  5
+My TMPDIR IS:  /scratch/local/63829312
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Aspergillus_fumigatus.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  4
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:21:23,051: INFO     Temp directory is: /scratch/local/63829312/guidemaker_41fbbgy5
+2021-02-04 19:21:23,051: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:21:23,052: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:21:26,184: INFO     Identifying PAM sites in the genome
+2021-02-04 19:22:54,895: INFO     Checking guides for restriction enzymes
+2021-02-04 19:22:55,890: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:22:55,890: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:23:04,046: INFO     Number of guides removed after checking for unique PAM: 2195823
+2021-02-04 19:23:04,046: INFO     Indexing all potential guide sites: 3499847. This is the longest step.
+2021-02-04 19:23:18,632: INFO     M                   = 16
+2021-02-04 19:23:18,632: INFO     indexThreadQty      = 4
+2021-02-04 19:23:18,632: INFO     efConstruction      = 10
+2021-02-04 19:23:18,632: INFO     maxM			          = 16
+2021-02-04 19:23:18,632: INFO     maxM0			          = 32
+2021-02-04 19:23:18,632: INFO     mult                = 0.360674
+2021-02-04 19:23:18,632: INFO     skip_optimized_index= 0
+2021-02-04 19:23:18,633: INFO     delaunay_type       = 2
+2021-02-04 19:23:18,633: INFO     Set HNSW query-time parameters:
+2021-02-04 19:23:18,633: INFO     ef(Search)         =20
+2021-02-04 19:23:18,633: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 19:26:00,571: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:26:00,572: INFO     searchMethod			  = 0
+2021-02-04 19:26:00,858: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:26:02,870: INFO     Set HNSW query-time parameters:
+2021-02-04 19:26:02,870: INFO     ef(Search)         =9
+2021-02-04 19:26:02,870: INFO     algoType           =2
+2021-02-04 19:27:36,903: INFO     Formatting data for BedTools
+2021-02-04 19:27:39,871: INFO     Create GuideMaker Annotation object
+2021-02-04 19:27:39,872: INFO     Identify genomic features
+2021-02-04 19:27:39,872: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:27:42,817: INFO     Total number of CDS/locus in the input genome: 9630
+2021-02-04 19:27:42,817: INFO     Find genomic features closest the guides
+2021-02-04 19:28:03,678: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:28:05,082: INFO     Select description columns
+2021-02-04 19:28:05,187: INFO     Format the output
+2021-02-04 19:28:10,572: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 231806
+2021-02-04 19:28:15,038: INFO     creating random control guides
+2021-02-04 19:28:15,757: INFO     Number of random control searched: 100
+2021-02-04 19:28:15,758: INFO     Percentage of GC content in the input genome: 48.82
+2021-02-04 19:28:15,758: INFO     Total length of the genome: 28.0 MB
+2021-02-04 19:28:15,758: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 19:28:15,761: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:28:15,761: INFO     PAM sequence: NGG
+2021-02-04 19:28:15,761: INFO     PAM orientation: 3prime
+2021-02-04 19:28:15,761: INFO     Genome strand(s) searched: both
+2021-02-04 19:28:15,761: INFO     Total PAM sites considered: 3499847
+2021-02-04 19:28:15,761: INFO     Guide RNA candidates found: 435707
+	Command being timed: "guidemaker -i ../all_test_data/Aspergillus_fumigatus.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63829312_5.log --threads 4"
+	User time (seconds): 917.61
+	System time (seconds): 68.92
+	Percent of CPU this job got: 233%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:02.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9084680
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 41378067
+	Voluntary context switches: 668298
+	Involuntary context switches: 99030
+	Swaps: 0
+	File system inputs: 1144
+	File system outputs: 1338200
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  5
+My TMPDIR IS:  /scratch/local/63829312
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Aspergillus_fumigatus.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  8
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:28:25,401: INFO     Temp directory is: /scratch/local/63829312/guidemaker_z6l5t1oy
+2021-02-04 19:28:25,402: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:28:25,402: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:28:28,449: INFO     Identifying PAM sites in the genome
+2021-02-04 19:29:56,965: INFO     Checking guides for restriction enzymes
+2021-02-04 19:29:58,025: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:29:58,025: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:30:06,149: INFO     Number of guides removed after checking for unique PAM: 2195823
+2021-02-04 19:30:06,149: INFO     Indexing all potential guide sites: 3499847. This is the longest step.
+2021-02-04 19:30:21,889: INFO     M                   = 16
+2021-02-04 19:30:21,889: INFO     indexThreadQty      = 8
+2021-02-04 19:30:21,889: INFO     efConstruction      = 10
+2021-02-04 19:30:21,889: INFO     maxM			          = 16
+2021-02-04 19:30:21,889: INFO     maxM0			          = 32
+2021-02-04 19:30:21,889: INFO     mult                = 0.360674
+2021-02-04 19:30:21,889: INFO     skip_optimized_index= 0
+2021-02-04 19:30:21,889: INFO     delaunay_type       = 2
+2021-02-04 19:30:21,889: INFO     Set HNSW query-time parameters:
+2021-02-04 19:30:21,889: INFO     ef(Search)         =20
+2021-02-04 19:30:21,889: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************
+
+
+2021-02-04 19:31:46,274: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:31:46,274: INFO     searchMethod			  = 0
+2021-02-04 19:31:46,568: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:31:48,885: INFO     Set HNSW query-time parameters:
+2021-02-04 19:31:48,885: INFO     ef(Search)         =9
+2021-02-04 19:31:48,885: INFO     algoType           =2
+2021-02-04 19:33:08,438: INFO     Formatting data for BedTools
+2021-02-04 19:33:11,334: INFO     Create GuideMaker Annotation object
+2021-02-04 19:33:11,335: INFO     Identify genomic features
+2021-02-04 19:33:11,335: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:33:14,478: INFO     Total number of CDS/locus in the input genome: 9630
+2021-02-04 19:33:14,478: INFO     Find genomic features closest the guides
+2021-02-04 19:33:34,361: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:33:35,549: INFO     Select description columns
+2021-02-04 19:33:35,649: INFO     Format the output
+2021-02-04 19:33:41,233: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 231850
+2021-02-04 19:33:45,664: INFO     creating random control guides
+2021-02-04 19:33:46,282: INFO     Number of random control searched: 100
+2021-02-04 19:33:46,282: INFO     Percentage of GC content in the input genome: 48.82
+2021-02-04 19:33:46,282: INFO     Total length of the genome: 28.0 MB
+2021-02-04 19:33:46,282: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 19:33:46,285: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:33:46,285: INFO     PAM sequence: NGG
+2021-02-04 19:33:46,285: INFO     PAM orientation: 3prime
+2021-02-04 19:33:46,285: INFO     Genome strand(s) searched: both
+2021-02-04 19:33:46,286: INFO     Total PAM sites considered: 3499847
+2021-02-04 19:33:46,286: INFO     Guide RNA candidates found: 435764
+	Command being timed: "guidemaker -i ../all_test_data/Aspergillus_fumigatus.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63829312_5.log --threads 8"
+	User time (seconds): 947.41
+	System time (seconds): 56.34
+	Percent of CPU this job got: 303%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:30.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9111792
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 27989376
+	Voluntary context switches: 1111843
+	Involuntary context switches: 434553
+	Swaps: 0
+	File system inputs: 2080
+	File system outputs: 1338480
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  5
+My TMPDIR IS:  /scratch/local/63829312
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Aspergillus_fumigatus.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  16
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:33:56,003: INFO     Temp directory is: /scratch/local/63829312/guidemaker_ufn2a6_c
+2021-02-04 19:33:56,003: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:33:56,004: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:33:59,135: INFO     Identifying PAM sites in the genome
+2021-02-04 19:35:25,572: INFO     Checking guides for restriction enzymes
+2021-02-04 19:35:26,572: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:35:26,573: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:35:34,732: INFO     Number of guides removed after checking for unique PAM: 2195823
+2021-02-04 19:35:34,733: INFO     Indexing all potential guide sites: 3499847. This is the longest step.
+2021-02-04 19:35:49,722: INFO     M                   = 16
+2021-02-04 19:35:49,723: INFO     indexThreadQty      = 16
+2021-02-04 19:35:49,723: INFO     efConstruction      = 10
+2021-02-04 19:35:49,723: INFO     maxM			          = 16
+2021-02-04 19:35:49,723: INFO     maxM0			          = 32
+2021-02-04 19:35:49,723: INFO     mult                = 0.360674
+2021-02-04 19:35:49,723: INFO     skip_optimized_index= 0
+2021-02-04 19:35:49,723: INFO     delaunay_type       = 2
+2021-02-04 19:35:49,723: INFO     Set HNSW query-time parameters:
+2021-02-04 19:35:49,723: INFO     ef(Search)         =20
+2021-02-04 19:35:49,723: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 19:36:35,378: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:36:35,379: INFO     searchMethod			  = 0
+2021-02-04 19:36:35,654: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:36:37,801: INFO     Set HNSW query-time parameters:
+2021-02-04 19:36:37,801: INFO     ef(Search)         =9
+2021-02-04 19:36:37,801: INFO     algoType           =2
+2021-02-04 19:37:52,293: INFO     Formatting data for BedTools
+2021-02-04 19:37:55,217: INFO     Create GuideMaker Annotation object
+2021-02-04 19:37:55,218: INFO     Identify genomic features
+2021-02-04 19:37:55,218: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:37:58,121: INFO     Total number of CDS/locus in the input genome: 9630
+2021-02-04 19:37:58,121: INFO     Find genomic features closest the guides
+2021-02-04 19:38:18,245: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:38:19,403: INFO     Select description columns
+2021-02-04 19:38:19,506: INFO     Format the output
+2021-02-04 19:38:24,824: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 231785
+2021-02-04 19:38:29,172: INFO     creating random control guides
+2021-02-04 19:38:29,806: INFO     Number of random control searched: 100
+2021-02-04 19:38:29,806: INFO     Percentage of GC content in the input genome: 48.82
+2021-02-04 19:38:29,806: INFO     Total length of the genome: 28.0 MB
+2021-02-04 19:38:29,807: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 19:38:29,810: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:38:29,810: INFO     PAM sequence: NGG
+2021-02-04 19:38:29,810: INFO     PAM orientation: 3prime
+2021-02-04 19:38:29,810: INFO     Genome strand(s) searched: both
+2021-02-04 19:38:29,810: INFO     Total PAM sites considered: 3499847
+2021-02-04 19:38:29,810: INFO     Guide RNA candidates found: 435668
+	Command being timed: "guidemaker -i ../all_test_data/Aspergillus_fumigatus.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63829312_5.log --threads 16"
+	User time (seconds): 984.19
+	System time (seconds): 61.85
+	Percent of CPU this job got: 369%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:43.36
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9212580
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 20768118
+	Voluntary context switches: 2007064
+	Involuntary context switches: 137231
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 1338256
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  5
+My TMPDIR IS:  /scratch/local/63829312
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Aspergillus_fumigatus.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NGG
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  32
+GuideMaker
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2021-02-04 19:38:39,348: INFO     Temp directory is: /scratch/local/63829312/guidemaker_r4p9prs0
+2021-02-04 19:38:39,348: INFO     Writing fasta file from genbank file(s)
+2021-02-04 19:38:39,349: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:38:42,460: INFO     Identifying PAM sites in the genome
+2021-02-04 19:40:09,206: INFO     Checking guides for restriction enzymes
+2021-02-04 19:40:10,183: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 19:40:10,183: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 19:40:18,329: INFO     Number of guides removed after checking for unique PAM: 2195823
+2021-02-04 19:40:18,329: INFO     Indexing all potential guide sites: 3499847. This is the longest step.
+2021-02-04 19:40:32,864: INFO     M                   = 16
+2021-02-04 19:40:32,864: INFO     indexThreadQty      = 32
+2021-02-04 19:40:32,864: INFO     efConstruction      = 10
+2021-02-04 19:40:32,864: INFO     maxM			          = 16
+2021-02-04 19:40:32,865: INFO     maxM0			          = 32
+2021-02-04 19:40:32,865: INFO     mult                = 0.360674
+2021-02-04 19:40:32,865: INFO     skip_optimized_index= 0
+2021-02-04 19:40:32,865: INFO     delaunay_type       = 2
+2021-02-04 19:40:32,865: INFO     Set HNSW query-time parameters:
+2021-02-04 19:40:32,865: INFO     ef(Search)         =20
+2021-02-04 19:40:32,865: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 19:41:02,112: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 19:41:02,113: INFO     searchMethod			  = 0
+2021-02-04 19:41:02,400: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 19:41:04,401: INFO     Set HNSW query-time parameters:
+2021-02-04 19:41:04,401: INFO     ef(Search)         =9
+2021-02-04 19:41:04,401: INFO     algoType           =2
+2021-02-04 19:42:11,415: INFO     Formatting data for BedTools
+2021-02-04 19:42:14,345: INFO     Create GuideMaker Annotation object
+2021-02-04 19:42:14,345: INFO     Identify genomic features
+2021-02-04 19:42:14,346: INFO     check if ../all_test_data/Aspergillus_fumigatus.gbk is gzipped
+2021-02-04 19:42:17,297: INFO     Total number of CDS/locus in the input genome: 9630
+2021-02-04 19:42:17,298: INFO     Find genomic features closest the guides
+2021-02-04 19:42:38,461: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 19:42:39,640: INFO     Select description columns
+2021-02-04 19:42:39,745: INFO     Format the output
+2021-02-04 19:42:45,144: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 231779
+2021-02-04 19:42:49,780: INFO     creating random control guides
+2021-02-04 19:42:50,533: INFO     Number of random control searched: 100
+2021-02-04 19:42:50,533: INFO     Percentage of GC content in the input genome: 48.82
+2021-02-04 19:42:50,533: INFO     Total length of the genome: 28.0 MB
+2021-02-04 19:42:50,533: INFO     created 10 control guides with a minimum distance of 7 and a median distance of 7
+2021-02-04 19:42:50,536: INFO     guidemaker completed, results are at TEST
+2021-02-04 19:42:50,536: INFO     PAM sequence: NGG
+2021-02-04 19:42:50,537: INFO     PAM orientation: 3prime
+2021-02-04 19:42:50,537: INFO     Genome strand(s) searched: both
+2021-02-04 19:42:50,537: INFO     Total PAM sites considered: 3499847
+2021-02-04 19:42:50,537: INFO     Guide RNA candidates found: 435639
+	Command being timed: "guidemaker -i ../all_test_data/Aspergillus_fumigatus.gbk --pamseq NGG --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63829312_5.log --threads 32"
+	User time (seconds): 1056.39
+	System time (seconds): 98.35
+	Percent of CPU this job got: 442%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:20.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9216592
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 17376662
+	Voluntary context switches: 4472448
+	Involuntary context switches: 146602
+	Swaps: 0
+	File system inputs: 248
+	File system outputs: 1338032
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

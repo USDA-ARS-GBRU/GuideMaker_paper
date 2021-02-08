@@ -1,0 +1,533 @@
+Thu Feb  4 18:13:43 EST 2021
+c29b-s22.ufhpc
+/blue/garrett/rp3448/analysis/guidemaker/AVXGuidemaker
+My SLURM_ARRAY_TASK_ID:  9
+My TMPDIR IS:  /scratch/local/63828725
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Pseudomonas_aeruginosa_PAO1_107.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NNAGAAW
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  1
+GuideMaker
+2021-02-04 18:13:47,117: INFO     Temp directory is: /scratch/local/63828725/guidemaker_eajgabdq
+2021-02-04 18:13:47,118: INFO     Writing fasta file from genbank file(s)
+2021-02-04 18:13:47,118: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/Scanner.py:1400: BiopythonParserWarning: Truncated LOCUS line found - is this correct?
+:'LOCUS       NC_002516            6264404 bp    dna     circular UNK \n'
+  BiopythonParserWarning,
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/__init__.py:762: BiopythonParserWarning: Non-upper case molecule type in LOCUS line: dna
+  BiopythonParserWarning,
+2021-02-04 18:13:47,929: INFO     Identifying PAM sites in the genome
+2021-02-04 18:13:50,355: INFO     Checking guides for restriction enzymes
+2021-02-04 18:13:50,357: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 18:13:50,358: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 18:13:50,364: INFO     Number of guides removed after checking for unique PAM: 201
+2021-02-04 18:13:50,364: INFO     Indexing all potential guide sites: 7291. This is the longest step.
+2021-02-04 18:13:50,399: INFO     M                   = 16
+2021-02-04 18:13:50,399: INFO     indexThreadQty      = 1
+2021-02-04 18:13:50,399: INFO     efConstruction      = 10
+2021-02-04 18:13:50,399: INFO     maxM			          = 16
+2021-02-04 18:13:50,399: INFO     maxM0			          = 32
+2021-02-04 18:13:50,399: INFO     mult                = 0.360674
+2021-02-04 18:13:50,399: INFO     skip_optimized_index= 0
+2021-02-04 18:13:50,399: INFO     delaunay_type       = 2
+2021-02-04 18:13:50,400: INFO     Set HNSW query-time parameters:
+2021-02-04 18:13:50,400: INFO     ef(Search)         =20
+2021-02-04 18:13:50,400: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+*2021-02-04 18:13:50,609: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 18:13:50,609: INFO     searchMethod			  = 0
+2021-02-04 18:13:50,610: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 18:13:50,618: INFO     Set HNSW query-time parameters:
+2021-02-04 18:13:50,619: INFO     ef(Search)         =9
+2021-02-04 18:13:50,619: INFO     algoType           =2
+2021-02-04 18:13:50,935: INFO     Formatting data for BedTools
+2021-02-04 18:13:50,950: INFO     Create GuideMaker Annotation object
+2021-02-04 18:13:50,950: INFO     Identify genomic features
+2021-02-04 18:13:50,950: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+2021-02-04 18:13:51,790: INFO     Total number of CDS/locus in the input genome: 5584
+2021-02-04 18:13:51,790: INFO     Find genomic features closest the guides
+2021-02-04 18:13:51,972: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 18:13:52,033: INFO     Select description columns
+2021-02-04 18:13:52,078: INFO     Format the output
+2021-02-04 18:13:52,138: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 2841
+2021-02-04 18:13:52,223: INFO     creating random control guides
+2021-02-04 18:13:52,311: INFO     Number of random control searched: 100
+2021-02-04 18:13:52,311: INFO     Percentage of GC content in the input genome: 66.56
+2021-02-04 18:13:52,311: INFO     Total length of the genome: 6.0 MB
+2021-02-04 18:13:52,311: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 18:13:52,314: INFO     guidemaker completed, results are at TEST
+2021-02-04 18:13:52,314: INFO     PAM sequence: NNAGAAW
+2021-02-04 18:13:52,314: INFO     PAM orientation: 3prime
+2021-02-04 18:13:52,314: INFO     Genome strand(s) searched: both
+2021-02-04 18:13:52,314: INFO     Total PAM sites considered: 7291
+2021-02-04 18:13:52,314: INFO     Guide RNA candidates found: 6404
+	Command being timed: "guidemaker -i ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk --pamseq NNAGAAW --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63828725_9.log --threads 1"
+	User time (seconds): 7.63
+	System time (seconds): 1.86
+	Percent of CPU this job got: 147%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.43
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 149828
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 180911
+	Voluntary context switches: 2992
+	Involuntary context switches: 58193
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 26888
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  9
+My TMPDIR IS:  /scratch/local/63828725
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Pseudomonas_aeruginosa_PAO1_107.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NNAGAAW
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  2
+GuideMaker
+2021-02-04 18:13:53,265: INFO     Temp directory is: /scratch/local/63828725/guidemaker_c4b6zg37
+2021-02-04 18:13:53,265: INFO     Writing fasta file from genbank file(s)
+2021-02-04 18:13:53,266: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/Scanner.py:1400: BiopythonParserWarning: Truncated LOCUS line found - is this correct?
+:'LOCUS       NC_002516            6264404 bp    dna     circular UNK \n'
+  BiopythonParserWarning,
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/__init__.py:762: BiopythonParserWarning: Non-upper case molecule type in LOCUS line: dna
+  BiopythonParserWarning,
+2021-02-04 18:13:54,054: INFO     Identifying PAM sites in the genome
+2021-02-04 18:13:56,417: INFO     Checking guides for restriction enzymes
+2021-02-04 18:13:56,419: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 18:13:56,419: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 18:13:56,425: INFO     Number of guides removed after checking for unique PAM: 201
+2021-02-04 18:13:56,425: INFO     Indexing all potential guide sites: 7291. This is the longest step.
+2021-02-04 18:13:56,460: INFO     M                   = 16
+2021-02-04 18:13:56,460: INFO     indexThreadQty      = 2
+2021-02-04 18:13:56,460: INFO     efConstruction      = 10
+2021-02-04 18:13:56,460: INFO     maxM			          = 16
+2021-02-04 18:13:56,460: INFO     maxM0			          = 32
+2021-02-04 18:13:56,460: INFO     mult                = 0.360674
+2021-02-04 18:13:56,460: INFO     skip_optimized_index= 0
+2021-02-04 18:13:56,460: INFO     delaunay_type       = 2
+2021-02-04 18:13:56,460: INFO     Set HNSW query-time parameters:
+2021-02-04 18:13:56,461: INFO     ef(Search)         =20
+2021-02-04 18:13:56,461: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 18:13:56,609: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 18:13:56,609: INFO     searchMethod			  = 0
+2021-02-04 18:13:56,609: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 18:13:56,618: INFO     Set HNSW query-time parameters:
+2021-02-04 18:13:56,618: INFO     ef(Search)         =9
+2021-02-04 18:13:56,618: INFO     algoType           =2
+2021-02-04 18:13:56,908: INFO     Formatting data for BedTools
+2021-02-04 18:13:56,921: INFO     Create GuideMaker Annotation object
+2021-02-04 18:13:56,922: INFO     Identify genomic features
+2021-02-04 18:13:56,922: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+2021-02-04 18:13:57,759: INFO     Total number of CDS/locus in the input genome: 5584
+2021-02-04 18:13:57,759: INFO     Find genomic features closest the guides
+2021-02-04 18:13:57,945: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 18:13:58,005: INFO     Select description columns
+2021-02-04 18:13:58,050: INFO     Format the output
+2021-02-04 18:13:58,111: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 2841
+2021-02-04 18:13:58,199: INFO     creating random control guides
+2021-02-04 18:13:58,287: INFO     Number of random control searched: 100
+2021-02-04 18:13:58,287: INFO     Percentage of GC content in the input genome: 66.56
+2021-02-04 18:13:58,288: INFO     Total length of the genome: 6.0 MB
+2021-02-04 18:13:58,288: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 18:13:58,290: INFO     guidemaker completed, results are at TEST
+2021-02-04 18:13:58,290: INFO     PAM sequence: NNAGAAW
+2021-02-04 18:13:58,290: INFO     PAM orientation: 3prime
+2021-02-04 18:13:58,290: INFO     Genome strand(s) searched: both
+2021-02-04 18:13:58,291: INFO     Total PAM sites considered: 7291
+2021-02-04 18:13:58,291: INFO     Guide RNA candidates found: 6404
+	Command being timed: "guidemaker -i ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk --pamseq NNAGAAW --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63828725_9.log --threads 2"
+	User time (seconds): 7.33
+	System time (seconds): 1.89
+	Percent of CPU this job got: 154%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.97
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 154156
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 169749
+	Voluntary context switches: 2993
+	Involuntary context switches: 294557
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 26872
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  9
+My TMPDIR IS:  /scratch/local/63828725
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Pseudomonas_aeruginosa_PAO1_107.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NNAGAAW
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  4
+GuideMaker
+2021-02-04 18:13:59,227: INFO     Temp directory is: /scratch/local/63828725/guidemaker_z8u8ua23
+2021-02-04 18:13:59,227: INFO     Writing fasta file from genbank file(s)
+2021-02-04 18:13:59,227: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/Scanner.py:1400: BiopythonParserWarning: Truncated LOCUS line found - is this correct?
+:'LOCUS       NC_002516            6264404 bp    dna     circular UNK \n'
+  BiopythonParserWarning,
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/__init__.py:762: BiopythonParserWarning: Non-upper case molecule type in LOCUS line: dna
+  BiopythonParserWarning,
+2021-02-04 18:14:00,026: INFO     Identifying PAM sites in the genome
+2021-02-04 18:14:02,594: INFO     Checking guides for restriction enzymes
+2021-02-04 18:14:02,596: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 18:14:02,596: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 18:14:02,602: INFO     Number of guides removed after checking for unique PAM: 201
+2021-02-04 18:14:02,602: INFO     Indexing all potential guide sites: 7291. This is the longest step.
+2021-02-04 18:14:02,637: INFO     M                   = 16
+2021-02-04 18:14:02,637: INFO     indexThreadQty      = 4
+2021-02-04 18:14:02,637: INFO     efConstruction      = 10
+2021-02-04 18:14:02,637: INFO     maxM			          = 16
+2021-02-04 18:14:02,637: INFO     maxM0			          = 32
+2021-02-04 18:14:02,637: INFO     mult                = 0.360674
+2021-02-04 18:14:02,638: INFO     skip_optimized_index= 0
+2021-02-04 18:14:02,638: INFO     delaunay_type       = 2
+2021-02-04 18:14:02,638: INFO     Set HNSW query-time parameters:
+2021-02-04 18:14:02,638: INFO     ef(Search)         =20
+2021-02-04 18:14:02,638: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 18:14:02,730: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 18:14:02,730: INFO     searchMethod			  = 0
+2021-02-04 18:14:02,730: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 18:14:02,739: INFO     Set HNSW query-time parameters:
+2021-02-04 18:14:02,739: INFO     ef(Search)         =9
+2021-02-04 18:14:02,739: INFO     algoType           =2
+2021-02-04 18:14:03,033: INFO     Formatting data for BedTools
+2021-02-04 18:14:03,047: INFO     Create GuideMaker Annotation object
+2021-02-04 18:14:03,047: INFO     Identify genomic features
+2021-02-04 18:14:03,047: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+2021-02-04 18:14:03,919: INFO     Total number of CDS/locus in the input genome: 5584
+2021-02-04 18:14:03,919: INFO     Find genomic features closest the guides
+2021-02-04 18:14:04,107: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 18:14:04,169: INFO     Select description columns
+2021-02-04 18:14:04,215: INFO     Format the output
+2021-02-04 18:14:04,277: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 2841
+2021-02-04 18:14:04,368: INFO     creating random control guides
+2021-02-04 18:14:04,462: INFO     Number of random control searched: 100
+2021-02-04 18:14:04,462: INFO     Percentage of GC content in the input genome: 66.56
+2021-02-04 18:14:04,462: INFO     Total length of the genome: 6.0 MB
+2021-02-04 18:14:04,462: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 18:14:04,464: INFO     guidemaker completed, results are at TEST
+2021-02-04 18:14:04,464: INFO     PAM sequence: NNAGAAW
+2021-02-04 18:14:04,464: INFO     PAM orientation: 3prime
+2021-02-04 18:14:04,465: INFO     Genome strand(s) searched: both
+2021-02-04 18:14:04,465: INFO     Total PAM sites considered: 7291
+2021-02-04 18:14:04,465: INFO     Guide RNA candidates found: 6404
+	Command being timed: "guidemaker -i ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk --pamseq NNAGAAW --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63828725_9.log --threads 4"
+	User time (seconds): 8.08
+	System time (seconds): 1.80
+	Percent of CPU this job got: 160%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.17
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 154080
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 169764
+	Voluntary context switches: 4450
+	Involuntary context switches: 264
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 26872
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  9
+My TMPDIR IS:  /scratch/local/63828725
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Pseudomonas_aeruginosa_PAO1_107.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NNAGAAW
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  8
+GuideMaker
+2021-02-04 18:14:05,407: INFO     Temp directory is: /scratch/local/63828725/guidemaker_cunjaknk
+2021-02-04 18:14:05,407: INFO     Writing fasta file from genbank file(s)
+2021-02-04 18:14:05,408: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/Scanner.py:1400: BiopythonParserWarning: Truncated LOCUS line found - is this correct?
+:'LOCUS       NC_002516            6264404 bp    dna     circular UNK \n'
+  BiopythonParserWarning,
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/__init__.py:762: BiopythonParserWarning: Non-upper case molecule type in LOCUS line: dna
+  BiopythonParserWarning,
+2021-02-04 18:14:06,200: INFO     Identifying PAM sites in the genome
+2021-02-04 18:14:09,141: INFO     Checking guides for restriction enzymes
+2021-02-04 18:14:09,143: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 18:14:09,144: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 18:14:09,151: INFO     Number of guides removed after checking for unique PAM: 201
+2021-02-04 18:14:09,151: INFO     Indexing all potential guide sites: 7291. This is the longest step.
+2021-02-04 18:14:09,190: INFO     M                   = 16
+2021-02-04 18:14:09,190: INFO     indexThreadQty      = 8
+2021-02-04 18:14:09,190: INFO     efConstruction      = 10
+2021-02-04 18:14:09,190: INFO     maxM			          = 16
+2021-02-04 18:14:09,190: INFO     maxM0			          = 32
+2021-02-04 18:14:09,190: INFO     mult                = 0.360674
+2021-02-04 18:14:09,190: INFO     skip_optimized_index= 0
+2021-02-04 18:14:09,190: INFO     delaunay_type       = 2
+2021-02-04 18:14:09,190: INFO     Set HNSW query-time parameters:
+2021-02-04 18:14:09,190: INFO     ef(Search)         =20
+2021-02-04 18:14:09,190: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2021-02-04 18:14:09,245: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 18:14:09,245: INFO     searchMethod			  = 0
+2021-02-04 18:14:09,245: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 18:14:09,255: INFO     Set HNSW query-time parameters:
+2021-02-04 18:14:09,255: INFO     ef(Search)         =9
+2021-02-04 18:14:09,256: INFO     algoType           =2
+2021-02-04 18:14:09,553: INFO     Formatting data for BedTools
+2021-02-04 18:14:09,567: INFO     Create GuideMaker Annotation object
+2021-02-04 18:14:09,567: INFO     Identify genomic features
+2021-02-04 18:14:09,568: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+2021-02-04 18:14:10,431: INFO     Total number of CDS/locus in the input genome: 5584
+2021-02-04 18:14:10,432: INFO     Find genomic features closest the guides
+2021-02-04 18:14:10,620: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 18:14:10,681: INFO     Select description columns
+2021-02-04 18:14:10,727: INFO     Format the output
+2021-02-04 18:14:10,790: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 2842
+2021-02-04 18:14:10,877: INFO     creating random control guides
+2021-02-04 18:14:10,965: INFO     Number of random control searched: 100
+2021-02-04 18:14:10,966: INFO     Percentage of GC content in the input genome: 66.56
+2021-02-04 18:14:10,966: INFO     Total length of the genome: 6.0 MB
+2021-02-04 18:14:10,966: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 8
+2021-02-04 18:14:10,968: INFO     guidemaker completed, results are at TEST
+2021-02-04 18:14:10,969: INFO     PAM sequence: NNAGAAW
+2021-02-04 18:14:10,969: INFO     PAM orientation: 3prime
+2021-02-04 18:14:10,969: INFO     Genome strand(s) searched: both
+2021-02-04 18:14:10,969: INFO     Total PAM sites considered: 7291
+2021-02-04 18:14:10,969: INFO     Guide RNA candidates found: 6405
+	Command being timed: "guidemaker -i ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk --pamseq NNAGAAW --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63828725_9.log --threads 8"
+	User time (seconds): 8.38
+	System time (seconds): 1.92
+	Percent of CPU this job got: 158%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 154144
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 175535
+	Voluntary context switches: 6890
+	Involuntary context switches: 258
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 26872
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  9
+My TMPDIR IS:  /scratch/local/63828725
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Pseudomonas_aeruginosa_PAO1_107.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NNAGAAW
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  16
+GuideMaker
+2021-02-04 18:14:11,921: INFO     Temp directory is: /scratch/local/63828725/guidemaker_t8lb4509
+2021-02-04 18:14:11,921: INFO     Writing fasta file from genbank file(s)
+2021-02-04 18:14:11,921: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/Scanner.py:1400: BiopythonParserWarning: Truncated LOCUS line found - is this correct?
+:'LOCUS       NC_002516            6264404 bp    dna     circular UNK \n'
+  BiopythonParserWarning,
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/__init__.py:762: BiopythonParserWarning: Non-upper case molecule type in LOCUS line: dna
+  BiopythonParserWarning,
+2021-02-04 18:14:12,697: INFO     Identifying PAM sites in the genome
+2021-02-04 18:14:15,161: INFO     Checking guides for restriction enzymes
+2021-02-04 18:14:15,163: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 18:14:15,163: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 18:14:15,169: INFO     Number of guides removed after checking for unique PAM: 201
+2021-02-04 18:14:15,170: INFO     Indexing all potential guide sites: 7291. This is the longest step.
+2021-02-04 18:14:15,204: INFO     M                   = 16
+2021-02-04 18:14:15,204: INFO     indexThreadQty      = 16
+2021-02-04 18:14:15,205: INFO     efConstruction      = 10
+2021-02-04 18:14:15,205: INFO     maxM			          = 16
+2021-02-04 18:14:15,205: INFO     maxM0			          = 32
+2021-02-04 18:14:15,205: INFO     mult                = 0.360674
+2021-02-04 18:14:15,205: INFO     skip_optimized_index= 0
+2021-02-04 18:14:15,205: INFO     delaunay_type       = 2
+2021-02-04 18:14:15,205: INFO     Set HNSW query-time parameters:
+2021-02-04 18:14:15,205: INFO     ef(Search)         =20
+2021-02-04 18:14:15,205: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+*****************************************************
+2021-02-04 18:14:15,243: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 18:14:15,243: INFO     searchMethod			  = 0
+2021-02-04 18:14:15,244: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 18:14:15,254: INFO     Set HNSW query-time parameters:
+2021-02-04 18:14:15,254: INFO     ef(Search)         =9
+2021-02-04 18:14:15,254: INFO     algoType           =2
+2021-02-04 18:14:15,520: INFO     Formatting data for BedTools
+2021-02-04 18:14:15,534: INFO     Create GuideMaker Annotation object
+2021-02-04 18:14:15,534: INFO     Identify genomic features
+2021-02-04 18:14:15,534: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+2021-02-04 18:14:16,360: INFO     Total number of CDS/locus in the input genome: 5584
+2021-02-04 18:14:16,360: INFO     Find genomic features closest the guides
+2021-02-04 18:14:16,545: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 18:14:16,605: INFO     Select description columns
+2021-02-04 18:14:16,650: INFO     Format the output
+2021-02-04 18:14:16,711: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 2841
+2021-02-04 18:14:16,795: INFO     creating random control guides
+2021-02-04 18:14:16,882: INFO     Number of random control searched: 100
+2021-02-04 18:14:16,882: INFO     Percentage of GC content in the input genome: 66.56
+2021-02-04 18:14:16,882: INFO     Total length of the genome: 6.0 MB
+2021-02-04 18:14:16,882: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 9
+2021-02-04 18:14:16,885: INFO     guidemaker completed, results are at TEST
+2021-02-04 18:14:16,885: INFO     PAM sequence: NNAGAAW
+2021-02-04 18:14:16,885: INFO     PAM orientation: 3prime
+2021-02-04 18:14:16,885: INFO     Genome strand(s) searched: both
+2021-02-04 18:14:16,885: INFO     Total PAM sites considered: 7291
+2021-02-04 18:14:16,885: INFO     Guide RNA candidates found: 6404
+	Command being timed: "guidemaker -i ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk --pamseq NNAGAAW --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63828725_9.log --threads 16"
+	User time (seconds): 7.49
+	System time (seconds): 1.99
+	Percent of CPU this job got: 160%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:05.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 154196
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 170085
+	Voluntary context switches: 12916
+	Involuntary context switches: 382854
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 26872
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+My SLURM_ARRAY_TASK_ID:  9
+My TMPDIR IS:  /scratch/local/63828725
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  Pseudomonas_aeruginosa_PAO1_107.gbk
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NNAGAAW
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  32
+GuideMaker
+2021-02-04 18:14:17,815: INFO     Temp directory is: /scratch/local/63828725/guidemaker_150ndax7
+2021-02-04 18:14:17,816: INFO     Writing fasta file from genbank file(s)
+2021-02-04 18:14:17,816: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/Scanner.py:1400: BiopythonParserWarning: Truncated LOCUS line found - is this correct?
+:'LOCUS       NC_002516            6264404 bp    dna     circular UNK \n'
+  BiopythonParserWarning,
+/home/rp3448/.conda/envs/AVX2/lib/python3.7/site-packages/Bio/GenBank/__init__.py:762: BiopythonParserWarning: Non-upper case molecule type in LOCUS line: dna
+  BiopythonParserWarning,
+2021-02-04 18:14:18,606: INFO     Identifying PAM sites in the genome
+2021-02-04 18:14:21,019: INFO     Checking guides for restriction enzymes
+2021-02-04 18:14:21,021: INFO     Number of guides removed after checking for restriction enzymes: 0
+2021-02-04 18:14:21,021: INFO     Identifing guides that are unique near the PAM site
+2021-02-04 18:14:21,027: INFO     Number of guides removed after checking for unique PAM: 201
+2021-02-04 18:14:21,027: INFO     Indexing all potential guide sites: 7291. This is the longest step.
+2021-02-04 18:14:21,061: INFO     M                   = 16
+2021-02-04 18:14:21,061: INFO     indexThreadQty      = 32
+2021-02-04 18:14:21,061: INFO     efConstruction      = 10
+2021-02-04 18:14:21,061: INFO     maxM			          = 16
+2021-02-04 18:14:21,061: INFO     maxM0			          = 32
+2021-02-04 18:14:21,061: INFO     mult                = 0.360674
+2021-02-04 18:14:21,061: INFO     skip_optimized_index= 0
+2021-02-04 18:14:21,061: INFO     delaunay_type       = 2
+2021-02-04 18:14:21,061: INFO     Set HNSW query-time parameters:
+2021-02-04 18:14:21,061: INFO     ef(Search)         =20
+2021-02-04 18:14:21,062: INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+*******************************************************2021-02-04 18:14:21,094: INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2021-02-04 18:14:21,095: INFO     searchMethod			  = 0
+2021-02-04 18:14:21,095: INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2021-02-04 18:14:21,105: INFO     Set HNSW query-time parameters:
+2021-02-04 18:14:21,105: INFO     ef(Search)         =9
+2021-02-04 18:14:21,105: INFO     algoType           =2
+2021-02-04 18:14:21,425: INFO     Formatting data for BedTools
+2021-02-04 18:14:21,443: INFO     Create GuideMaker Annotation object
+2021-02-04 18:14:21,443: INFO     Identify genomic features
+2021-02-04 18:14:21,443: INFO     check if ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk is gzipped
+2021-02-04 18:14:22,325: INFO     Total number of CDS/locus in the input genome: 5584
+2021-02-04 18:14:22,325: INFO     Find genomic features closest the guides
+2021-02-04 18:14:22,527: INFO     Select guides that start between +500 and -500 of a feature start
+2021-02-04 18:14:22,589: INFO     Select description columns
+2021-02-04 18:14:22,635: INFO     Format the output
+2021-02-04 18:14:22,700: INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 2842
+2021-02-04 18:14:22,787: INFO     creating random control guides
+2021-02-04 18:14:22,878: INFO     Number of random control searched: 100
+2021-02-04 18:14:22,879: INFO     Percentage of GC content in the input genome: 66.56
+2021-02-04 18:14:22,879: INFO     Total length of the genome: 6.0 MB
+2021-02-04 18:14:22,879: INFO     created 10 control guides with a minimum distance of 8 and a median distance of 9
+2021-02-04 18:14:22,881: INFO     guidemaker completed, results are at TEST
+2021-02-04 18:14:22,881: INFO     PAM sequence: NNAGAAW
+2021-02-04 18:14:22,881: INFO     PAM orientation: 3prime
+2021-02-04 18:14:22,882: INFO     Genome strand(s) searched: both
+2021-02-04 18:14:22,882: INFO     Total PAM sites considered: 7291
+2021-02-04 18:14:22,882: INFO     Guide RNA candidates found: 6405
+	Command being timed: "guidemaker -i ../all_test_data/Pseudomonas_aeruginosa_PAO1_107.gbk --pamseq NNAGAAW --outdir TEST --pam_orientation 3prime --guidelength 20 --strand both --lcp 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_63828725_9.log --threads 32"
+	User time (seconds): 7.80
+	System time (seconds): 2.26
+	Percent of CPU this job got: 167%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 154348
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 196298
+	Voluntary context switches: 22506
+	Involuntary context switches: 230495
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 26896
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

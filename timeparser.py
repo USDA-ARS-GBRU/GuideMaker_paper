@@ -70,8 +70,11 @@ def parse_sample_file(file):
                 genome = line.strip().split()[2]
                 tlist.append(genome)
             if "Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" in line:
-                ll = line.strip().split()[2]
-                tlist.append(ll)
+                threads = line.strip().split()[2]
+                tlist.append(threads)
+            if "Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" in line:
+                pam = line.strip().split()[2]
+                tlist.append(pam)
     return tlist
 
 
@@ -90,8 +93,8 @@ def main(args=None):
             print(e)
             continue
     datalist_flat = sum(datalist, [])
-    chunks = [datalist_flat[x:x+4] for x in range(0, len(datalist_flat), 4)]
-    labels = ["Genome", "threads", "CPU%", "process_sec"]
+    chunks = [datalist_flat[x:x+5] for x in range(0, len(datalist_flat), 5)]
+    labels = ["Genome", "PAM","threads", "CPU%", "process_sec"]
     df = pandas.DataFrame.from_records(chunks, columns=labels)
     print(df)
     df.to_csv(args.outfile, index=False)

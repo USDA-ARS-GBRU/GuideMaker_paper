@@ -21,34 +21,38 @@ data_nonavx2["log_time"] <- log(data_nonavx2$process_sec)
 # combine data
 data <- bind_rows(data_avx2,data_nonavx2 )
 
+##########
+main_fig <- c("Escherichia.coli_str_K-12_substr_MG1655.gbk", "Pseudomonas_aeruginosa_PAO1_107.gbk", "Burkholderia_thailandensis_E264_ATCC_700388_133.gbk")
+
+data_main <- data[data$Genome %in% main_fig, ]
 
 ######### non log graph #############
-sel_data <- data %>%
-  select(Genome, threads, process_sec, Processor)
+sel_data <- data_main %>%
+  select(Genome, PAM, threads, process_sec, Processor)
 
 ## Get summary stat
-summarystat <- summarySE(sel_data, measurevar="process_sec", groupvars=c("Genome", "threads","Processor"))
+summarystat <- summarySE(sel_data, measurevar="process_sec", groupvars=c("Genome","PAM", "threads","Processor"))
 
 # The errorbars overlapped, so use position_dodge to move them horizontally
-pd <- position_dodge(0.1) # move them .05 to the left and right
+pd <- position_dodge(0.5) # move them .05 to the left and right
 
 
 # plot
 p3 <- ggplot(summarystat, aes(x=threads, y=process_sec, colour=Genome, group=Genome)) + 
   geom_errorbar(aes(ymin=process_sec-sd, ymax=process_sec+sd), colour="black", width=.1, position=pd) +
   geom_line(position=pd) +
-  geom_point(position=pd, size=3, shape=21, fill="white") + # 21 is filled circle
+  geom_point(position=pd, size=2, shape=21, fill="white") + # 21 is filled circle
   xlab("Processor cores") +
   ylab("Run time in seconds") +
   expand_limits(y=0) + # Expand y range
   theme_bw() +
   theme(legend.justification=c(1,0),
         legend.text = element_text(color = "black", size= 5),
-        legend.position=c(0.48,0.60))# Position legend (left-right, top-bottom)
+        legend.position=c(0.45,0.10))# Position legend (left-right, top-bottom)
   
 
  
-p4 <- p3 + facet_grid(. ~ Processor)
+p4 <- p3 + facet_grid(PAM ~ Processor)
 
 ## Fixing axis text size
 p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
@@ -58,14 +62,14 @@ p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 
   theme(legend.title = element_text(face = "bold"))
 
 p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
-  scale_y_continuous(breaks = seq(0, 3500, 100))
+  scale_y_continuous(breaks = seq(0, 250, 50))
   
 
 p6 + theme(legend.key.size = unit(0, 'lines'))
 
 # Save the plot
-ggsave("figures/AVX2_Performance_Graph.pdf", width = 10, height = 6, units = "in")
-ggsave("figures/AVX2_Performance_Graph.png", width = 10, height = 6, units = "in")
+ggsave("figures/AVX2_Performance_Graph_main.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/AVX2_Performance_Graph_main.png", width = 8, height = 4, units = "in")
 
 dev.off()
 
@@ -75,56 +79,203 @@ print("Plot saved as AVX2_Performance_Graph.pdf")
 ##
 file.remove("Rplots.pdf")
 
-################## log graph #############
-sel_data <- data %>%
-  select(Genome,Processor, log_time, threads)
+# ################## log graph #############
+# sel_data <- data_main %>%
+#   select(Genome,Processor, log_time, threads)
+# 
+# ## Get summary stat
+# summarystat <- summarySE(sel_data, measurevar="log_time", groupvars=c("Genome", "threads","Processor"))
+# 
+# # The errorbars overlapped, so use position_dodge to move them horizontally
+# pd <- position_dodge(0.1) # move them .05 to the left and right
+# 
+# 
+# # plot
+# p3 <- ggplot(summarystat, aes(x=threads, y=log_time, colour=Genome, group=Genome)) + 
+#   geom_errorbar(aes(ymin=log_time-sd, ymax=log_time+sd), colour="black", width=.1, position=pd) +
+#   geom_line(position=pd) +
+#   geom_point(position=pd, size=3, shape=21, fill="white") + # 21 is filled circle
+#   xlab("Processor cores") +
+#   ylab("Run time in seconds (log)") +
+#   expand_limits(y=0) + # Expand y range
+#   theme_bw() +
+#   theme(legend.justification=c(1,0),
+#         legend.text = element_text(color = "black", size= 5),
+#         legend.position=c(0.45,0.20))# Position legend (left-right, top-bottom)
+# 
+# 
+# p4 <- p3 + facet_grid(. ~ Processor)
+# 
+# ## Fixing axis text size
+# p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
+#                  axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+#                  axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+#                  axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
+#   theme(legend.title = element_text(face = "bold"))
+# 
+# p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
+#   scale_y_continuous(breaks = seq(0, 8, 1))
+# 
+# p6 + theme(legend.key.size = unit(0, 'lines'))
+# 
+# # Save the plot
+# ggsave("figures/AVX2_Performance_Graph_log_main.pdf", width = 8, height = 6, units = "in")
+# ggsave("figures/AVX2_Performance_Graph_log_main.png", width = 8, height = 6, units = "in")
+# 
+# dev.off()
+# 
+# print("Plot saved as AVX2_Performance_Graph_log.pdf")
+# 
+# 
+# ##
+# file.remove("Rplots.pdf")
+# 
+# 
+# 
+# 
+# ################### supplement ###########
+# data_supplement <- data[!(data$Genome %in% main_fig), ]
+# 
+# ######### non log graph #############
+# sel_data <- data_supplement %>%
+#   select(Genome, threads, process_sec, Processor)
+# 
+# ## Get summary stat
+# summarystat <- summarySE(sel_data, measurevar="process_sec", groupvars=c("Genome", "threads","Processor"))
+# 
+# # The errorbars overlapped, so use position_dodge to move them horizontally
+# pd <- position_dodge(0.1) # move them .05 to the left and right
+# 
+# 
+# # plot
+# p3 <- ggplot(summarystat, aes(x=threads, y=process_sec, colour=Genome, group=Genome)) + 
+#   geom_errorbar(aes(ymin=process_sec-sd, ymax=process_sec+sd), colour="black", width=.1, position=pd) +
+#   geom_line(position=pd) +
+#   geom_point(position=pd, size=3, shape=21, fill="white") + # 21 is filled circle
+#   xlab("Processor cores") +
+#   ylab("Run time in seconds") +
+#   expand_limits(y=0) + # Expand y range
+#   theme_bw() +
+#   theme(legend.justification=c(1,0),
+#         legend.text = element_text(color = "black", size= 5),
+#         legend.position=c(0.48,0.60))# Position legend (left-right, top-bottom)
+# 
+# 
+# 
+# p4 <- p3 + facet_grid(. ~ Processor)
+# 
+# ## Fixing axis text size
+# p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
+#                  axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+#                  axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+#                  axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
+#   theme(legend.title = element_text(face = "bold"))
+# 
+# p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
+#   scale_y_continuous(breaks = seq(0, 300,50))
+# 
+# 
+# p6 + theme(legend.key.size = unit(0, 'lines'))
+# 
+# # Save the plot
+# ggsave("figures/AVX2_Performance_Graph_supplement.pdf", width = 8, height = 4, units = "in")
+# ggsave("figures/AVX2_Performance_Graph_supplement.png", width = 8, height = 4, units = "in")
+# 
+# dev.off()
+# 
+# print("Plot saved as AVX2_Performance_Graph.pdf")
+# 
+# 
+# ##
+# file.remove("Rplots.pdf")
+# 
+# ################## log graph #############
+# sel_data <- data_supplement  %>%
+#   select(Genome,Processor, log_time, threads)
+# 
+# ## Get summary stat
+# summarystat <- summarySE(sel_data, measurevar="log_time", groupvars=c("Genome", "threads","Processor"))
+# 
+# # The errorbars overlapped, so use position_dodge to move them horizontally
+# pd <- position_dodge(0.1) # move them .05 to the left and right
+# 
+# 
+# # plot
+# p3 <- ggplot(summarystat, aes(x=threads, y=log_time, colour=Genome, group=Genome)) + 
+#   geom_errorbar(aes(ymin=log_time-sd, ymax=log_time+sd), colour="black", width=.1, position=pd) +
+#   geom_line(position=pd) +
+#   geom_point(position=pd, size=3, shape=21, fill="white") + # 21 is filled circle
+#   xlab("Processor cores") +
+#   ylab("Run time in seconds (log)") +
+#   expand_limits(y=0) + # Expand y range
+#   theme_bw() +
+#   theme(legend.justification=c(1,0),
+#         legend.text = element_text(color = "black", size= 5),
+#         legend.position=c(0.45,0.20))# Position legend (left-right, top-bottom)
+# 
+# 
+# p4 <- p3 + facet_grid(. ~ Processor)
+# 
+# ## Fixing axis text size
+# p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
+#                  axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+#                  axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+#                  axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
+#   theme(legend.title = element_text(face = "bold"))
+# 
+# p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
+#   scale_y_continuous(breaks = seq(0, 8, 1))
+# 
+# p6 + theme(legend.key.size = unit(0, 'lines'))
+# 
+# # Save the plot
+# ggsave("figures/AVX2_Performance_Graph_log_supplement.pdf", width = 8, height = 6, units = "in")
+# ggsave("figures/AVX2_Performance_Graph_log_supplement.png", width = 8, height = 6, units = "in")
+# 
+# dev.off()
+# 
+# print("Plot saved as AVX2_Performance_Graph_log.pdf")
+# 
+# 
+# ##
+# file.remove("Rplots.pdf")
+# 
 
-## Get summary stat
-summarystat <- summarySE(sel_data, measurevar="log_time", groupvars=c("Genome", "threads","Processor"))
-
-# The errorbars overlapped, so use position_dodge to move them horizontally
-pd <- position_dodge(0.1) # move them .05 to the left and right
 
 
-# plot
-p3 <- ggplot(summarystat, aes(x=threads, y=log_time, colour=Genome, group=Genome)) + 
-  geom_errorbar(aes(ymin=log_time-sd, ymax=log_time+sd), colour="black", width=.1, position=pd) +
-  geom_line(position=pd) +
-  geom_point(position=pd, size=3, shape=21, fill="white") + # 21 is filled circle
-  xlab("Processor cores") +
-  ylab("Run time in seconds (log)") +
-  expand_limits(y=0) + # Expand y range
-  theme_bw() +
-  theme(legend.justification=c(1,0),
-        legend.text = element_text(color = "black", size= 5),
-        legend.position=c(0.45,0.20))# Position legend (left-right, top-bottom)
 
 
-p4 <- p3 + facet_grid(. ~ Processor)
-
-## Fixing axis text size
-p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
-                 axis.text.y = element_text(color = "black", size = 10, angle = 0),  
-                 axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
-                 axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
-  theme(legend.title = element_text(face = "bold"))
-
-p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
-  scale_y_continuous(breaks = seq(0, 8, 1))
-
-p6 + theme(legend.key.size = unit(0, 'lines'))
-
-# Save the plot
-ggsave("figures/AVX2_Performance_Graph_log.pdf", width = 10, height = 6, units = "in")
-ggsave("figures/AVX2_Performance_Graph_log.png", width = 10, height = 6, units = "in")
-
-dev.off()
-
-print("Plot saved as AVX2_Performance_Graph_log.pdf")
 
 
-##
-file.remove("Rplots.pdf")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
