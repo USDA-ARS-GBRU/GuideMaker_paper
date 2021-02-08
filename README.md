@@ -38,7 +38,7 @@ python distparser.py -i dist_profile_logs/ -o dist_profile.csv
 ## Table
 Table summarizing output with different values of `dist` parameter across three genomes.
 
-|Genome                           |Escherichia.coli (K12)|FIELD3|FIELD4|FIELD5|FIELD6|FIELD7|Pseudomonas aeruginosa (PA01)|FIELD9|FIELD10|FIELD11|FIELD12|FIELD13|Burkholderia thailandensis(E264)|FIELD15|FIELD16|FIELD17|FIELD18|FIELD19|
+|Genome                           |Escherichia.coli (K12)|Pseudomonas aeruginosa (PA01)|FIELD9|FIELD10|FIELD11|FIELD12|FIELD13|Burkholderia thailandensis(E264)|FIELD15|FIELD16|FIELD17|FIELD18|FIELD19|
 |---------------------------------|----------------------|------|------|------|------|------|-----------------------------|------|-------|-------|-------|-------|--------------------------------|-------|-------|-------|-------|-------|
 |Total PAM sites in genome        |542072                |      |      |      |      |      |1171798                      |      |       |       |       |       |923228                          |       |       |       |       |       |
 |Number of locus in genome        |4357                  |4357  |4357  |4357  |4357  |4357  |5584                         |5584  |5584   |5584   |5584   |5584   |5633                            |5633   |5633   |5633   |5633   |5633   |
