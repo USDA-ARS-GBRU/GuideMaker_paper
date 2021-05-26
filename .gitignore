@@ -9,7 +9,6 @@ rough.R
 *.xls
 GuideMaker_filter_feature_testing.xls
 *.pptx
-*.pdf
 *.tsv
 *.xlsx
 *.bed
