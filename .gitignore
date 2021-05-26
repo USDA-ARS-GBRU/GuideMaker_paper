@@ -2,6 +2,10 @@
 *.Rproj.user
 *.Rapp.history
 *.Rhistory
+*.RDataTmp
+*.gitignore
+*.RData
+*.DS_Store
 .Rproj.user
 targets.csv
 controls.csv
