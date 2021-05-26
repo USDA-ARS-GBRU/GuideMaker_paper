@@ -24,7 +24,8 @@ data <- bind_rows(data_avx2,data_nonavx2 )
 ##########
 main_fig <- c("Escherichia.coli_str_K-12_substr_MG1655.gbk", "Pseudomonas_aeruginosa_PAO1_107.gbk", "Burkholderia_thailandensis_E264_ATCC_700388_133.gbk")
 
-data_main <- data[data$Genome %in% main_fig, ]
+data_main <- data[data$Genome %in% main_fig, ] %>%
+  filter(PAM =="NGG")
 
 ######### non log graph #############
 sel_data <- data_main %>%
@@ -34,7 +35,7 @@ sel_data <- data_main %>%
 summarystat <- summarySE(sel_data, measurevar="process_sec", groupvars=c("Genome","PAM", "threads","Processor"))
 
 # The errorbars overlapped, so use position_dodge to move them horizontally
-pd <- position_dodge(0.5) # move them .05 to the left and right
+pd <- position_dodge(0.05) # move them .05 to the left and right
 
 
 # plot
@@ -48,368 +49,258 @@ p3 <- ggplot(summarystat, aes(x=threads, y=process_sec, colour=Genome, group=Gen
   theme_bw() +
   theme(legend.justification=c(1,0),
         legend.text = element_text(color = "black", size= 5),
-        legend.position=c(0.45,0.10))# Position legend (left-right, top-bottom)
-  
+        legend.position=c(0.45,0.70))# Position legend (left-right, top-bottom)
 
- 
-p4 <- p3 + facet_grid(PAM ~ Processor)
+
+
+p4 <- p3 + facet_grid(. ~ Processor)
 
 ## Fixing axis text size
 p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
-           axis.text.y = element_text(color = "black", size = 10, angle = 0),  
-           axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
-           axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
+                 axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+                 axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+                 axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
   theme(legend.title = element_text(face = "bold"))
 
 p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
-  scale_y_continuous(breaks = seq(0, 250, 50))
-  
+  scale_y_continuous(breaks = seq(0, 300, 50))
+
 
 p6 + theme(legend.key.size = unit(0, 'lines'))
 
 # Save the plot
-ggsave("figures/AVX2_Performance_Graph_main.pdf", width = 8, height = 4, units = "in")
-ggsave("figures/AVX2_Performance_Graph_main.png", width = 8, height = 4, units = "in")
+ggsave("figures/Figure 3. Performance of GuideMaker for SpCas9.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Figure 3. Performance of GuideMaker for SpCas9.png", width = 8, height = 4, units = "in")
 
 dev.off()
 
-print("Plot saved as AVX2_Performance_Graph.pdf")
+print("Figure 3. Performance of GuideMaker for SpCas9.pdf")
 
 
 ##
 file.remove("Rplots.pdf")
 
-# ################## log graph #############
-# sel_data <- data_main %>%
-#   select(Genome,Processor, log_time, threads)
-# 
-# ## Get summary stat
-# summarystat <- summarySE(sel_data, measurevar="log_time", groupvars=c("Genome", "threads","Processor"))
-# 
-# # The errorbars overlapped, so use position_dodge to move them horizontally
-# pd <- position_dodge(0.1) # move them .05 to the left and right
-# 
-# 
-# # plot
-# p3 <- ggplot(summarystat, aes(x=threads, y=log_time, colour=Genome, group=Genome)) + 
-#   geom_errorbar(aes(ymin=log_time-sd, ymax=log_time+sd), colour="black", width=.1, position=pd) +
-#   geom_line(position=pd) +
-#   geom_point(position=pd, size=3, shape=21, fill="white") + # 21 is filled circle
-#   xlab("Processor cores") +
-#   ylab("Run time in seconds (log)") +
-#   expand_limits(y=0) + # Expand y range
-#   theme_bw() +
-#   theme(legend.justification=c(1,0),
-#         legend.text = element_text(color = "black", size= 5),
-#         legend.position=c(0.45,0.20))# Position legend (left-right, top-bottom)
-# 
-# 
-# p4 <- p3 + facet_grid(. ~ Processor)
-# 
-# ## Fixing axis text size
-# p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
-#                  axis.text.y = element_text(color = "black", size = 10, angle = 0),  
-#                  axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
-#                  axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
-#   theme(legend.title = element_text(face = "bold"))
-# 
-# p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
-#   scale_y_continuous(breaks = seq(0, 8, 1))
-# 
-# p6 + theme(legend.key.size = unit(0, 'lines'))
-# 
-# # Save the plot
-# ggsave("figures/AVX2_Performance_Graph_log_main.pdf", width = 8, height = 6, units = "in")
-# ggsave("figures/AVX2_Performance_Graph_log_main.png", width = 8, height = 6, units = "in")
-# 
-# dev.off()
-# 
-# print("Plot saved as AVX2_Performance_Graph_log.pdf")
-# 
-# 
-# ##
-# file.remove("Rplots.pdf")
-# 
-# 
-# 
-# 
-# ################### supplement ###########
-# data_supplement <- data[!(data$Genome %in% main_fig), ]
-# 
-# ######### non log graph #############
-# sel_data <- data_supplement %>%
-#   select(Genome, threads, process_sec, Processor)
-# 
-# ## Get summary stat
-# summarystat <- summarySE(sel_data, measurevar="process_sec", groupvars=c("Genome", "threads","Processor"))
-# 
-# # The errorbars overlapped, so use position_dodge to move them horizontally
-# pd <- position_dodge(0.1) # move them .05 to the left and right
-# 
-# 
-# # plot
-# p3 <- ggplot(summarystat, aes(x=threads, y=process_sec, colour=Genome, group=Genome)) + 
-#   geom_errorbar(aes(ymin=process_sec-sd, ymax=process_sec+sd), colour="black", width=.1, position=pd) +
-#   geom_line(position=pd) +
-#   geom_point(position=pd, size=3, shape=21, fill="white") + # 21 is filled circle
-#   xlab("Processor cores") +
-#   ylab("Run time in seconds") +
-#   expand_limits(y=0) + # Expand y range
-#   theme_bw() +
-#   theme(legend.justification=c(1,0),
-#         legend.text = element_text(color = "black", size= 5),
-#         legend.position=c(0.48,0.60))# Position legend (left-right, top-bottom)
-# 
-# 
-# 
-# p4 <- p3 + facet_grid(. ~ Processor)
-# 
-# ## Fixing axis text size
-# p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
-#                  axis.text.y = element_text(color = "black", size = 10, angle = 0),  
-#                  axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
-#                  axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
-#   theme(legend.title = element_text(face = "bold"))
-# 
-# p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
-#   scale_y_continuous(breaks = seq(0, 300,50))
-# 
-# 
-# p6 + theme(legend.key.size = unit(0, 'lines'))
-# 
-# # Save the plot
-# ggsave("figures/AVX2_Performance_Graph_supplement.pdf", width = 8, height = 4, units = "in")
-# ggsave("figures/AVX2_Performance_Graph_supplement.png", width = 8, height = 4, units = "in")
-# 
-# dev.off()
-# 
-# print("Plot saved as AVX2_Performance_Graph.pdf")
-# 
-# 
-# ##
-# file.remove("Rplots.pdf")
-# 
-# ################## log graph #############
-# sel_data <- data_supplement  %>%
-#   select(Genome,Processor, log_time, threads)
-# 
-# ## Get summary stat
-# summarystat <- summarySE(sel_data, measurevar="log_time", groupvars=c("Genome", "threads","Processor"))
-# 
-# # The errorbars overlapped, so use position_dodge to move them horizontally
-# pd <- position_dodge(0.1) # move them .05 to the left and right
-# 
-# 
-# # plot
-# p3 <- ggplot(summarystat, aes(x=threads, y=log_time, colour=Genome, group=Genome)) + 
-#   geom_errorbar(aes(ymin=log_time-sd, ymax=log_time+sd), colour="black", width=.1, position=pd) +
-#   geom_line(position=pd) +
-#   geom_point(position=pd, size=3, shape=21, fill="white") + # 21 is filled circle
-#   xlab("Processor cores") +
-#   ylab("Run time in seconds (log)") +
-#   expand_limits(y=0) + # Expand y range
-#   theme_bw() +
-#   theme(legend.justification=c(1,0),
-#         legend.text = element_text(color = "black", size= 5),
-#         legend.position=c(0.45,0.20))# Position legend (left-right, top-bottom)
-# 
-# 
-# p4 <- p3 + facet_grid(. ~ Processor)
-# 
-# ## Fixing axis text size
-# p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
-#                  axis.text.y = element_text(color = "black", size = 10, angle = 0),  
-#                  axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
-#                  axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
-#   theme(legend.title = element_text(face = "bold"))
-# 
-# p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
-#   scale_y_continuous(breaks = seq(0, 8, 1))
-# 
-# p6 + theme(legend.key.size = unit(0, 'lines'))
-# 
-# # Save the plot
-# ggsave("figures/AVX2_Performance_Graph_log_supplement.pdf", width = 8, height = 6, units = "in")
-# ggsave("figures/AVX2_Performance_Graph_log_supplement.png", width = 8, height = 6, units = "in")
-# 
-# dev.off()
-# 
-# print("Plot saved as AVX2_Performance_Graph_log.pdf")
-# 
-# 
-# ##
-# file.remove("Rplots.pdf")
-# 
+################## supplement_fig 1 #############
+
+
+supp_fig_1 <- data[data$Genome %in% main_fig, ] %>%
+  filter(PAM =="NNAGAAW" | PAM =="NGRRT" )
+
+
+sel_supp_fig_1 <- supp_fig_1 %>%
+  select(Genome, PAM, threads, process_sec, Processor)
+
+## Get summary stat
+summarystat_sel_supp_fig_1 <- summarySE(sel_supp_fig_1, measurevar="process_sec", groupvars=c("Genome","PAM", "threads","Processor"))
+
+# The errorbars overlapped, so use position_dodge to move them horizontally
+pd <- position_dodge(0.05) # move them .05 to the left and right
+
+
+# plot
+p3 <- ggplot(summarystat_sel_supp_fig_1, aes(x=threads, y=process_sec, colour=Genome, group=Genome)) + 
+  geom_errorbar(aes(ymin=process_sec-sd, ymax=process_sec+sd), colour="black", width=.1, position=pd) +
+  geom_line(position=pd) +
+  geom_point(position=pd, size=2, shape=21, fill="white") + # 21 is filled circle
+  xlab("Processor cores") +
+  ylab("Run time in seconds") +
+  expand_limits(y=0) + # Expand y range
+  theme_bw() +
+  theme(legend.justification=c(1,0),
+        legend.text = element_text(color = "black", size= 5),
+        legend.position=c(0.40,0.20))# Position legend (left-right, top-bottom)
 
 
 
+p4 <- p3 + facet_grid(PAM ~ Processor)
+
+## Fixing axis text size
+p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
+                 axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+                 axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+                 axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
+  theme(legend.title = element_text(face = "bold"))
+
+p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
+  scale_y_continuous(breaks = seq(0, 50, 10))
+
+
+p6 + theme(legend.key.size = unit(0, 'lines'))
+
+# Save the plot
+ggsave("figures/Supplemental Figure 1. Performance of GuideMaker for SaCas9 and StCas9.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Supplemental Figure 1. Performance of GuideMaker for SaCas9 and StCas9.png", width = 8, height = 4, units = "in")
+
+dev.off()
+
+print("Supplemental Figure 1. Performance of GuideMaker for SaCas9 and StCas9.pdf")
+
+
+##
+file.remove("Rplots.pdf")
 
 
 
+################## supplement_fig 2 #############
+
+supp_fig <- c("Aspergillus_fumigatus.gbk",
+              "Arabidopsis_thaliana.gbk")
+
+
+supp_fig_2 <- data[data$Genome %in% supp_fig, ]
+
+
+sel_supp_fig_2 <- supp_fig_2 %>%
+  select(Genome, PAM, threads, process_sec, Processor)
+
+## Get summary stat
+summarystat_sel_supp_fig_2 <- summarySE(sel_supp_fig_2, measurevar="process_sec", groupvars=c("Genome","PAM", "threads","Processor"))
+
+# The errorbars overlapped, so use position_dodge to move them horizontally
+pd <- position_dodge(0.05) # move them .05 to the left and right
+
+
+# plot
+p3 <- ggplot(summarystat_sel_supp_fig_2, aes(x=threads, y=process_sec, colour=Genome, group=Genome)) + 
+  geom_errorbar(aes(ymin=process_sec-sd, ymax=process_sec+sd), colour="black", width=.1, position=pd) +
+  geom_line(position=pd) +
+  geom_point(position=pd, size=2, shape=21, fill="white") + # 21 is filled circle
+  xlab("Processor cores") +
+  ylab("Run time in seconds") +
+  expand_limits(y=0) + # Expand y range
+  theme_bw() +
+  theme(legend.justification=c(1,0),
+        legend.text = element_text(color = "black", size= 5),
+        legend.position=c(0.35,0.15))# Position legend (left-right, top-bottom)
+
+
+p4 <- p3 + facet_grid(PAM ~ Processor)
+
+## Fixing axis text size
+p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
+                 axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+                 axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+                 axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
+  theme(legend.title = element_text(face = "bold"))
+
+p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32)) +
+  scale_y_continuous(breaks = seq(0, 2000, 500))
+
+
+p6 + theme(legend.key.size = unit(0, 'lines'))
+
+# Save the plot
+ggsave("figures/Supplemental Figure 2. Performance of GuideMaker for SpCas9, SaCas9 and StCas9.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Supplemental Figure 2. Performance of GuideMaker for SpCas9, SaCas9 and StCas9.png", width = 8, height = 4, units = "in")
+
+dev.off()
+
+print("Supplemental Figure 2. Performance of GuideMaker for SpCas9, SaCas9 and StCas9.pdf")
+
+
+##
+file.remove("Rplots.pdf")
 
 
 
+########### Memory Usage Plots####################
+library(tidyverse)
+sel_data <- data %>%
+  select(Genome, PAM, threads, MemoryUsage, Processor)
+sel_data["MemoryUsage"] <- round(sel_data$MemoryUsage/1e6, 1)
+## Get summary stat
+summarystat <- summarySE(sel_data, measurevar="MemoryUsage", groupvars=c("Genome","PAM", "threads","Processor"))
+write.csv(summarystat,"memory_usage.csv")
+
+# The errorbars overlapped, so use position_dodge to move them horizontally
+pd <- position_dodge(0.5) # move them .05 to the left and right
 
 
+# plot
+p3 <- ggplot(summarystat, aes(x=threads, y=MemoryUsage, colour=Genome, group=Genome)) + 
+  geom_errorbar(aes(ymin=MemoryUsage-sd, ymax=MemoryUsage+sd), colour="black", width=.1, position=pd) +
+  geom_line(position=pd) +
+  geom_point(position=pd, size=2, shape=21, fill="white") + # 21 is filled circle
+  xlab("Processor cores") +
+  ylab("Memory Usage in GB") +
+  expand_limits(y=0) + # Expand y range
+  theme_bw() +
+  theme(legend.justification=c(1,0),
+        legend.text = element_text(color = "black", size= 5),
+        legend.title=element_text(size=8),
+        legend.position=c(0.45,0.10))# Position legend (left-right, top-bottom)
 
 
+p4 <- p3 + facet_grid(PAM ~ Processor)
+
+## Fixing axis text size
+p5 <- p4 + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
+                 axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+                 axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+                 axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold")) +
+  theme(legend.title = element_text(face = "bold"))
 
 
+p6 <- p5 + scale_x_continuous(breaks = c(0, 4, 8, 12, 16, 20, 24, 28, 32))
+p7 <- p6 + coord_cartesian(ylim = c(min(sel_data$MemoryUsage)- (0.2 * min(sel_data$MemoryUsage)), max(sel_data$MemoryUsage)))
+p8 <- p7 + theme(legend.key.size = unit(0, 'lines'))
+p8
+# Save the plot
+ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.png", width = 8, height = 4, units = "in")
+
+dev.off()
+
+print("Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf")
 
 
+##
+file.remove("Rplots.pdf")
 
 
+################## supplement_fig 4 #############
+######improvement over AVX2 #########
+
+impdata <- data %>%
+  select(Genome, PAM, threads, process_sec, Processor)
+
+## Get summary stat
+summarystat <- summarySE(impdata, measurevar="process_sec", groupvars=c("Genome","PAM", "threads","Processor"))
+write.csv(summarystat,"ProcessTime.csv")
+
+Gain = impdata %>%
+  group_by(PAM, threads,  Processor) %>%
+  summarise_at(vars(process_sec),list(SumProcessTime = sum)) %>%
+  arrange(Processor) %>%
+  spread(Processor,SumProcessTime) %>%
+  mutate(`Improvement%` = (nonAVX2-AVX2)/nonAVX2 * 100)
 
 
+library("ggsci")
+library("ggplot2")
+library("gridExtra")
 
 
+p <- ggplot(Gain, aes(x=as.factor(threads), y=`Improvement%`, fill=as.factor(threads))) +
+  geom_bar(stat="identity") + theme_bw() + facet_grid(. ~ PAM)
+
+p2 <-  p + scale_fill_lancet() +
+  xlab("Processor cores") +
+  ylab("Improvement % with AVX2") +
+  theme(legend.position = "none") 
+
+p2
+
+# Save the plot
+ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.png", width = 8, height = 4, units = "in")
+
+dev.off()
+
+print("Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf")
 
 
+##
+file.remove("Rplots.pdf")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# #######fold change in the run time
-# 
-# AVX2_1 <- summarystat %>%
-#   filter (threads==1 & Processor =="AVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# AVX2_2 <-summarystat %>%
-#   filter (threads==2 & Processor =="AVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# AVX2_4 <-summarystat %>%
-#   filter (threads==4 & Processor =="AVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# AVX2_8 <-summarystat %>%
-#   filter (threads==8 & Processor =="AVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# AVX2_16 <-summarystat %>%
-#   filter (threads==16 & Processor =="AVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# AVX2_32 <-summarystat %>%
-#   filter (threads==32 & Processor =="AVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# ########### non AVX2 ###########
-# 
-# nonAVX2_1 <- summarystat %>%
-#   filter (threads==1 & Processor =="nonAVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# nonAVX2_2 <-summarystat %>%
-#   filter (threads==2 & Processor =="nonAVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# nonAVX2_4 <-summarystat %>%
-#   filter (threads==4 & Processor =="nonAVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# nonAVX2_8 <-summarystat %>%
-#   filter (threads==8 & Processor =="nonAVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# nonAVX2_16 <-summarystat %>%
-#   filter (threads==16 & Processor =="nonAVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# nonAVX2_32 <-summarystat %>%
-#   filter (threads==32 & Processor =="nonAVX2") %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# #######
-# 
-# 
-# 
-# AVX2_ratio_1_2_4_8_16 <- c(AVX2_1/AVX2_2, AVX2_2/AVX2_4, AVX2_4/AVX2_16,AVX2_16/AVX2_32)
-# AVX2_ratio_1_2_4_8_16
-# 
-# nonAVX2_ratio_1_2_4_8_16 <- c(nonAVX2_1/nonAVX2_2, nonAVX2_2/nonAVX2_4, nonAVX2_4/nonAVX2_16,nonAVX2_16/nonAVX2_32)
-# nonAVX2_ratio_1_2_4_8_16
-# 
-# 
-# data.frame(processors=c(1, 2, 4, 8, 16, 32), 
-#            Mean_run_time_AVX2 = c(AVX2_1, AVX2_2, AVX2_4, AVX2_8, AVX2_16, AVX2_32),
-#            Mean_run_time_nonAVX2 = c(nonAVX2_1, nonAVX2_2, nonAVX2_4, nonAVX2_8, nonAVX2_16, nonAVX2_32))
-# 
-# 
-# 
-# 
-# 
-# #########
-# processor_1 <- summarystat %>%
-#   filter (threads==1 ) %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# processor_2 <-summarystat %>%
-#   filter (threads==2 ) %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# processor_4 <-summarystat %>%
-#   filter (threads==4 ) %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# processor_8 <-summarystat %>%
-#   filter (threads==8 ) %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# processor_16 <-summarystat %>%
-#   filter (threads==16 ) %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# processor_32 <-summarystat %>%
-#   filter (threads==32 ) %>%
-#   summarize(mean=mean(process_sec)) %>% pull()
-# 
-# 
-# ratio_1_2_4_8_16 <- c(processor_1/processor_2,
-#                               processor_2/ processor_4,
-#                               processor_4/ processor_8,
-#                               processor_8/ processor_16,
-#                       processor_16/ processor_32)
-# 
-# 
-# ratio_1_2_4_8_16 
-# 
-# 
-# 
-# 
-# require(vcd)
-# require(MASS)
-# 
-# # data generation
-# ps <- summarystat %>%
-#   pull(process_sec)
-#   
-# # estimate the parameters
-# fit1 <- fitdistr(ps, "exponential") 
-# 
-# # plot a graph
-# hist(ps, freq = FALSE, breaks = 5, xlim = c(0, quantile(ps, 0.99)))
-# curve(dexp(x, rate = fit1$estimate), from = 0, col = "red", add = TRUE)
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  

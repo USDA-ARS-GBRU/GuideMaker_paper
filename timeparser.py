@@ -61,20 +61,20 @@ def parse_sample_file(file):
     with open(file, "r") as f:
         for line in f:
             if "Elapsed (wall clock) time (h:mm:ss or m:ss):" in line:
-                seconds = time_string_to_secs(line.strip().split()[7])
+                seconds = time_string_to_secs(line.rstrip().split()[7])
                 tlist.append(seconds)
-            if "Percent of CPU this job got:" in line:
-                cpu = line.strip().split()[6]
-                tlist.append(cpu)
             if "Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" in line:
-                genome = line.strip().split()[2]
+                genome = line.rstrip().split()[2]
                 tlist.append(genome)
             if "Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" in line:
-                threads = line.strip().split()[2]
+                threads = line.rstrip().split()[2]
                 tlist.append(threads)
             if "Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" in line:
-                pam = line.strip().split()[2]
+                pam = line.rstrip().split()[2]
                 tlist.append(pam)
+            if "Maximum resident set size (kbytes):" in line:
+            	RAM_usages = line.rstrip().split()[5]
+            	tlist.append(RAM_usages)
     return tlist
 
 
@@ -94,7 +94,7 @@ def main(args=None):
             continue
     datalist_flat = sum(datalist, [])
     chunks = [datalist_flat[x:x+5] for x in range(0, len(datalist_flat), 5)]
-    labels = ["Genome", "PAM","threads", "CPU%", "process_sec"]
+    labels = ["Genome", "PAM","threads", "process_sec", "MemoryUsage"]
     df = pandas.DataFrame.from_records(chunks, columns=labels)
     print(df)
     df.to_csv(args.outfile, index=False)
