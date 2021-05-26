@@ -23,4 +23,4 @@ Rscript Plot.R
 
 ## Plot
 
-# ![alt text](https://github.com/USDA-ARS-GBRU/GuideMaker_paper/blob/master/figures/AVX2_Performance_Graph_main.png)
+# ![alt text](https://github.com/USDA-ARS-GBRU/GuideMaker_paper/blob/master/figures/Figure%203.%20Performance%20of%20GuideMaker%20for%20SpCas9.png)
