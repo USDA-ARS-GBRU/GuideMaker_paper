@@ -24,3 +24,7 @@ Rscript Plot.R
 ## Plot
 
 # ![alt text](https://github.com/USDA-ARS-GBRU/GuideMaker_paper/blob/master/figures/Figure%203.%20Performance%20of%20GuideMaker%20for%20SpCas9.png)
+
+
+## Comparisions of performance with or without AVX2 instruction settings
+# ![alt text](https://github.com/USDA-ARS-GBRU/GuideMaker_paper/blob/master/figures/Supplemental%20Figure%203.%20Performance%20of%20GuideMaker%20with%20AVX2%20settings.png)
