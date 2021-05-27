@@ -246,8 +246,8 @@ p7 <- p6 + coord_cartesian(ylim = c(min(sel_data$MemoryUsage)- (0.2 * min(sel_da
 p8 <- p7 + theme(legend.key.size = unit(0, 'lines'))
 p8
 # Save the plot
-ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf", width = 8, height = 4, units = "in")
-ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.png", width = 8, height = 4, units = "in")
+ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.png", width = 8, height = 4, units = "in")
 
 dev.off()
 
@@ -280,27 +280,75 @@ library("ggsci")
 library("ggplot2")
 library("gridExtra")
 
+# 
+# p <- ggplot(Gain, aes(x=as.factor(threads), y=`Improvement%`, fill=as.factor(threads))) +
+#   geom_bar(stat="identity") + theme_bw() + facet_grid(. ~ PAM)
+# 
+# p2 <-  p + scale_fill_lancet() +
+#   xlab("Processor cores") +
+#   ylab("Improvement % with AVX2") +
+#   theme(legend.position = "none") 
+# 
+# p2
+# 
+# # Save the plot
+# ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf", width = 8, height = 4, units = "in")
+# ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.png", width = 8, height = 4, units = "in")
+# 
+# dev.off()
+# 
+# print("Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf")
 
-p <- ggplot(Gain, aes(x=as.factor(threads), y=`Improvement%`, fill=as.factor(threads))) +
-  geom_bar(stat="identity") + theme_bw() + facet_grid(. ~ PAM)
 
-p2 <-  p + scale_fill_lancet() +
-  xlab("Processor cores") +
-  ylab("Improvement % with AVX2") +
-  theme(legend.position = "none") 
+##
+# file.remove("Rplots.pdf")
 
-p2
 
-# Save the plot
-ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf", width = 8, height = 4, units = "in")
-ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.png", width = 8, height = 4, units = "in")
+
+Gain2 = impdata %>%
+  group_by(PAM, threads,  Processor)
+
+Gain2$threads <- as.factor(Gain2$threads)
+
+
+library(rstatix)
+library(ggpubr)
+
+# Create a bar plot with error bars (mean +/- sd)
+bp <- ggbarplot(
+  Gain2, x = "threads", y = "process_sec", add = "mean", 
+  color= "Processor", palette = c("#00AFBB", "#E7B800"),
+  position = position_dodge(0.8)
+)
+# Add p-values onto the bar plots
+stat.test <- stat.test %>%
+  add_xy_position(fun = "mean", x = "threads", dodge = 0.8) 
+barplot <- bp + stat_pvalue_manual(
+  stat.test,  label = "p", tip.length = 0.01
+) + scale_y_continuous(expand = c(0,0),
+                       limits = c(0,350)) +
+  labs(y = "Mean run time in seconds") +
+  labs(x = "Processor cores") +
+  theme(axis.line = element_line(size = 1, color = "black")) 
+  
+
+barplot + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
+                  axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+                  axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+                  axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold"))
+
+ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.png", width = 8, height = 4, units = "in")
+
 
 dev.off()
 
-print("Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf")
+print("Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf")
 
 
 ##
 file.remove("Rplots.pdf")
+
+#
 
 
