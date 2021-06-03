@@ -20,6 +20,11 @@ data_nonavx2["log_time"] <- log(data_nonavx2$process_sec)
 
 # combine data
 data <- bind_rows(data_avx2,data_nonavx2 )
+data$Genome <- gsub('Pseudomonas_aeruginosa_PAO1_107.gbk', 'Pseudomonas aeruginosa', data$Genome)
+data$Genome <- gsub('Burkholderia_thailandensis_E264_ATCC_700388_133.gbk', 'Burkholderia thailandensis', data$Genome)
+data$Genome <- gsub('Escherichia.coli_str_K-12_substr_MG1655.gbk', 'Escherichia coli', data$Genome)
+data$Genome <- gsub('Aspergillus_fumigatus.gbk', 'Aspergillus fumigatus', data$Genome)
+data$Genome <- gsub('Arabidopsis_thaliana.gbk', 'Arabidopsis thaliana', data$Genome)
 
 ##########
 main_fig <- c("Escherichia.coli_str_K-12_substr_MG1655.gbk", "Pseudomonas_aeruginosa_PAO1_107.gbk", "Burkholderia_thailandensis_E264_ATCC_700388_133.gbk")
@@ -258,7 +263,7 @@ print("Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf")
 file.remove("Rplots.pdf")
 
 
-################## supplement_fig 4 #############
+################## supplement_fig 3 #############
 ######improvement over AVX2 #########
 
 impdata <- data %>%
@@ -269,76 +274,65 @@ summarystat <- summarySE(impdata, measurevar="process_sec", groupvars=c("Genome"
 write.csv(summarystat,"ProcessTime.csv")
 
 Gain = impdata %>%
-  group_by(PAM, threads,  Processor) %>%
-  summarise_at(vars(process_sec),list(SumProcessTime = sum)) %>%
-  arrange(Processor) %>%
-  spread(Processor,SumProcessTime) %>%
-  mutate(`Improvement%` = (nonAVX2-AVX2)/nonAVX2 * 100)
-
-
-library("ggsci")
-library("ggplot2")
-library("gridExtra")
-
-# 
-# p <- ggplot(Gain, aes(x=as.factor(threads), y=`Improvement%`, fill=as.factor(threads))) +
-#   geom_bar(stat="identity") + theme_bw() + facet_grid(. ~ PAM)
-# 
-# p2 <-  p + scale_fill_lancet() +
-#   xlab("Processor cores") +
-#   ylab("Improvement % with AVX2") +
-#   theme(legend.position = "none") 
-# 
-# p2
-# 
-# # Save the plot
-# ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf", width = 8, height = 4, units = "in")
-# ggsave("figures/Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.png", width = 8, height = 4, units = "in")
-# 
-# dev.off()
-# 
-# print("Supplemental Figure 4. Memory usage of GuideMaker for SpCas9, SaCas9, and StCas9.pdf")
-
-
-##
-# file.remove("Rplots.pdf")
+  select(PAM, threads,  Processor, process_sec, Genome) %>%
+  group_by(PAM, threads,  Processor, Genome) %>%
+  summarise_at(vars(process_sec),list(SumProcessTime = sum, MeanRuntime = mean, SdRuntime=sd)) %>%
+  mutate(xx = (SdRuntime/MeanRuntime)^2) %>%
+  select(PAM, threads, Genome, Processor, xx) %>%
+  spread(Processor,xx) %>%
+  mutate(yy = AVX2 + nonAVX2) %>%
+  mutate(zz = sqrt(yy))
 
 
 
 Gain2 = impdata %>%
-  group_by(PAM, threads,  Processor)
+  select(PAM, threads,  Processor, process_sec, Genome) %>%
+  group_by(PAM, threads,  Processor, Genome) %>%
+  summarise_at(vars(process_sec),list(MeanRuntime = mean)) %>%
+  spread(Processor,MeanRuntime) %>%
+  mutate(MeanRatio = AVX2/nonAVX2) 
 
-Gain2$threads <- as.factor(Gain2$threads)
+
+Gain3 <- left_join(Gain, Gain2, by =c("PAM", "threads", "Genome")) %>%
+  mutate(UQ = MeanRatio * zz)
 
 
-library(rstatix)
-library(ggpubr)
+Gain4 <- impdata %>%
+group_by(PAM, threads,  Processor, Genome) %>%
+summarise_at(vars(process_sec),list(SumProcessTime = sum)) %>%
+arrange(Processor) %>%
+spread(Processor,SumProcessTime) %>%
+mutate(`Improvement%` = (nonAVX2-AVX2)/nonAVX2 * 100)
 
-# Create a bar plot with error bars (mean +/- sd)
-bp <- ggbarplot(
-  Gain2, x = "threads", y = "process_sec", add = "mean", 
-  color= "Processor", palette = c("#00AFBB", "#E7B800"),
-  position = position_dodge(0.8)
-)
-# Add p-values onto the bar plots
-stat.test <- stat.test %>%
-  add_xy_position(fun = "mean", x = "threads", dodge = 0.8) 
-barplot <- bp + stat_pvalue_manual(
-  stat.test,  label = "p", tip.length = 0.01
-) + scale_y_continuous(expand = c(0,0),
-                       limits = c(0,350)) +
-  labs(y = "Mean run time in seconds") +
-  labs(x = "Processor cores") +
-  theme(axis.line = element_line(size = 1, color = "black")) 
-  
 
-barplot + theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
-                  axis.text.y = element_text(color = "black", size = 10, angle = 0),  
-                  axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
-                  axis.title.y = element_text(color = "black", size = 12, angle = 90, face="bold"))
+Gain5 <- left_join(Gain3, Gain4, by =c("PAM", "threads", "Genome"))
+Gain5$threads <- as.factor(Gain5$threads)
 
-ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf", width = 8, height = 4, units = "in")
-ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.png", width = 8, height = 4, units = "in")
+
+
+# Default bar plot
+p<- ggplot(Gain5, aes(x=threads, y=`Improvement%`, fill=as.factor(threads))) + 
+  geom_bar(stat="identity", color="black", 
+           position=position_dodge()) +
+  geom_errorbar(aes(ymin=`Improvement%` - UQ, ymax= `Improvement%`+UQ), width=.2,
+                position=position_dodge(.9)) +  theme_bw() + facet_grid(Genome ~ PAM)
+
+
+p2 <-  p + scale_fill_lancet() +
+  xlab("Processor cores") +
+  ylab("Improvement % with AVX2") +
+  theme(legend.position = "none")
+
+p3 <- p2 + theme(strip.text.y = element_text(size = 6, colour = "black"), 
+                 strip.text.x = element_text(size = 12, colour = "black", face="bold"),
+                 axis.title.x = element_text(color = "black", size = 12, angle = 0, face="bold"),
+                 axis.title.y = element_text(color = "black", size = 12, face="bold"),
+                 axis.text.y = element_text(color = "black", size = 10, angle = 0),
+                 axis.text.x = element_text(color = "black", size = 10, angle = 0))
+p3
+
+ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf", width = 8, height = 6, units = "in")
+ggsave("figures/Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.png", width = 8, height = 6, units = "in")
 
 
 dev.off()
@@ -348,7 +342,3 @@ print("Supplemental Figure 3. Performance of GuideMaker with AVX2 settings.pdf")
 
 ##
 file.remove("Rplots.pdf")
-
-#
-
-
