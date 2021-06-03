@@ -16,7 +16,7 @@ python timeparser.py -i slurm_nonavx2_logs/ -o nonavx2_out.csv
 Plotting the output from `timeparser.py`  in R. This script will generate figures used in the paper.
 
 ```R
-
+# Run R script
 Rscript Plot.R 
 
 ```
