@@ -20,10 +20,10 @@ def myparser():
     parser = argparse.ArgumentParser(
         description="timeparser.py: A script to reformat slurm log files.")
     parser.add_argument('--indir', '-i', type=str, required=True,
-                        help='The error log produced from vsearch')
+                        help='The error log produced from guidemaker run')
 
     parser.add_argument('--outfile', '-o', type=str, required=True,
-                        help='A csv file of filename, seqs, unique seqs, and the fraction unique')
+                        help='A csv file of filename')
     return parser
 
 

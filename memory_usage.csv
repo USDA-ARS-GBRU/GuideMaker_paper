@@ -1,181 +1,91 @@
-,Genome,PAM,threads,Processor,N,MemoryUsage,sd,se,ci
-1,Arabidopsis thaliana,NGG,1,AVX2,10,14.2,0.105409255,0.033333333,0.075405239
-2,Arabidopsis thaliana,NGG,1,nonAVX2,10,14.29,0.031622777,0.01,0.022621572
-3,Arabidopsis thaliana,NGG,2,AVX2,10,15.3,0,0,0
-4,Arabidopsis thaliana,NGG,2,nonAVX2,10,15.3,0,0,0
-5,Arabidopsis thaliana,NGG,4,AVX2,10,15.3,0,0,0
-6,Arabidopsis thaliana,NGG,4,nonAVX2,10,15.3,0,0,0
-7,Arabidopsis thaliana,NGG,8,AVX2,10,15.36,0.051639778,0.016329932,0.036940872
-8,Arabidopsis thaliana,NGG,8,nonAVX2,10,15.4,0,0,0
-9,Arabidopsis thaliana,NGG,16,AVX2,10,15.46,0.051639778,0.016329932,0.036940872
-10,Arabidopsis thaliana,NGG,16,nonAVX2,10,15.5,0,0,0
-11,Arabidopsis thaliana,NGG,32,AVX2,10,15.6,0,0,0
-12,Arabidopsis thaliana,NGG,32,nonAVX2,10,15.6,0,0,0
-13,Arabidopsis thaliana,NGRRT,1,AVX2,10,6.69,0.087559504,0.027688746,0.062636296
-14,Arabidopsis thaliana,NGRRT,1,nonAVX2,10,6.75,0.070710678,0.02236068,0.050583372
-15,Arabidopsis thaliana,NGRRT,2,AVX2,10,7.4,0,0,0
-16,Arabidopsis thaliana,NGRRT,2,nonAVX2,10,7.4,0,0,0
-17,Arabidopsis thaliana,NGRRT,4,AVX2,10,7.4,0,0,0
-18,Arabidopsis thaliana,NGRRT,4,nonAVX2,10,7.4,0,0,0
-19,Arabidopsis thaliana,NGRRT,8,AVX2,10,7.4,0,0,0
-20,Arabidopsis thaliana,NGRRT,8,nonAVX2,10,7.4,0,0,0
-21,Arabidopsis thaliana,NGRRT,16,AVX2,10,7.4,0,0,0
-22,Arabidopsis thaliana,NGRRT,16,nonAVX2,10,7.41,0.031622777,0.01,0.022621572
-23,Arabidopsis thaliana,NGRRT,32,AVX2,10,7.5,0,0,0
-24,Arabidopsis thaliana,NGRRT,32,nonAVX2,10,7.5,0,0,0
-25,Arabidopsis thaliana,NNAGAAW,1,AVX2,10,3.01,0.031622777,0.01,0.022621572
-26,Arabidopsis thaliana,NNAGAAW,1,nonAVX2,10,3.05,0.052704628,0.016666667,0.037702619
-27,Arabidopsis thaliana,NNAGAAW,2,AVX2,10,3.4,0,0,0
-28,Arabidopsis thaliana,NNAGAAW,2,nonAVX2,10,3.4,0,0,0
-29,Arabidopsis thaliana,NNAGAAW,4,AVX2,10,3.45,0.052704628,0.016666667,0.037702619
-30,Arabidopsis thaliana,NNAGAAW,4,nonAVX2,10,3.45,0.052704628,0.016666667,0.037702619
-31,Arabidopsis thaliana,NNAGAAW,8,AVX2,10,3.5,0,0,0
-32,Arabidopsis thaliana,NNAGAAW,8,nonAVX2,10,3.49,0.031622777,0.01,0.022621572
-33,Arabidopsis thaliana,NNAGAAW,16,AVX2,10,3.46,0.051639778,0.016329932,0.036940872
-34,Arabidopsis thaliana,NNAGAAW,16,nonAVX2,10,3.49,0.031622777,0.01,0.022621572
-35,Arabidopsis thaliana,NNAGAAW,32,AVX2,10,3.5,0,0,0
-36,Arabidopsis thaliana,NNAGAAW,32,nonAVX2,10,3.47,0.048304589,0.015275252,0.034555021
-37,Aspergillus fumigatus,NGG,1,AVX2,10,8.2,0,0,0
-38,Aspergillus fumigatus,NGG,1,nonAVX2,10,8.2,0,0,0
-39,Aspergillus fumigatus,NGG,2,AVX2,10,8.9,0,0,0
-40,Aspergillus fumigatus,NGG,2,nonAVX2,10,8.9,0,0,0
-41,Aspergillus fumigatus,NGG,4,AVX2,10,8.9,0,0,0
-42,Aspergillus fumigatus,NGG,4,nonAVX2,10,8.9,0,0,0
-43,Aspergillus fumigatus,NGG,8,AVX2,10,8.9,0,0,0
-44,Aspergillus fumigatus,NGG,8,nonAVX2,10,8.9,0,0,0
-45,Aspergillus fumigatus,NGG,16,AVX2,10,9,0,0,0
-46,Aspergillus fumigatus,NGG,16,nonAVX2,10,9,0,0,0
-47,Aspergillus fumigatus,NGG,32,AVX2,10,9,0,0,0
-48,Aspergillus fumigatus,NGG,32,nonAVX2,10,9.02,0.042163702,0.013333333,0.030162096
-49,Aspergillus fumigatus,NGRRT,1,AVX2,10,2.46,0.051639778,0.016329932,0.036940872
-50,Aspergillus fumigatus,NGRRT,1,nonAVX2,10,2.48,0.042163702,0.013333333,0.030162096
-51,Aspergillus fumigatus,NGRRT,2,AVX2,10,2.7,0,0,0
-52,Aspergillus fumigatus,NGRRT,2,nonAVX2,10,2.7,0,0,0
-53,Aspergillus fumigatus,NGRRT,4,AVX2,10,2.7,0,0,0
-54,Aspergillus fumigatus,NGRRT,4,nonAVX2,10,2.7,0,0,0
-55,Aspergillus fumigatus,NGRRT,8,AVX2,10,2.7,0,0,0
-56,Aspergillus fumigatus,NGRRT,8,nonAVX2,10,2.7,0,0,0
-57,Aspergillus fumigatus,NGRRT,16,AVX2,10,2.8,0,0,0
-58,Aspergillus fumigatus,NGRRT,16,nonAVX2,10,2.8,0,0,0
-59,Aspergillus fumigatus,NGRRT,32,AVX2,10,2.8,0,0,0
-60,Aspergillus fumigatus,NGRRT,32,nonAVX2,10,2.8,0,0,0
-61,Aspergillus fumigatus,NNAGAAW,1,AVX2,10,0.59,0.031622777,0.01,0.022621572
-62,Aspergillus fumigatus,NNAGAAW,1,nonAVX2,10,0.58,0.042163702,0.013333333,0.030162096
-63,Aspergillus fumigatus,NNAGAAW,2,AVX2,10,0.6,0,0,0
-64,Aspergillus fumigatus,NNAGAAW,2,nonAVX2,10,0.6,0,0,0
-65,Aspergillus fumigatus,NNAGAAW,4,AVX2,10,0.6,0,0,0
-66,Aspergillus fumigatus,NNAGAAW,4,nonAVX2,10,0.6,0,0,0
-67,Aspergillus fumigatus,NNAGAAW,8,AVX2,10,0.6,0,0,0
-68,Aspergillus fumigatus,NNAGAAW,8,nonAVX2,10,0.6,0,0,0
-69,Aspergillus fumigatus,NNAGAAW,16,AVX2,10,0.6,0,0,0
-70,Aspergillus fumigatus,NNAGAAW,16,nonAVX2,10,0.6,0,0,0
-71,Aspergillus fumigatus,NNAGAAW,32,AVX2,10,0.6,0,0,0
-72,Aspergillus fumigatus,NNAGAAW,32,nonAVX2,10,0.6,0,0,0
-73,Burkholderia thailandensis,NGG,1,AVX2,10,2.1,0,0,0
-74,Burkholderia thailandensis,NGG,1,nonAVX2,10,2.1,0,0,0
-75,Burkholderia thailandensis,NGG,2,AVX2,10,2.4,0,0,0
-76,Burkholderia thailandensis,NGG,2,nonAVX2,10,2.4,0,0,0
-77,Burkholderia thailandensis,NGG,4,AVX2,10,2.4,0,0,0
-78,Burkholderia thailandensis,NGG,4,nonAVX2,10,2.4,0,0,0
-79,Burkholderia thailandensis,NGG,8,AVX2,10,2.4,0,0,0
-80,Burkholderia thailandensis,NGG,8,nonAVX2,10,2.4,0,0,0
-81,Burkholderia thailandensis,NGG,16,AVX2,10,2.4,0,0,0
-82,Burkholderia thailandensis,NGG,16,nonAVX2,10,2.4,0,0,0
-83,Burkholderia thailandensis,NGG,32,AVX2,10,2.4,0,0,0
-84,Burkholderia thailandensis,NGG,32,nonAVX2,10,2.4,0,0,0
-85,Burkholderia thailandensis,NGRRT,1,AVX2,10,0.4,0,0,0
-86,Burkholderia thailandensis,NGRRT,1,nonAVX2,10,0.4,0,0,0
-87,Burkholderia thailandensis,NGRRT,2,AVX2,10,0.5,0,0,0
-88,Burkholderia thailandensis,NGRRT,2,nonAVX2,10,0.5,0,0,0
-89,Burkholderia thailandensis,NGRRT,4,AVX2,10,0.5,0,0,0
-90,Burkholderia thailandensis,NGRRT,4,nonAVX2,10,0.5,0,0,0
-91,Burkholderia thailandensis,NGRRT,8,AVX2,10,0.5,0,0,0
-92,Burkholderia thailandensis,NGRRT,8,nonAVX2,10,0.5,0,0,0
-93,Burkholderia thailandensis,NGRRT,16,AVX2,10,0.5,0,0,0
-94,Burkholderia thailandensis,NGRRT,16,nonAVX2,10,0.5,0,0,0
-95,Burkholderia thailandensis,NGRRT,32,AVX2,10,0.5,0,0,0
-96,Burkholderia thailandensis,NGRRT,32,nonAVX2,10,0.5,0,0,0
-97,Burkholderia thailandensis,NNAGAAW,1,AVX2,10,0.2,0,0,0
-98,Burkholderia thailandensis,NNAGAAW,1,nonAVX2,10,0.2,0,0,0
-99,Burkholderia thailandensis,NNAGAAW,2,AVX2,10,0.2,0,0,0
-100,Burkholderia thailandensis,NNAGAAW,2,nonAVX2,10,0.2,0,0,0
-101,Burkholderia thailandensis,NNAGAAW,4,AVX2,10,0.2,0,0,0
-102,Burkholderia thailandensis,NNAGAAW,4,nonAVX2,10,0.2,0,0,0
-103,Burkholderia thailandensis,NNAGAAW,8,AVX2,10,0.2,0,0,0
-104,Burkholderia thailandensis,NNAGAAW,8,nonAVX2,10,0.2,0,0,0
-105,Burkholderia thailandensis,NNAGAAW,16,AVX2,10,0.2,0,0,0
-106,Burkholderia thailandensis,NNAGAAW,16,nonAVX2,10,0.2,0,0,0
-107,Burkholderia thailandensis,NNAGAAW,32,AVX2,10,0.2,0,0,0
-108,Burkholderia thailandensis,NNAGAAW,32,nonAVX2,10,0.2,0,0,0
-109,Escherichia coli,NGG,1,AVX2,10,1.7,0,0,0
-110,Escherichia coli,NGG,1,nonAVX2,10,1.7,0,0,0
-111,Escherichia coli,NGG,2,AVX2,10,1.9,0,0,0
-112,Escherichia coli,NGG,2,nonAVX2,10,1.9,0,0,0
-113,Escherichia coli,NGG,4,AVX2,10,1.9,0,0,0
-114,Escherichia coli,NGG,4,nonAVX2,10,1.9,0,0,0
-115,Escherichia coli,NGG,8,AVX2,10,1.9,0,0,0
-116,Escherichia coli,NGG,8,nonAVX2,10,1.9,0,0,0
-117,Escherichia coli,NGG,16,AVX2,10,1.9,0,0,0
-118,Escherichia coli,NGG,16,nonAVX2,10,1.93,0.048304589,0.015275252,0.034555021
-119,Escherichia coli,NGG,32,AVX2,10,1.9,0,0,0
-120,Escherichia coli,NGG,32,nonAVX2,10,1.95,0.052704628,0.016666667,0.037702619
-121,Escherichia coli,NGRRT,1,AVX2,10,0.5,0,0,0
-122,Escherichia coli,NGRRT,1,nonAVX2,10,0.5,0,0,0
-123,Escherichia coli,NGRRT,2,AVX2,10,0.5,0,0,0
-124,Escherichia coli,NGRRT,2,nonAVX2,10,0.5,0,0,0
-125,Escherichia coli,NGRRT,4,AVX2,10,0.5,0,0,0
-126,Escherichia coli,NGRRT,4,nonAVX2,10,0.5,0,0,0
-127,Escherichia coli,NGRRT,8,AVX2,10,0.5,0,0,0
-128,Escherichia coli,NGRRT,8,nonAVX2,10,0.5,0,0,0
-129,Escherichia coli,NGRRT,16,AVX2,10,0.5,0,0,0
-130,Escherichia coli,NGRRT,16,nonAVX2,10,0.5,0,0,0
-131,Escherichia coli,NGRRT,32,AVX2,10,0.5,0,0,0
-132,Escherichia coli,NGRRT,32,nonAVX2,10,0.5,0,0,0
-133,Escherichia coli,NNAGAAW,1,AVX2,10,0.2,0,0,0
-134,Escherichia coli,NNAGAAW,1,nonAVX2,10,0.2,0,0,0
-135,Escherichia coli,NNAGAAW,2,AVX2,10,0.2,0,0,0
-136,Escherichia coli,NNAGAAW,2,nonAVX2,10,0.2,0,0,0
-137,Escherichia coli,NNAGAAW,4,AVX2,10,0.2,0,0,0
-138,Escherichia coli,NNAGAAW,4,nonAVX2,10,0.2,0,0,0
-139,Escherichia coli,NNAGAAW,8,AVX2,10,0.2,0,0,0
-140,Escherichia coli,NNAGAAW,8,nonAVX2,10,0.2,0,0,0
-141,Escherichia coli,NNAGAAW,16,AVX2,10,0.2,0,0,0
-142,Escherichia coli,NNAGAAW,16,nonAVX2,10,0.2,0,0,0
-143,Escherichia coli,NNAGAAW,32,AVX2,10,0.2,0,0,0
-144,Escherichia coli,NNAGAAW,32,nonAVX2,10,0.2,0,0,0
-145,Pseudomonas aeruginosa,NGG,1,AVX2,10,2.56,0.051639778,0.016329932,0.036940872
-146,Pseudomonas aeruginosa,NGG,1,nonAVX2,10,2.6,0,0,0
-147,Pseudomonas aeruginosa,NGG,2,AVX2,10,3,0,0,0
-148,Pseudomonas aeruginosa,NGG,2,nonAVX2,10,3,0,0,0
-149,Pseudomonas aeruginosa,NGG,4,AVX2,10,3,0,0,0
-150,Pseudomonas aeruginosa,NGG,4,nonAVX2,10,3,0,0,0
-151,Pseudomonas aeruginosa,NGG,8,AVX2,10,3,0,0,0
-152,Pseudomonas aeruginosa,NGG,8,nonAVX2,10,3,0,0,0
-153,Pseudomonas aeruginosa,NGG,16,AVX2,10,3.08,0.042163702,0.013333333,0.030162096
-154,Pseudomonas aeruginosa,NGG,16,nonAVX2,10,3.1,0,0,0
-155,Pseudomonas aeruginosa,NGG,32,AVX2,10,3.1,0,0,0
-156,Pseudomonas aeruginosa,NGG,32,nonAVX2,10,3.1,0,0,0
-157,Pseudomonas aeruginosa,NGRRT,1,AVX2,10,0.5,0,0,0
-158,Pseudomonas aeruginosa,NGRRT,1,nonAVX2,10,0.5,0,0,0
-159,Pseudomonas aeruginosa,NGRRT,2,AVX2,10,0.5,0,0,0
-160,Pseudomonas aeruginosa,NGRRT,2,nonAVX2,10,0.5,0,0,0
-161,Pseudomonas aeruginosa,NGRRT,4,AVX2,10,0.53,0.048304589,0.015275252,0.034555021
-162,Pseudomonas aeruginosa,NGRRT,4,nonAVX2,10,0.53,0.048304589,0.015275252,0.034555021
-163,Pseudomonas aeruginosa,NGRRT,8,AVX2,10,0.56,0.051639778,0.016329932,0.036940872
-164,Pseudomonas aeruginosa,NGRRT,8,nonAVX2,10,0.51,0.031622777,0.01,0.022621572
-165,Pseudomonas aeruginosa,NGRRT,16,AVX2,10,0.55,0.052704628,0.016666667,0.037702619
-166,Pseudomonas aeruginosa,NGRRT,16,nonAVX2,10,0.56,0.051639778,0.016329932,0.036940872
-167,Pseudomonas aeruginosa,NGRRT,32,AVX2,10,0.56,0.051639778,0.016329932,0.036940872
-168,Pseudomonas aeruginosa,NGRRT,32,nonAVX2,10,0.6,0,0,0
-169,Pseudomonas aeruginosa,NNAGAAW,1,AVX2,10,0.2,0,0,0
-170,Pseudomonas aeruginosa,NNAGAAW,1,nonAVX2,10,0.2,0,0,0
-171,Pseudomonas aeruginosa,NNAGAAW,2,AVX2,10,0.2,0,0,0
-172,Pseudomonas aeruginosa,NNAGAAW,2,nonAVX2,10,0.2,0,0,0
-173,Pseudomonas aeruginosa,NNAGAAW,4,AVX2,10,0.2,0,0,0
-174,Pseudomonas aeruginosa,NNAGAAW,4,nonAVX2,10,0.2,0,0,0
-175,Pseudomonas aeruginosa,NNAGAAW,8,AVX2,10,0.2,0,0,0
-176,Pseudomonas aeruginosa,NNAGAAW,8,nonAVX2,10,0.2,0,0,0
-177,Pseudomonas aeruginosa,NNAGAAW,16,AVX2,10,0.2,0,0,0
-178,Pseudomonas aeruginosa,NNAGAAW,16,nonAVX2,10,0.2,0,0,0
-179,Pseudomonas aeruginosa,NNAGAAW,32,AVX2,10,0.2,0,0,0
-180,Pseudomonas aeruginosa,NNAGAAW,32,nonAVX2,10,0.2,0,0,0
+"","Genome","PAM","threads","N","MemoryUsage","sd","se","ci"
+"1","Arabidopsis_thaliana.gbk","NGG",1,10,15.68,0.154919333848297,0.0489897948556637,0.110822615336754
+"2","Arabidopsis_thaliana.gbk","NGG",2,10,16.5,0,0,0
+"3","Arabidopsis_thaliana.gbk","NGG",4,10,16.6,0,0,0
+"4","Arabidopsis_thaliana.gbk","NGG",8,10,16.6,0,0,0
+"5","Arabidopsis_thaliana.gbk","NGG",16,10,16.7,0,0,0
+"6","Arabidopsis_thaliana.gbk","NNAGAAW",1,10,3.2,0,0,0
+"7","Arabidopsis_thaliana.gbk","NNAGAAW",2,10,3.6,0,0,0
+"8","Arabidopsis_thaliana.gbk","NNAGAAW",4,10,3.6,0,0,0
+"9","Arabidopsis_thaliana.gbk","NNAGAAW",8,10,3.61,0.0316227766016838,0.01,0.0226215716279821
+"10","Arabidopsis_thaliana.gbk","NNAGAAW",16,10,3.64,0.0516397779494323,0.0163299316185545,0.036940871778918
+"11","Arabidopsis_thaliana.gbk","NNGRRT",1,10,7.15,0.0527046276694733,0.0166666666666668,0.0377026193799703
+"12","Arabidopsis_thaliana.gbk","NNGRRT",2,10,7.9,0,0,0
+"13","Arabidopsis_thaliana.gbk","NNGRRT",4,10,7.9,0,0,0
+"14","Arabidopsis_thaliana.gbk","NNGRRT",8,10,7.9,0,0,0
+"15","Arabidopsis_thaliana.gbk","NNGRRT",16,10,8,0,0,0
+"16","Aspergillus_fumigatus.gbk","NGG",1,10,8.65,0.0849836585598801,0.0268741924943286,0.0607936470454633
+"17","Aspergillus_fumigatus.gbk","NGG",2,10,9.4,0,0,0
+"18","Aspergillus_fumigatus.gbk","NGG",4,10,9.4,0,0,0
+"19","Aspergillus_fumigatus.gbk","NGG",8,10,9.42,0.0421637021355782,0.0133333333333333,0.030162095503976
+"20","Aspergillus_fumigatus.gbk","NGG",16,10,9.5,0,0,0
+"21","Aspergillus_fumigatus.gbk","NNAGAAW",1,10,0.6,0,0,0
+"22","Aspergillus_fumigatus.gbk","NNAGAAW",2,10,0.6,0,0,0
+"23","Aspergillus_fumigatus.gbk","NNAGAAW",4,10,0.6,0,0,0
+"24","Aspergillus_fumigatus.gbk","NNAGAAW",8,10,0.6,0,0,0
+"25","Aspergillus_fumigatus.gbk","NNAGAAW",16,10,0.6,0,0,0
+"26","Aspergillus_fumigatus.gbk","NNGRRT",1,10,2.55,0.052704627669473,0.0166666666666667,0.0377026193799701
+"27","Aspergillus_fumigatus.gbk","NNGRRT",2,10,2.9,0,0,0
+"28","Aspergillus_fumigatus.gbk","NNGRRT",4,10,2.9,0,0,0
+"29","Aspergillus_fumigatus.gbk","NNGRRT",8,10,2.9,0,0,0
+"30","Aspergillus_fumigatus.gbk","NNGRRT",16,10,2.9,0,0,0
+"31","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NGG",1,10,2.2,0,0,0
+"32","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NGG",2,10,2.58,0.0421637021355784,0.0133333333333333,0.0301620955039761
+"33","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NGG",4,10,2.58,0.0421637021355784,0.0133333333333333,0.0301620955039761
+"34","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NGG",8,10,2.59,0.0316227766016838,0.01,0.0226215716279821
+"35","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NGG",16,10,2.6,0,0,0
+"36","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNAGAAW",1,10,0.2,0,0,0
+"37","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNAGAAW",2,10,0.2,0,0,0
+"38","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNAGAAW",4,10,0.2,0,0,0
+"39","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNAGAAW",8,10,0.2,0,0,0
+"40","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNAGAAW",16,10,0.2,0,0,0
+"41","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNGRRT",1,10,0.5,0,0,0
+"42","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNGRRT",2,10,0.5,0,0,0
+"43","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNGRRT",4,10,0.5,0,0,0
+"44","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNGRRT",8,10,0.5,0,0,0
+"45","Burkholderia_thailandensis_E264_ATCC_700388_133.gbk","NNGRRT",16,10,0.5,0,0,0
+"46","Escherichia.coli_str_K-12_substr_MG1655.gbk","NGG",1,10,1.8,0,0,0
+"47","Escherichia.coli_str_K-12_substr_MG1655.gbk","NGG",2,10,2,0,0,0
+"48","Escherichia.coli_str_K-12_substr_MG1655.gbk","NGG",4,10,2,0,0,0
+"49","Escherichia.coli_str_K-12_substr_MG1655.gbk","NGG",8,10,2,0,0,0
+"50","Escherichia.coli_str_K-12_substr_MG1655.gbk","NGG",16,10,2,0,0,0
+"51","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNAGAAW",1,10,0.2,0,0,0
+"52","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNAGAAW",2,10,0.2,0,0,0
+"53","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNAGAAW",4,10,0.2,0,0,0
+"54","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNAGAAW",8,10,0.2,0,0,0
+"55","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNAGAAW",16,10,0.2,0,0,0
+"56","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNGRRT",1,10,0.5,0,0,0
+"57","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNGRRT",2,10,0.55,0.052704627669473,0.0166666666666667,0.0377026193799701
+"58","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNGRRT",4,10,0.5,0,0,0
+"59","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNGRRT",8,10,0.51,0.0316227766016838,0.01,0.022621571627982
+"60","Escherichia.coli_str_K-12_substr_MG1655.gbk","NNGRRT",16,10,0.55,0.052704627669473,0.0166666666666667,0.0377026193799701
+"61","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NGG",1,10,43.2,0,0,0
+"62","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NGG",2,10,47.25,0.158113883008417,0.0499999999999995,0.113107858139909
+"63","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NGG",4,10,47.2,0,0,0
+"64","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NGG",8,10,47.39,0.144913767461896,0.045825756949559,0.103665064324095
+"65","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NGG",16,10,47.74,0.150554530541815,0.0476095228569518,0.107700223148258
+"66","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNAGAAW",1,10,7.9,0,0,0
+"67","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNAGAAW",2,10,8.5,0,0,0
+"68","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNAGAAW",4,10,8.5,0,0,0
+"69","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNAGAAW",8,10,8.5,0,0,0
+"70","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNAGAAW",16,10,8.6,0,0,0
+"71","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNGRRT",1,10,18.7,0,0,0
+"72","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNGRRT",2,10,19.9,0,0,0
+"73","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNGRRT",4,10,19.98,0.042163702135579,0.0133333333333335,0.0301620955039765
+"74","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNGRRT",8,10,19.91,0.0316227766016842,0.0100000000000001,0.0226215716279824
+"75","GCF_000499845.1_PhaVulg1_0_genomic.gbff","NNGRRT",16,10,20.1,0,0,0
+"76","Pseudomonas_aeruginosa_PAO1_107.gbk","NGG",1,10,2.8,0,0,0
+"77","Pseudomonas_aeruginosa_PAO1_107.gbk","NGG",2,10,3.2,0,0,0
+"78","Pseudomonas_aeruginosa_PAO1_107.gbk","NGG",4,10,3.2,0,0,0
+"79","Pseudomonas_aeruginosa_PAO1_107.gbk","NGG",8,10,3.2,0,0,0
+"80","Pseudomonas_aeruginosa_PAO1_107.gbk","NGG",16,10,3.2,0,0,0
+"81","Pseudomonas_aeruginosa_PAO1_107.gbk","NNAGAAW",1,10,0.2,0,0,0
+"82","Pseudomonas_aeruginosa_PAO1_107.gbk","NNAGAAW",2,10,0.2,0,0,0
+"83","Pseudomonas_aeruginosa_PAO1_107.gbk","NNAGAAW",4,10,0.2,0,0,0
+"84","Pseudomonas_aeruginosa_PAO1_107.gbk","NNAGAAW",8,10,0.2,0,0,0
+"85","Pseudomonas_aeruginosa_PAO1_107.gbk","NNAGAAW",16,10,0.2,0,0,0
+"86","Pseudomonas_aeruginosa_PAO1_107.gbk","NNGRRT",1,10,0.5,0,0,0
+"87","Pseudomonas_aeruginosa_PAO1_107.gbk","NNGRRT",2,10,0.6,0,0,0
+"88","Pseudomonas_aeruginosa_PAO1_107.gbk","NNGRRT",4,10,0.6,0,0,0
+"89","Pseudomonas_aeruginosa_PAO1_107.gbk","NNGRRT",8,10,0.6,0,0,0
+"90","Pseudomonas_aeruginosa_PAO1_107.gbk","NNGRRT",16,10,0.6,0,0,0
