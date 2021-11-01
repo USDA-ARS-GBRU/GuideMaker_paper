@@ -541,12 +541,14 @@ gg_cdf <- ggplot(alldata_cdf, aes(x = CDF, fill = type)) +
         axis.title.x = element_text(color = "black", size = 14, angle = 0, face="bold"),
         axis.title.y = element_text(color = "black", size = 14, angle = 90, face="bold")) +
   theme(legend.title = element_blank())+
+  ylim(0,50000)+
+  xlim(0,0.1)
   xlab("CFD Score")+
   ylab("Count")+
-  scale_y_continuous(expand = c(0,0), labels = label_number(suffix = " M", scale=1e-6))+
+  scale_y_continuous(expand = c(0,0), labels = label_number(suffix = " K", scale=1e-3))#+
   theme(legend.justification=c(1,0),
         legend.text = element_text(color = "black", size= 10, face = "bold"),
-        legend.position=c(0.9,0.50))+
+        legend.position=c(0.05,0.50))+
   coord_cartesian(ylim = c(0, 550000))
 
 plot_grid(gg_doench, gg_cdf, align = 'hv')
