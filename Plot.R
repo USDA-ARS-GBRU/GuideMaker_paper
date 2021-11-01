@@ -440,4 +440,159 @@ df%>% filter(Method=="CHOPCHOP") %>%
             sd_ms = sd(MemoryUsage))
 
 
-  
+######### with and without filter in E.coli ###############
+
+df_with_filter_doench<- read.csv("targets_with_filter_doench.csv", header = TRUE)
+
+df_without_filter_doench <- read.csv("targets_without_filter_doench.csv", header = TRUE)
+
+
+
+########
+withfilter_doench <- data.frame(Efficiency=df_with_filter_doench$Efficiency, type="GuideMaker (with filter)")
+withoutfilter_doench <- data.frame(Efficiency=df_without_filter_doench$Efficiency, type="GuideMaker (without filter)")
+
+# and combine into your new data frame vegLengths
+alldata_doench <- rbind(withfilter_doench, withoutfilter_doench)
+
+ggplot(alldata_doench, aes(x=Efficiency,y=..count.., fill = type)) +
+  geom_density(alpha = 0.2) +
+  theme_classic() +
+  theme(axis.text.x = element_text(color = "black", size = 16, angle = 0),
+        axis.text.y = element_text(color = "black", size = 16, angle = 0),  
+        axis.title.x = element_text(color = "black", size = 16, angle = 0, face="bold"),
+        axis.title.y = element_text(color = "black", size = 16, angle = 90, face="bold")) +
+  theme(legend.title = element_text(face = "bold", size=8))+
+  theme(legend.position = 'right',
+        legend.key.size = unit(0.5, 'cm'),
+        legend.title = element_blank(),
+        legend.text = element_text(size = 8, face = "bold"))+
+  ylab("Count")+
+  xlab("Doench Efficiency Score")+
+  coord_cartesian(xlim = c(0, 1))+
+  scale_y_continuous(labels = label_number(suffix = " M", scale=1e-6))
+
+
+### histogram
+hist(withfilter_doench$Efficiency)
+hist(withoutfilter_doench$Efficiency)
+
+gg_doench <- ggplot(alldata_doench, aes(x = Efficiency, fill = type)) +                    
+  geom_histogram(position = "identity", alpha = 0.4, bins = 50) +
+  theme_classic() +
+  theme(axis.text.x = element_text(color = "black", size = 14, angle = 0),
+        axis.text.y = element_text(color = "black", size = 14, angle = 0),  
+        axis.title.x = element_text(color = "black", size = 14, angle = 0, face="bold"),
+        axis.title.y = element_text(color = "black", size = 14, angle = 90, face="bold")) +
+  theme(legend.title = element_text(face = "bold", size=8))+
+  theme(legend.position = 'none',
+        legend.key.size = unit(0.5, 'cm'),
+        legend.title = element_blank(),
+        legend.text = element_text(size = 12, face = "bold"))+
+  xlab("Doench Efficiency Score")+
+  coord_cartesian(ylim = c(0, 45000), xlim = c(0, 1))+
+  scale_y_continuous(expand = c(0,0), labels = label_number(suffix = " K", scale=1e-3))+
+  ylab("Count")
+
+
+
+############################################
+
+
+cfd_without_filter <- read.csv("targets_without_filter_cfd.csv", header = TRUE)
+cfd_with_filter <- read.csv("targets_with_filter_cfd.csv", header = TRUE)
+
+
+withoutfilter_cdf <- data.frame(CDF=cfd_without_filter$max_cfd, type="GuideMaker (without filter)")
+withfilter_cdf <- data.frame(CDF=cfd_with_filter$Max.CFD, type="GuideMaker (with filter)")
+# and combine into your new data frame vegLengths
+alldata_cdf <- rbind(withfilter_cdf, withoutfilter_cdf)
+
+
+ggplot(alldata_cdf, aes(x=CDF,y=..count.., fill = type)) +
+  geom_density(alpha = 0.2) +
+  theme_classic() +
+  theme(legend.justification=c(1,0),
+        legend.text = element_text(color = "black", size= 5),
+        legend.position=c(0.9,0.50))+
+  theme(axis.text.x = element_text(color = "black", size = 16, angle = 0),
+        axis.text.y = element_text(color = "black", size = 16, angle = 0),  
+        axis.title.x = element_text(color = "black", size = 16, angle = 0, face="bold"),
+        axis.title.y = element_text(color = "black", size = 16, angle = 90, face="bold")) +
+  theme(legend.title = element_text(face = "bold", size=8))+
+  theme(legend.position = 'bottom',
+        legend.key.size = unit(0.5, 'cm'),
+        legend.title = element_blank(),
+        legend.text = element_text(size = 8, face = "bold"))+
+  ylab("Count")+
+  coord_cartesian(xlim = c(0, 0.02))+
+  scale_y_continuous(labels = label_number(suffix = " M", scale=1e-6))
+
+
+### histogram
+hist(cfd_with_filter$Max.CFD)
+hist(cfd_without_filter$max_cfd)
+
+gg_cdf <- ggplot(alldata_cdf, aes(x = CDF, fill = type)) +                    
+  geom_histogram(position = "identity", alpha = 0.4, bins = 50) +
+  theme_classic() +
+  theme(axis.text.x = element_text(color = "black", size = 14, angle = 0),
+        axis.text.y = element_text(color = "black", size = 14, angle = 0),  
+        axis.title.x = element_text(color = "black", size = 14, angle = 0, face="bold"),
+        axis.title.y = element_text(color = "black", size = 14, angle = 90, face="bold")) +
+  theme(legend.title = element_blank())+
+  xlab("CFD Score")+
+  ylab("Count")+
+  scale_y_continuous(expand = c(0,0), labels = label_number(suffix = " M", scale=1e-6))+
+  theme(legend.justification=c(1,0),
+        legend.text = element_text(color = "black", size= 10, face = "bold"),
+        legend.position=c(0.9,0.50))+
+  coord_cartesian(ylim = c(0, 550000))
+
+plot_grid(gg_doench, gg_cdf, align = 'hv')
+
+ggsave("figures/Supplemental Figure 6. Doench_CDF.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Supplemental Figure 6. Doench_CDF.png", width = 8, height = 4, units = "in")
+
+############# NGG 
+targets_ecoli_ngg_hamming <- read.csv("targets_ecoli_ngg_hamming.csv", header = TRUE, stringsAsFactors = FALSE)
+targets_ecoli_ngg_leven <- read.csv("targets_ecoli_ngg_leven.csv", header = TRUE, stringsAsFactors = FALSE)
+
+
+guideseq_ecoli_ngg_hamming <- unique(targets_ecoli_ngg_hamming$Guide.sequence)
+hm <- length(guideseq_ecoli_ngg_hamming)
+guideseq_ecoli_ngg_leven <- unique(targets_ecoli_ngg_leven$Guide.sequence)
+lev <- length(guideseq_ecoli_ngg_leven)
+
+common <- intersect(guideseq_ecoli_ngg_hamming,guideseq_ecoli_ngg_leven)
+hm_lv_common <- length(common)
+hm_lv_common/lev * 100
+
+
+########## nngrrt
+leven_nngrrt <- read.csv("targets_leven_nngrrt.csv", header = TRUE, stringsAsFactors = FALSE)
+hamming_nngrrt <- read.csv("targets_hamming_nngrrt.csv", header = TRUE, stringsAsFactors = FALSE)
+
+nngrrt_leven <- unique(leven_nngrrt$Guide.sequence)
+nngrrt_hamming <- unique(hamming_nngrrt$Guide.sequence)
+
+common <- intersect(nngrrt_leven,nngrrt_hamming)
+
+length(common) / length(nngrrt_leven) * 100
+
+########  NNAGAAW  
+leven_nnagaaw <-  read.csv("targets_leven_nnagaaw.csv", header = TRUE, stringsAsFactors = FALSE)
+hamming_nnagaaw <-  read.csv("targets_hamming_nnagaaw.csv", header = TRUE, stringsAsFactors = FALSE)
+
+leven_nnagaaw_uniq <- unique(leven_nnagaaw$Guide.sequence)
+hamming_nnagaaw_uniq <- unique(hamming_nnagaaw$Guide.sequence)
+
+common <- intersect(leven_nnagaaw_uniq,hamming_nnagaaw_uniq)
+
+length(leven_nnagaaw_uniq)
+length(hamming_nnagaaw_uniq )
+
+length(common)/length(leven_nnagaaw_uniq) * 100
+
+                          
+                          
