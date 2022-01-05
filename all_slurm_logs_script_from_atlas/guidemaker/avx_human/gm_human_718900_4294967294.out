@@ -1,0 +1,13 @@
+Fri Dec 31 13:28:21 CST 2021
+Atlas-0234.HPC.MsState.Edu
+/project/gbru_fy21_tomato_ralstonia/guidemaker/avx_human
+atlas
+Atlas-0234
+bigmem
+1
+My SLURM_ARRAY_TASK_ID: 
+My TMPDIR IS:  /local/scratch/ravin.poudel/718900
+Input Genome:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  GCF_000001405.39_GRCh38.p13_genomic.gbff
+Input PAM:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  NNGRRT
+Threads used:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  32
+GuideMaker

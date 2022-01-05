@@ -1,0 +1,94 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"conda"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "conda"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+/var/spool/slurmd/job718929/slurm_script: line 19: activate: No such file or directory
+Your CPU supports instructions that this binary was not compiled to use: SSE3 SSE4.1 SSE4.2 AVX AVX2
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+2022-01-01 22:08:53,809 root         INFO     Configuration data loaded from /project/gbru_fy21_tomato_ralstonia/run/script/.conda/envs/avx_human/lib/python3.7/site-packages/guidemaker/data/config_default.yaml:
+2022-01-01 22:08:53,815 root         INFO     {'NMSLIB': {'M': 16, 'efc': 10, 'post': 1, 'ef': 9}, 'CONTROL': {'MINIMUM_HMDIST': 7, 'CONTROL_SEARCH_MULTIPLE': [10, 100, 1000, 10000]}, 'MINIMUM_PROPORTION': 0.5}
+2022-01-01 22:08:53,816 root         INFO     Temp directory is: /local/scratch/ravin.poudel/718929/guidemaker_qg6kgbp5
+2022-01-01 22:08:53,816 root         INFO     Writing fasta file from genbank file(s)
+2022-01-01 22:08:53,818 guidemaker.core INFO     check if /project/gbru_fy21_tomato_ralstonia/guidemaker/all_test_data/GCF_000001405.39_GRCh38.p13_genomic.gbff.gz is gzipped
+2022-01-01 22:11:19,229 root         INFO     Identifying PAM sites in the genome
+2022-01-01 22:30:01,785 root         INFO     Checking guides for restriction enzymes
+2022-01-01 22:30:01,804 root         INFO     Number of guides removed after checking for restriction enzymes: 0
+2022-01-01 22:30:01,805 root         INFO     Identifing guides that are unique near the PAM site
+2022-01-01 22:33:30,452 root         INFO     Number of guides with non unique seed sequence: 86615849
+2022-01-01 22:34:02,299 root         INFO     Indexing all potential guide sites: 65925113. This is the longest step.
+2022-01-01 22:39:39,932 nmslib       INFO     M                   = 16
+2022-01-01 22:39:39,933 nmslib       INFO     indexThreadQty      = 32
+2022-01-01 22:39:39,933 nmslib       INFO     efConstruction      = 10
+2022-01-01 22:39:39,933 nmslib       INFO     maxM			          = 16
+2022-01-01 22:39:39,933 nmslib       INFO     maxM0			          = 32
+2022-01-01 22:39:39,946 nmslib       INFO     mult                = 0.360674
+2022-01-01 22:39:39,947 nmslib       INFO     skip_optimized_index= 0
+2022-01-01 22:39:39,947 nmslib       INFO     delaunay_type       = 2
+2022-01-01 22:39:39,947 nmslib       INFO     Set HNSW query-time parameters:
+2022-01-01 22:39:39,948 nmslib       INFO     ef(Search)         =20
+2022-01-01 22:39:39,948 nmslib       INFO     algoType           =2
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+****************************************************2022-01-01 23:03:01,991 nmslib       INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2022-01-01 23:03:01,991 nmslib       INFO     searchMethod			  = 0
+2022-01-01 23:03:11,687 root         INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2022-01-01 23:05:24,614 nmslib       INFO     Set HNSW query-time parameters:
+2022-01-01 23:05:24,615 nmslib       INFO     ef(Search)         =9
+2022-01-01 23:05:24,615 nmslib       INFO     algoType           =2
+2022-01-02 00:25:34,830 root         INFO     Formatting data for BedTools
+2022-01-02 00:25:49,527 root         INFO     Create GuideMaker Annotation object
+2022-01-02 00:25:49,527 root         INFO     Identify genomic features
+2022-01-02 00:25:49,537 guidemaker.core INFO     check if /project/gbru_fy21_tomato_ralstonia/guidemaker/all_test_data/GCF_000001405.39_GRCh38.p13_genomic.gbff.gz is gzipped
+2022-01-02 00:27:52,688 root         INFO     Find genomic features closest the guides
+2022-01-02 00:37:43,303 root         INFO     Select guides that start between +500 and -500 of a feature start
+2022-01-02 00:37:46,234 root         INFO     Select description columns
+2022-01-02 00:37:48,958 root         INFO     Format the output
+2022-01-02 00:41:47,546 root         INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 35084
+2022-01-02 00:41:48,570 root         INFO     Creating random control guides
+2022-01-02 00:42:35,532 root         INFO     Number of random control searched: 1000
+2022-01-02 00:42:35,539 root         INFO     Percentage of GC content in the input genome: 39.02
+2022-01-02 00:42:35,540 root         INFO     Total length of the genome: 3120.5 MB
+2022-01-02 00:42:35,540 root         INFO     Created 10 control guides with a minimum distance of 7 and a median distance of 7
+2022-01-02 00:42:35,546 root         INFO     GuideMaker completed, results are at TEST
+2022-01-02 00:42:35,547 root         INFO     PAM sequence: NNGRRT
+2022-01-02 00:42:35,547 root         INFO     PAM orientation: 3prime
+2022-01-02 00:42:35,547 root         INFO     Genome strand(s) searched: both
+2022-01-02 00:42:35,548 root         INFO     Total PAM sites considered: 90309223
+2022-01-02 00:42:35,548 root         INFO     Guide RNA candidates found: 72911
+	Command being timed: "guidemaker -i /project/gbru_fy21_tomato_ralstonia/guidemaker/all_test_data/GCF_000001405.39_GRCh38.p13_genomic.gbff.gz --pamseq NNGRRT --outdir TEST --pam_orientation 3prime --guidelength 20 --lsr 11 --dist 3 --before 500 --into 500 --knum 10 --controls 10 --log GM_human_hamming_718929_.log --threads 32"
+	User time (seconds): 57797.90
+	System time (seconds): 5276.61
+	Percent of CPU this job got: 642%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:43:35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 227497468
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 5
+	Minor (reclaiming a frame) page faults: 1398403577
+	Voluntary context switches: 149342526
+	Involuntary context switches: 71697
+	Swaps: 0
+	File system inputs: 5764112
+	File system outputs: 9249008
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

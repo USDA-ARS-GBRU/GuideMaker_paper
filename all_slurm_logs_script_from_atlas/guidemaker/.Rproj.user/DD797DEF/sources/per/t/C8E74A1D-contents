@@ -1,0 +1,19 @@
+library(tidyverse)
+
+## NGG
+leven_ngg <- read.csv("avx_phaeous_leven_hamming/Vulgaris_NGG_Leven/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+hamming_ngg <- read.csv("avx_phaeous_leven_hamming/Vulgaris_NGG_Hamming/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+ngg_overlap <- sum(hamming_ngg %in% leven_ngg)/length(leven_ngg) * 100
+ngg_overlap
+
+## NNGRRT
+leven_nngrrt <- read.csv("avx_phaeous_leven_hamming/Vulgaris_NNGRRT_Leven/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+hamming_nngrrt <- read.csv("avx_phaeous_leven_hamming/Vulgaris_NNGRRT_Hamming/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+nngrrt_overlap <- sum(hamming_nngrrt %in% leven_nngrrt)/length(leven_nngrrt) * 100
+nngrrt_overlap
+
+## NNAGAAW
+leven_nnagaaw <- read.csv("avx_phaeous_leven_hamming/Vulgaris_NNAGAAW_Leven/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+hamming_nnagaaw <- read.csv("avx_phaeous_leven_hamming/Vulgaris_NNAGAAW_Hamming/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+nnagaaw_overlap <- sum(hamming_nnagaaw %in% leven_nnagaaw)/length(leven_nnagaaw) * 100
+nnagaaw_overlap

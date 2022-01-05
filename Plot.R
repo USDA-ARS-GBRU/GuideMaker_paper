@@ -541,14 +541,12 @@ gg_cdf <- ggplot(alldata_cdf, aes(x = CDF, fill = type)) +
         axis.title.x = element_text(color = "black", size = 14, angle = 0, face="bold"),
         axis.title.y = element_text(color = "black", size = 14, angle = 90, face="bold")) +
   theme(legend.title = element_blank())+
-  ylim(0,50000)+
-  xlim(0,0.1)
   xlab("CFD Score")+
   ylab("Count")+
-  scale_y_continuous(expand = c(0,0), labels = label_number(suffix = " K", scale=1e-3))#+
+  scale_y_continuous(expand = c(0,0), labels = label_number(suffix = " M", scale=1e-6))+
   theme(legend.justification=c(1,0),
         legend.text = element_text(color = "black", size= 10, face = "bold"),
-        legend.position=c(0.05,0.50))+
+        legend.position=c(0.9,0.50))+
   coord_cartesian(ylim = c(0, 550000))
 
 plot_grid(gg_doench, gg_cdf, align = 'hv')
@@ -596,5 +594,59 @@ length(hamming_nnagaaw_uniq )
 
 length(common)/length(leven_nnagaaw_uniq) * 100
 
-                          
-                          
+
+############# Leven_Hamming_Comparison for Vulgaris Genome ###############
+library(tidyverse)
+
+## NGG
+leven_ngg <- read.csv("all_slurm_logs_script_from_atlas/guidemaker/avx_phaeous_leven_hamming/Vulgaris_NGG_Leven/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+hamming_ngg <- read.csv("all_slurm_logs_script_from_atlas/guidemaker/avx_phaeous_leven_hamming/Vulgaris_NGG_Hamming/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+ngg_overlap <- sum(hamming_ngg %in% leven_ngg)/length(leven_ngg) * 100
+ngg_overlap
+
+## NNGRRT
+leven_nngrrt <- read.csv("all_slurm_logs_script_from_atlas/guidemaker/avx_phaeous_leven_hamming/Vulgaris_NNGRRT_Leven/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+hamming_nngrrt <- read.csv("all_slurm_logs_script_from_atlas/guidemaker/avx_phaeous_leven_hamming/Vulgaris_NNGRRT_Hamming/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+nngrrt_overlap <- sum(hamming_nngrrt %in% leven_nngrrt)/length(leven_nngrrt) * 100
+nngrrt_overlap
+
+## NNAGAAW
+leven_nnagaaw <- read.csv("all_slurm_logs_script_from_atlas/guidemaker/avx_phaeous_leven_hamming/Vulgaris_NNAGAAW_Leven/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+hamming_nnagaaw <- read.csv("all_slurm_logs_script_from_atlas/guidemaker/avx_phaeous_leven_hamming/Vulgaris_NNAGAAW_Hamming/targets.csv", header = TRUE) %>% select(Guide.sequence) %>% pull()
+nnagaaw_overlap <- sum(hamming_nnagaaw %in% leven_nnagaaw)/length(leven_nnagaaw) * 100
+nnagaaw_overlap
+
+
+######### analyses of human genome ##############
+# This analysis is based on .err files (logs) from GuideMaker_ALL/GuideMaker_paper/all_slurm_logs_script_from_atlas/guidemaker/avx_human/
+human_df <- read.csv("all_slurm_logs_script_from_atlas/guidemaker/avx_human/human_genome_summary.csv", header = TRUE)
+human_df["Run_Type"] <- c("(A) Guidelength: 20; lsr: 11; dtype: hamming", "(A) Guidelength: 20; lsr: 11; dtype: hamming", "(A) Guidelength: 20; lsr: 11; dtype: hamming",
+                          "(B) Guidelength: 25; lsr: 20; dtype: hamming", "(B) Guidelength: 25; lsr: 20; dtype: hamming", "(B) Guidelength: 25; lsr: 20; dtype: hamming")
+
+human_df$PAM <- factor(human_df$PAM, levels=c("NGG","NNGRRT","NNAGAAW"))
+
+p <-ggplot(data=human_df, aes(x=PAM, y=Run.time.in.seconds, fill=PAM)) +
+  geom_bar(stat="identity")+
+  facet_grid(~Run_Type) +
+  theme_bw()+
+  theme(axis.text.x = element_text(color = "black", size = 10, angle = 0),
+        axis.text.y = element_text(color = "black", size = 10, angle = 0),  
+        axis.title.x = element_text(color = "black", size = 16, angle = 0, face="bold"),
+        axis.title.y = element_text(color = "black", size = 16, angle = 90, face="bold")) +
+  theme(legend.title = element_text(face = "bold", size=8))+
+  theme(legend.position = 'none',
+        legend.key.size = unit(0.5, 'cm'),
+        legend.title = element_blank(),
+        legend.text = element_text(size = 8, face = "bold"))+
+  theme(strip.text.x = element_text(size=12, face = "bold", angle=0))+
+  ylab("Run time in seconds")+
+  xlab(" ") +
+  scale_y_continuous(limits = c(0,80000), expand = c(0,0), labels = label_number(suffix = " K", scale=1e-3))+
+  scale_fill_manual(values=c("#999999", "#E69F00", "#56B4E9"))
+
+p             
+  
+# Save the plot
+ggsave("figures/Figure 7. Performance of GuideMaker for human genome.pdf", width = 8, height = 4, units = "in")
+ggsave("figures/Figure 7. Performance of GuideMaker for human genome.png", width = 8, height = 4, units = "in")                    
+

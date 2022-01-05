@@ -1,0 +1,49 @@
+09-26 17:42 root         INFO     Configuration data loaded from /project/gbru_fy21_tomato_ralstonia/guidemaker/nonavx/GuideMaker/guidemaker/data/config_default.yaml:
+09-26 17:42 root         INFO     {'NMSLIB': {'M': 16, 'efc': 10, 'post': 1, 'ef': 9}, 'CONTROL': {'MINIMUM_HMDIST': 7, 'CONTROL_SEARCH_MULTIPLE': [10, 100, 1000, 10000]}, 'MINIMUM_PROPORTION': 0.5}
+09-26 17:42 root         INFO     Temp directory is: /tmp/guidemaker_lenrcayr
+09-26 17:42 root         INFO     Writing fasta file from genbank file(s)
+09-26 17:42 root         INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+09-26 17:42 root         INFO     Identifying PAM sites in the genome
+09-26 17:42 root         INFO     Checking guides for restriction enzymes
+09-26 17:42 root         INFO     Number of guides removed after checking for restriction enzymes: 0
+09-26 17:42 root         INFO     Identifing guides that are unique near the PAM site
+09-26 17:42 root         INFO     Number of guides with non unique seed sequence: 453
+09-26 17:42 root         INFO     Indexing all potential guide sites: 20221. This is the longest step.
+09-26 17:42 nmslib       INFO     M                   = 16
+09-26 17:42 nmslib       INFO     indexThreadQty      = 32
+09-26 17:42 nmslib       INFO     efConstruction      = 10
+09-26 17:42 nmslib       INFO     maxM			          = 16
+09-26 17:42 nmslib       INFO     maxM0			          = 32
+09-26 17:42 nmslib       INFO     mult                = 0.360674
+09-26 17:42 nmslib       INFO     skip_optimized_index= 0
+09-26 17:42 nmslib       INFO     delaunay_type       = 2
+09-26 17:42 nmslib       INFO     Set HNSW query-time parameters:
+09-26 17:42 nmslib       INFO     ef(Search)         =20
+09-26 17:42 nmslib       INFO     algoType           =2
+09-26 17:42 nmslib       INFO     No appropriate custom distance function for Hamming (bit-storage) space
+09-26 17:42 nmslib       INFO     searchMethod			  = 0
+09-26 17:42 root         INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+09-26 17:42 nmslib       INFO     Set HNSW query-time parameters:
+09-26 17:42 nmslib       INFO     ef(Search)         =9
+09-26 17:42 nmslib       INFO     algoType           =2
+09-26 17:42 root         INFO     Formatting data for BedTools
+09-26 17:42 root         INFO     Create GuideMaker Annotation object
+09-26 17:42 root         INFO     Identify genomic features
+09-26 17:42 root         INFO     check if ../all_test_data/Escherichia.coli_str_K-12_substr_MG1655.gbk is gzipped
+09-26 17:42 root         INFO     Total number of CDS/locus in the input genome: 4357
+09-26 17:42 root         INFO     Find genomic features closest the guides
+09-26 17:42 root         INFO     Select guides that start between +500 and -500 of a feature start
+09-26 17:42 root         INFO     Select description columns
+09-26 17:42 root         INFO     Format the output
+09-26 17:42 root         INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 8427
+09-26 17:42 root         INFO     Creating random control guides
+09-26 17:42 root         INFO     Number of random control searched: 100
+09-26 17:42 root         INFO     Percentage of GC content in the input genome: 50.79
+09-26 17:42 root         INFO     Total length of the genome: 4.4 MB
+09-26 17:42 root         INFO     Created 10 control guides with a minimum distance of 8 and a median distance of 8
+09-26 17:42 root         INFO     GuideMaker completed, results are at TEST
+09-26 17:42 root         INFO     PAM sequence: NNAGAAW
+09-26 17:42 root         INFO     PAM orientation: 3prime
+09-26 17:42 root         INFO     Genome strand(s) searched: both
+09-26 17:42 root         INFO     Total PAM sites considered: 20528
+09-26 17:42 root         INFO     Guide RNA candidates found: 16755

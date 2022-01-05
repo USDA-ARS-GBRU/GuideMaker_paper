@@ -1,0 +1,49 @@
+2022-01-03 12:43:37,394 root         INFO     Configuration data loaded from /project/gbru_fy21_tomato_ralstonia/run/script/.conda/envs/AVX2/lib/python3.7/site-packages/guidemaker/data/config_default.yaml:
+2022-01-03 12:43:37,402 root         INFO     {'NMSLIB': {'M': 16, 'efc': 10, 'post': 1, 'ef': 9}, 'CONTROL': {'MINIMUM_HMDIST': 7, 'CONTROL_SEARCH_MULTIPLE': [10, 100, 1000, 10000]}, 'MINIMUM_PROPORTION': 0.5}
+2022-01-03 12:43:37,403 root         INFO     Temp directory is: /local/scratch/ravin.poudel/719420/guidemaker_ulnnnw93
+2022-01-03 12:43:37,403 root         INFO     Writing fasta file from genbank file(s)
+2022-01-03 12:43:37,405 guidemaker.core INFO     check if ../all_test_data/GCF_000499845.1_PhaVulg1_0_genomic.gbff is gzipped
+2022-01-03 12:43:55,613 root         INFO     Identifying PAM sites in the genome
+2022-01-03 12:50:47,388 root         INFO     Checking guides for restriction enzymes
+2022-01-03 12:50:47,423 root         INFO     Number of guides removed after checking for restriction enzymes: 0
+2022-01-03 12:50:47,424 root         INFO     Identifing guides that are unique near the PAM site
+2022-01-03 12:51:57,159 root         INFO     Number of guides with non unique seed sequence: 30879761
+2022-01-03 12:52:06,871 root         INFO     Indexing all potential guide sites: 21958124. This is the longest step.
+2022-01-03 12:53:59,082 nmslib       INFO     M                   = 16
+2022-01-03 12:53:59,082 nmslib       INFO     indexThreadQty      = 32
+2022-01-03 12:53:59,082 nmslib       INFO     efConstruction      = 10
+2022-01-03 12:53:59,082 nmslib       INFO     maxM			          = 16
+2022-01-03 12:53:59,082 nmslib       INFO     maxM0			          = 32
+2022-01-03 12:53:59,083 nmslib       INFO     mult                = 0.360674
+2022-01-03 12:53:59,083 nmslib       INFO     skip_optimized_index= 0
+2022-01-03 12:53:59,083 nmslib       INFO     delaunay_type       = 2
+2022-01-03 12:53:59,083 nmslib       INFO     Set HNSW query-time parameters:
+2022-01-03 12:53:59,083 nmslib       INFO     ef(Search)         =20
+2022-01-03 12:53:59,083 nmslib       INFO     algoType           =2
+2022-01-03 12:58:10,816 nmslib       INFO     No appropriate custom distance function for Hamming (bit-storage) space
+2022-01-03 12:58:10,816 nmslib       INFO     searchMethod			  = 0
+2022-01-03 12:58:13,851 root         INFO     Identifying guides that have a hamming distance <= 3 to all other potential guides
+2022-01-03 12:58:56,646 nmslib       INFO     Set HNSW query-time parameters:
+2022-01-03 12:58:56,646 nmslib       INFO     ef(Search)         =9
+2022-01-03 12:58:56,646 nmslib       INFO     algoType           =2
+2022-01-03 13:22:02,228 root         INFO     Formatting data for BedTools
+2022-01-03 13:22:08,707 root         INFO     Create GuideMaker Annotation object
+2022-01-03 13:22:08,707 root         INFO     Identify genomic features
+2022-01-03 13:22:08,708 guidemaker.core INFO     check if ../all_test_data/GCF_000499845.1_PhaVulg1_0_genomic.gbff is gzipped
+2022-01-03 13:22:22,623 root         INFO     Total number of CDS/locus in the input genome: 32720
+2022-01-03 13:22:22,623 root         INFO     Find genomic features closest the guides
+2022-01-03 13:25:44,886 root         INFO     Select guides that start between +500 and -500 of a feature start
+2022-01-03 13:25:47,935 root         INFO     Select description columns
+2022-01-03 13:25:48,218 root         INFO     Format the output
+2022-01-03 13:26:45,354 root         INFO     Number of Guides within a gene coordinates i.e. zero Feature distance: 272799
+2022-01-03 13:26:48,974 root         INFO     Creating random control guides
+2022-01-03 13:26:56,343 root         INFO     Number of random control searched: 1000
+2022-01-03 13:26:56,344 root         INFO     Percentage of GC content in the input genome: 31.70
+2022-01-03 13:26:56,344 root         INFO     Total length of the genome: 496.9 MB
+2022-01-03 13:26:56,344 root         INFO     Created 10 control guides with a minimum distance of 7 and a median distance of 7
+2022-01-03 13:26:56,349 root         INFO     GuideMaker completed, results are at Vulgaris_NGG_Hamming
+2022-01-03 13:26:56,349 root         INFO     PAM sequence: NGG
+2022-01-03 13:26:56,349 root         INFO     PAM orientation: 3prime
+2022-01-03 13:26:56,350 root         INFO     Genome strand(s) searched: both
+2022-01-03 13:26:56,350 root         INFO     Total PAM sites considered: 34275226
+2022-01-03 13:26:56,350 root         INFO     Guide RNA candidates found: 383226
